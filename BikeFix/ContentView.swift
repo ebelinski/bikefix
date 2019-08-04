@@ -1,9 +1,15 @@
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
+
+  @State var nodeViewModels: [NodeViewModel] = []
+
   var body: some View {
-    Text("Hello World")
+    MapView(nodeViewModels: $nodeViewModels)
+      .edgesIgnoringSafeArea(.vertical)
   }
+
 }
 
 #if DEBUG

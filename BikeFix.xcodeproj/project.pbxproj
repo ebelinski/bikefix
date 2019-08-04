@@ -18,6 +18,7 @@
 		415E55B922F6536E00D35882 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55B822F6536E00D35882 /* Node.swift */; };
 		415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55BE22F7182E00D35882 /* NodeViewModel.swift */; };
 		415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C022F7189700D35882 /* NodeAnnotation.swift */; };
+		415E55C322F718E200D35882 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C222F718E200D35882 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		415E55B822F6536E00D35882 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		415E55BE22F7182E00D35882 /* NodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModel.swift; sourceTree = "<group>"; };
 		415E55C022F7189700D35882 /* NodeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeAnnotation.swift; sourceTree = "<group>"; };
+		415E55C222F718E200D35882 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				415E55A022F6289600D35882 /* AppDelegate.swift */,
 				415E55A222F6289600D35882 /* SceneDelegate.swift */,
 				415E55A422F6289600D35882 /* ContentView.swift */,
+				415E55C222F718E200D35882 /* MapView.swift */,
 				415E55B422F6534D00D35882 /* NodeProvider.swift */,
 				415E55B622F6536600D35882 /* NodeResponse.swift */,
 				415E55B822F6536E00D35882 /* Node.swift */,
@@ -168,6 +171,7 @@
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
+				415E55C322F718E200D35882 /* MapView.swift in Sources */,
 				415E55A522F6289600D35882 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
