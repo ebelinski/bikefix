@@ -1,6 +1,6 @@
 import Foundation
 
-struct Location: Codable {
+struct Node: Codable {
 
   struct Tags: Codable {
     let name: String?
