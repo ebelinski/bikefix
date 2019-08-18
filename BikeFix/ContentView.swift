@@ -3,11 +3,22 @@ import CoreLocation
 
 struct ContentView: View {
 
-  @State var nodeViewModels: [NodeViewModel] = []
-
   var body: some View {
-    MapView(nodeViewModels: $nodeViewModels)
-      .edgesIgnoringSafeArea(.vertical)
+    TabView {
+      Map()
+        .edgesIgnoringSafeArea(.all)
+        .tabItem {
+          Image(systemName: "map.fill")
+          Text("Map")
+        }
+      Settings()
+        .tabItem {
+          Image(systemName: "gear")
+          Text("Settings")
+        }
+
+    }
+    .edgesIgnoringSafeArea(.top)
   }
 
 }
