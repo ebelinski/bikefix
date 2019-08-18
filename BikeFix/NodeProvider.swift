@@ -12,7 +12,6 @@ class NodeProvider {
   var task: URLSessionDataTask?
 
   func getData(forRegion region: MKCoordinateRegion) {
-
     // Kind of a fuzzy calculation, deliberately larger than it needs to be
     let topLeftLatitude = region.center.latitude - region.span.latitudeDelta
     let topLeftLongitude = region.center.longitude - region.span.longitudeDelta
