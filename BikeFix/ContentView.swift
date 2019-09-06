@@ -6,7 +6,8 @@ struct ContentView: View {
   var body: some View {
     TabView {
       Map()
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.horizontal)
         .tabItem {
           Image(systemName: "map.fill")
           Text("Map")

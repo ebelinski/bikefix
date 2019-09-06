@@ -5,7 +5,24 @@ struct Map: View {
   @EnvironmentObject var nodeProvider: NodeProvider
 
   var body: some View {
-    MapView(nodes: $nodeProvider.nodes)
+    ZStack {
+      MapView(nodes: $nodeProvider.nodes)
+
+      HStack {
+        Spacer()
+        VStack {
+          Spacer()
+          Button(action: {
+            print("Locate Me")
+          }) {
+            Image(systemName: "location")
+              .imageScale(.large)
+              .accessibility(label: Text("Locate Me"))
+              .padding()
+          }
+        }
+      }
+    }
   }
   
 }
