@@ -2,10 +2,10 @@ import SwiftUI
 
 struct Map: View {
 
-  @State var nodeViewModels: [NodeViewModel] = []
+  @EnvironmentObject var nodeProvider: NodeProvider
 
   var body: some View {
-    MapView(nodeViewModels: $nodeViewModels)
+    MapView()
   }
   
 }

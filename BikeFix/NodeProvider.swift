@@ -1,14 +1,18 @@
 import Foundation
 import MapKit
+import Combine
 
-protocol NodeProviderDelegate {
-  func displayNodes(Nodes: [Node])
-}
+class NodeProvider: NSObject, ObservableObject {
 
-class NodeProvider {
+  var objectWillChange = PassthroughSubject<Void, Never>()
+
+  @Published var nodes: [Node] = [] {
+    willSet {
+      objectWillChange.send()
+    }
+  }
 
   let baseEndpoint = "https://www.overpass-api.de/api/"
-  var delegate: NodeProviderDelegate?
   var task: URLSessionDataTask?
 
   func getData(forRegion region: MKCoordinateRegion) {
@@ -43,7 +47,7 @@ class NodeProvider {
       do {
         let response = try JSONDecoder().decode(NodeResponse.self, from: data)
         DispatchQueue.main.async {
-          self.delegate?.displayNodes(Nodes: response.elements)
+          self.nodes = response.elements
         }
       } catch let error {
         print("\(error)")

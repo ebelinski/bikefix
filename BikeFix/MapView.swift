@@ -3,7 +3,7 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
 
-  @Binding var nodeViewModels: [NodeViewModel]
+  @EnvironmentObject var nodeProvider: NodeProvider
 
   func makeUIView(context: Context) -> MKMapView {
     let map = MKMapView()
@@ -13,8 +13,15 @@ struct MapView: UIViewRepresentable {
 
   func updateUIView(_ uiView: MKMapView, context: Context) {
     uiView.removeAnnotations(uiView.annotations)
-    let newAnnotations = nodeViewModels.map { NodeAnnotation(nodeViewModel: $0) }
-    uiView.addAnnotations(newAnnotations)
+
+    let annotations: [MKPointAnnotation] = nodeProvider.nodes.map {
+      let annotation = MKPointAnnotation()
+      annotation.coordinate = CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon)
+      annotation.title = $0.tags.name ?? $0.tags.description ?? $0.tags.brand ?? "Unnamed"
+      return annotation
+    }
+
+    uiView.addAnnotations(annotations)
   }
 
   func makeCoordinator() -> Coordinator {
@@ -50,6 +57,14 @@ struct MapView: UIViewRepresentable {
         annotationView?.annotation = annotation
       }
       return annotationView
+    }
+
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+      let newRegion = mapView.region
+
+      if (newRegion.span.latitudeDelta < 2.0) {
+        control.nodeProvider.getData(forRegion: newRegion)
+      }
     }
 
   }
