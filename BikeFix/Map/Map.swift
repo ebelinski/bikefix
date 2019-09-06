@@ -5,7 +5,7 @@ struct Map: View {
   @EnvironmentObject var nodeProvider: NodeProvider
 
   var body: some View {
-    MapView()
+    MapView(nodes: $nodeProvider.nodes)
   }
   
 }

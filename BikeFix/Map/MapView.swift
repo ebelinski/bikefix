@@ -4,6 +4,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
 
   @EnvironmentObject var nodeProvider: NodeProvider
+  @Binding var nodes: [Node]
 
   func makeUIView(context: Context) -> MKMapView {
     let map = MKMapView()
@@ -14,7 +15,7 @@ struct MapView: UIViewRepresentable {
   func updateUIView(_ uiView: MKMapView, context: Context) {
     uiView.removeAnnotations(uiView.annotations)
 
-    let annotations: [MKPointAnnotation] = nodeProvider.nodes.map {
+    let annotations: [MKPointAnnotation] = nodes.map {
       let annotation = MKPointAnnotation()
       annotation.coordinate = CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon)
       annotation.title = $0.tags.name ?? $0.tags.description ?? $0.tags.brand ?? "Unnamed"
