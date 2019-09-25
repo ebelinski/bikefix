@@ -60,5 +60,7 @@
 	<string>BikeFix uses your location to show your current location on the map.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>BikeFix uses your location to show your current location on the map.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
