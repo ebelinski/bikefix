@@ -1,19 +1,27 @@
 import SwiftUI
+import MapKit
 
 struct Map: View {
 
   @EnvironmentObject var nodeProvider: NodeProvider
 
+  @State var currentlyDisplayingLocationAuthorizationRequest = false
+  @State var shouldNavigateToUserLocation = false
+
+  let locationManager = CLLocationManager()
+
   var body: some View {
     ZStack {
-      MapView(nodes: $nodeProvider.nodes)
+      MapView(nodes: $nodeProvider.nodes,
+              currentlyDisplayingLocationAuthorizationRequest: $currentlyDisplayingLocationAuthorizationRequest,
+              shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
 
       HStack {
         Spacer()
         VStack {
           Spacer()
           Button(action: {
-            print("Locate Me")
+            self.checkForLocationAuthorizationAndNavigateToUserLocation()
           }) {
             Image(systemName: "location")
               .imageScale(.large)
@@ -23,6 +31,19 @@ struct Map: View {
         }
       }
     }
+  }
+
+  func checkForLocationAuthorizationAndNavigateToUserLocation() {
+    currentlyDisplayingLocationAuthorizationRequest = false
+
+    if CLLocationManager.authorizationStatus() == .notDetermined {
+      print("location authorization not determined")
+      currentlyDisplayingLocationAuthorizationRequest = true
+      locationManager.requestWhenInUseAuthorization()
+      return
+    }
+
+    shouldNavigateToUserLocation = true
   }
   
 }

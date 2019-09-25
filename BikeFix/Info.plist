@@ -56,5 +56,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BikeFix uses your location to show your current location on the map.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>BikeFix uses your location to show your current location on the map.</string>
 </dict>
 </plist>

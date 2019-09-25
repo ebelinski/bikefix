@@ -4,11 +4,19 @@ import MapKit
 struct MapView: UIViewRepresentable {
 
   @EnvironmentObject var nodeProvider: NodeProvider
+
   @Binding var nodes: [Node]
+  @Binding var currentlyDisplayingLocationAuthorizationRequest: Bool
+  @Binding var shouldNavigateToUserLocation: Bool
+
+  let locationManager = CLLocationManager()
 
   func makeUIView(context: Context) -> MKMapView {
     let map = MKMapView()
     map.delegate = context.coordinator
+    map.showsScale = true
+    map.showsCompass = true
+    map.showsUserLocation = true
     return map
   }
 
@@ -23,11 +31,29 @@ struct MapView: UIViewRepresentable {
     }
 
     uiView.addAnnotations(annotations)
+
+    if !currentlyDisplayingLocationAuthorizationRequest && shouldNavigateToUserLocation {
+      moveToUserLocation(map: uiView)
+    }
   }
 
   func makeCoordinator() -> Coordinator {
     Coordinator(self)
   }
+
+  // MARK: Location -
+
+  private func moveToUserLocation(map: MKMapView) {
+    guard let location = locationManager.location else { return }
+
+    let region = MKCoordinateRegion(center: location.coordinate,
+                                    span: MKCoordinateSpan(latitudeDelta: 0.02,
+                                                           longitudeDelta: 0.02))
+    map.setRegion(region, animated: true)
+    shouldNavigateToUserLocation = false
+  }
+
+  // MARK: Coordinator -
 
   final class Coordinator: NSObject, MKMapViewDelegate {
 
