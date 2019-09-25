@@ -31,6 +31,9 @@ struct Map: View {
         }
       }
     }
+    .onAppear {
+      self.shouldNavigateToUserLocation = true
+    }
   }
 
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
