@@ -50,7 +50,6 @@ struct MapView: UIViewRepresentable {
                                     span: MKCoordinateSpan(latitudeDelta: 0.02,
                                                            longitudeDelta: 0.02))
     map.setRegion(region, animated: true)
-    shouldNavigateToUserLocation = false
   }
 
   // MARK: Coordinator -
@@ -63,6 +62,10 @@ struct MapView: UIViewRepresentable {
 
     init(_ control: MapView) {
       self.control = control
+    }
+
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+      control.shouldNavigateToUserLocation = false
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
