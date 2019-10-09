@@ -40,6 +40,7 @@
 		415E55C222F718E200D35882 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		41A600232309865E00E2548F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		415E559F22F6289600D35882 /* BikeFix */ = {
 			isa = PBXGroup;
 			children = (
+				41E30A89234E08AD0015715D /* BikeFix.entitlements */,
 				415E55A022F6289600D35882 /* AppDelegate.swift */,
 				415E55A222F6289600D35882 /* SceneDelegate.swift */,
 				415E55A422F6289600D35882 /* ContentView.swift */,
@@ -340,7 +342,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BikeFix/BikeFix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "BikeFix/Preview\\ Content";
 				DEVELOPMENT_TEAM = H7ATB2ZBVD;
 				ENABLE_PREVIEWS = YES;
@@ -351,6 +355,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.BikeFix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -360,7 +365,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BikeFix/BikeFix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "BikeFix/Preview\\ Content";
 				DEVELOPMENT_TEAM = H7ATB2ZBVD;
 				ENABLE_PREVIEWS = YES;
@@ -371,6 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.BikeFix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
