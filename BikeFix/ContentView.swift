@@ -18,7 +18,6 @@ struct ContentView: View {
           Text("Settings")
         }
     }
-    .edgesIgnoringSafeArea(.top)
   }
 
 }
