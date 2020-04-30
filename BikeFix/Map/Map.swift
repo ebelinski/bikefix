@@ -62,7 +62,7 @@ struct Map: View {
       .accessibility(label: Text("Loading data..."))
       .padding()
       .background(Color.softBackground)
-      .cornerRadius(5)
+      .cornerRadius(10)
       .shadow(color: Color.shadow, radius: 5)
       .padding()
   }
@@ -76,7 +76,7 @@ struct Map: View {
         .accessibility(label: Text("Locate Me"))
         .padding()
         .background(Color.softBackground)
-        .cornerRadius(5)
+        .cornerRadius(10)
         .shadow(color: Color.shadow, radius: 5)
     }
     .padding()
