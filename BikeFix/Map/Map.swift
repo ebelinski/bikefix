@@ -27,7 +27,11 @@ struct Map: View {
               .imageScale(.large)
               .accessibility(label: Text("Locate Me"))
               .padding()
+              .background(Color.softBackground)
+              .cornerRadius(5)
+              .shadow(color: Color.shadow, radius: 5)
           }
+          .padding()
         }
       }
     }
