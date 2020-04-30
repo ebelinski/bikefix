@@ -32,7 +32,6 @@ struct MapView: UIViewRepresentable {
 
     uiView.addAnnotations(annotations)
 
-    print("2️⃣2️⃣ shouldNavigateToUserLocation: \(shouldNavigateToUserLocation)")
     if !currentlyDisplayingLocationAuthorizationRequest && shouldNavigateToUserLocation {
       moveToUserLocation(map: uiView)
     }
