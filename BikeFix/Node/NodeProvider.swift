@@ -21,11 +21,11 @@ class NodeProvider: NSObject, ObservableObject {
     loading = true
 
     // Kind of a fuzzy calculation, deliberately larger than it needs to be
-    let topLeftLatitude = region.center.latitude - region.span.latitudeDelta
-    let topLeftLongitude = region.center.longitude - region.span.longitudeDelta
+    let topLeftLatitude = region.center.latitude - region.span.latitudeDelta * 2
+    let topLeftLongitude = region.center.longitude - region.span.longitudeDelta * 2
 
-    let bottomRightLatitude = region.center.latitude + region.span.latitudeDelta
-    let bottomRightLongitude = region.center.longitude + region.span.longitudeDelta
+    let bottomRightLatitude = region.center.latitude + region.span.latitudeDelta * 2
+    let bottomRightLongitude = region.center.longitude + region.span.longitudeDelta * 2
 
     let data = "data=[out:json];"
     let node = "node[amenity=bicycle_repair_station]"

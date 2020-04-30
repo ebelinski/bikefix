@@ -13,20 +13,26 @@ struct MapView: UIViewRepresentable {
 
   func makeUIView(context: Context) -> MKMapView {
     let map = MKMapView()
+
     map.delegate = context.coordinator
     map.showsScale = true
     map.showsCompass = true
     map.showsUserLocation = true
+
+    map.register(NodeAnnotationInfoView.self,
+                 forAnnotationViewWithReuseIdentifier: String(describing: NodeAnnotationInfoView.self))
+    map.register(NodeAnnotationMarkerView.self,
+                 forAnnotationViewWithReuseIdentifier: String(describing: NodeAnnotationMarkerView.self))
+
     return map
   }
 
   func updateUIView(_ uiView: MKMapView, context: Context) {
     uiView.removeAnnotations(uiView.annotations)
 
-    let annotations: [MKPointAnnotation] = nodes.map {
-      let annotation = MKPointAnnotation()
-      annotation.coordinate = CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon)
-      annotation.title = $0.tags.name ?? $0.tags.description ?? $0.tags.brand ?? "Unnamed"
+    let annotations: [NodeAnnotation] = nodes.map {
+      let annotation = NodeAnnotation(title: $0.tags.name ?? $0.tags.description ?? $0.tags.brand ?? "Unnamed",
+                                      coordinate: CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon))
       return annotation
     }
 
@@ -56,8 +62,6 @@ struct MapView: UIViewRepresentable {
 
   final class Coordinator: NSObject, MKMapViewDelegate {
 
-    let identifier = "Annotation"
-
     var control: MapView
 
     init(_ control: MapView) {
@@ -78,11 +82,9 @@ struct MapView: UIViewRepresentable {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
       guard let annotation = annotation as? NodeAnnotation else { return nil }
 
-      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: NodeAnnotationMarkerView.self)) as? NodeAnnotationMarkerView
       if annotationView == nil {
-        annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        annotationView?.canShowCallout = true
-        annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        annotationView = NodeAnnotationMarkerView(annotation: annotation, reuseIdentifier: String(describing: NodeAnnotationMarkerView.self))
       } else {
         annotationView?.annotation = annotation
       }
