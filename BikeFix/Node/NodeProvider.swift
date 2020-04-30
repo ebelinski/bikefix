@@ -12,10 +12,18 @@ class NodeProvider: NSObject, ObservableObject {
     }
   }
 
+  @Published var loading = false {
+     willSet {
+       objectWillChange.send()
+     }
+   }
+
   let baseEndpoint = "https://www.overpass-api.de/api/"
   var task: URLSessionDataTask?
 
   func getData(forRegion region: MKCoordinateRegion) {
+    loading = true
+
     // Kind of a fuzzy calculation, deliberately larger than it needs to be
     let topLeftLatitude = region.center.latitude - region.span.latitudeDelta
     let topLeftLongitude = region.center.longitude - region.span.longitudeDelta
@@ -47,10 +55,14 @@ class NodeProvider: NSObject, ObservableObject {
       do {
         let response = try JSONDecoder().decode(NodeResponse.self, from: data)
         DispatchQueue.main.async {
+          self.loading = false
           self.nodes = response.elements
         }
       } catch let error {
-        print("\(error)")
+        print("\(error.localizedDescription)")
+        DispatchQueue.main.async {
+          self.loading = false
+        }
       }
     }
 

@@ -21,6 +21,8 @@ struct Map: View {
   var body: some View {
     ZStack {
       map
+        .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.horizontal)
 
       mapOverlays
     }
@@ -38,24 +40,46 @@ struct Map: View {
   }
 
   var mapOverlays: some View {
-    HStack {
-      Spacer()
-      VStack {
-        Spacer()
-        Button(action: {
-          self.checkForLocationAuthorizationAndNavigateToUserLocation()
-        }) {
-          Image(systemName: "location")
-            .imageScale(.large)
-            .accessibility(label: Text("Locate Me"))
-            .padding()
-            .background(Color.softBackground)
-            .cornerRadius(5)
-            .shadow(color: Color.shadow, radius: 5)
+    VStack {
+      if nodeProvider.loading {
+        HStack {
+          Spacer()
+          loadingIndicator
         }
-        .padding()
       }
-    } 
+
+      Spacer()
+
+      HStack {
+        Spacer()
+        locationButton
+      }
+    }
+  }
+
+  var loadingIndicator: some View {
+    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+      .accessibility(label: Text("Loading data..."))
+      .padding()
+      .background(Color.softBackground)
+      .cornerRadius(5)
+      .shadow(color: Color.shadow, radius: 5)
+      .padding()
+  }
+
+  var locationButton: some View {
+    Button(action: {
+      self.checkForLocationAuthorizationAndNavigateToUserLocation()
+    }) {
+      Image(systemName: "location")
+        .imageScale(.large)
+        .accessibility(label: Text("Locate Me"))
+        .padding()
+        .background(Color.softBackground)
+        .cornerRadius(5)
+        .shadow(color: Color.shadow, radius: 5)
+    }
+    .padding()
   }
 
   // MARK: - Methods
