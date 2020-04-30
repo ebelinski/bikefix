@@ -7,15 +7,11 @@ class NodeProvider: NSObject, ObservableObject {
   var objectWillChange = PassthroughSubject<Void, Never>()
 
   @Published var nodes: [Node] = [] {
-    willSet {
-      objectWillChange.send()
-    }
+    willSet { objectWillChange.send() }
   }
 
   @Published var loading = false {
-     willSet {
-       objectWillChange.send()
-     }
+     willSet { objectWillChange.send() }
    }
 
   let baseEndpoint = "https://www.overpass-api.de/api/"

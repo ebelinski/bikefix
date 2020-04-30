@@ -27,7 +27,10 @@ struct Map: View {
       mapOverlays
     }
     .onAppear {
-      self.shouldNavigateToUserLocation = true
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        // Setting it right away doesn't work, due to some funny behavior with MapView's mapViewDidChangeVisibleRegion method.
+        self.shouldNavigateToUserLocation = true
+      }
     }
   }
 
