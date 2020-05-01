@@ -21,16 +21,15 @@ class NodeProvider: NSObject, ObservableObject {
     loading = true
 
     // Kind of a fuzzy calculation, deliberately larger than it needs to be
-    let topLeftLat = region.center.latitude - region.span.latitudeDelta * 2
-    let topLeftLon = region.center.longitude - region.span.longitudeDelta * 2
+    let topLeftLat = region.center.latitude - region.span.latitudeDelta
+    let topLeftLon = region.center.longitude - region.span.longitudeDelta
 
-    let bottomRightLat = region.center.latitude + region.span.latitudeDelta * 2
-    let bottomRightLon = region.center.longitude + region.span.longitudeDelta * 2
+    let bottomRightLat = region.center.latitude + region.span.latitudeDelta
+    let bottomRightLon = region.center.longitude + region.span.longitudeDelta
 
     let data = "data=[out:json][timeout:25]"
     let box = "[bbox:\(topLeftLat),\(topLeftLon),\(bottomRightLat),\(bottomRightLon)];"
     let node = "(node[amenity=bicycle_repair_station];node[shop=bicycle];);"
-//    let box = "(\(topLeftLat),\(topLeftLon),\(bottomRightLat),\(bottomRightLon));"
     let meta = "out%20meta;"
     let endpoint = "\(baseEndpoint)interpreter?\(data)\(box)\(node)\(meta)"
 
