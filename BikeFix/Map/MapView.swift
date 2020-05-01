@@ -3,13 +3,21 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
 
+  // MARK: - Environment
+
   @EnvironmentObject var nodeProvider: NodeProvider
+
+  // MARK: - Bindings
 
   @Binding var nodes: [Node]
   @Binding var displayingLocationAuthRequest: Bool
   @Binding var shouldNavigateToUserLocation: Bool
 
+  // MARK: - Instance variables
+
   let locationManager = CLLocationManager()
+
+  // MARK: - Instance methods
 
   func makeUIView(context: Context) -> MKMapView {
     let map = MKMapView()
@@ -47,7 +55,7 @@ struct MapView: UIViewRepresentable {
     Coordinator(self)
   }
 
-  // MARK: Location -
+  // MARK: - Location
 
   private func moveToUserLocation(map: MKMapView) {
     guard let location = locationManager.location else { return }
@@ -58,7 +66,7 @@ struct MapView: UIViewRepresentable {
     map.setRegion(region, animated: true)
   }
 
-  // MARK: Coordinator -
+  // MARK: - Coordinator
 
   final class Coordinator: NSObject, MKMapViewDelegate {
 
@@ -84,7 +92,10 @@ struct MapView: UIViewRepresentable {
 
       var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: NodeAnnotationMarkerView.self)) as? NodeAnnotationMarkerView
       if annotationView == nil {
-        annotationView = NodeAnnotationMarkerView(annotation: annotation, reuseIdentifier: String(describing: NodeAnnotationMarkerView.self))
+        annotationView = NodeAnnotationMarkerView(
+          annotation: annotation,
+          reuseIdentifier: String(describing: NodeAnnotationMarkerView.self)
+        )
       } else {
         annotationView?.annotation = annotation
       }
