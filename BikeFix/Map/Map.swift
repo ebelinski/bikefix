@@ -16,6 +16,8 @@ struct Map: View {
 
   let locationManager = CLLocationManager()
 
+  let mapButtonDimension: CGFloat = 50
+
   // MARK: - Body view
 
   var body: some View {
@@ -63,8 +65,7 @@ struct Map: View {
   var loadingIndicator: some View {
     ActivityIndicator(isAnimating: .constant(true), style: .medium)
       .accessibility(label: Text("Loading data..."))
-      .padding()
-      .frame(minWidth: 60, minHeight: 60)
+      .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
       .background(Color.mapButtonBackground)
       .cornerRadius(10)
       .shadow(color: Color.shadow, radius: 5)
@@ -78,8 +79,7 @@ struct Map: View {
       Image(systemName: "location")
         .imageScale(.large)
         .accessibility(label: Text("Locate Me"))
-        .padding()
-        .frame(minWidth: 60, minHeight: 60)
+        .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
         .background(Color.mapButtonBackground)
         .cornerRadius(10)
         .shadow(color: Color.shadow, radius: 5)
