@@ -39,9 +39,7 @@ struct MapView: UIViewRepresentable {
     uiView.removeAnnotations(uiView.annotations)
 
     let annotations: [NodeAnnotation] = nodes.map {
-      let annotation = NodeAnnotation(title: $0.tags.name ?? $0.tags.description ?? $0.tags.brand ?? "Unnamed",
-                                      coordinate: CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon))
-      return annotation
+      NodeAnnotation(nodeVM: NodeViewModel(node: $0))
     }
 
     uiView.addAnnotations(annotations)

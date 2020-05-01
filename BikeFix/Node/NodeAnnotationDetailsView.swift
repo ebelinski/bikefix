@@ -5,9 +5,7 @@ class NodeAnnotationInfoView: MKAnnotationView {
 
   override var annotation: MKAnnotation? {
     willSet {
-      guard let annotation = newValue as? NodeAnnotation else {
-        return
-      }
+      guard let annotation = newValue as? NodeAnnotation else { return }
 
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)

@@ -7,15 +7,15 @@ class NodeAnnotation: NSObject, MKAnnotation {
   let title: String?
   let coordinate: CLLocationCoordinate2D
 
-  init(title: String, coordinate: CLLocationCoordinate2D) {
-    self.title = title
-    self.coordinate = coordinate
+  init(nodeVM: NodeViewModel) {
+    self.title = nodeVM.name
+    self.coordinate = nodeVM.location
 
     super.init()
   }
 
   var subtitle: String? {
-    return "foobar"
+    return nil
   }
 
   var mapItem: MKMapItem? {
@@ -29,7 +29,7 @@ class NodeAnnotation: NSObject, MKAnnotation {
   }
 
   var markerTintColor: UIColor  {
-    return .blue
+    return UIColor.bikefixPrimary
   }
 
   var image: UIImage {
