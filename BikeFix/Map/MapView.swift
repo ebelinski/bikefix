@@ -23,6 +23,7 @@ struct MapView: UIViewRepresentable {
     let map = MKMapView()
 
     map.delegate = context.coordinator
+    map.mapType = .mutedStandard
     map.showsScale = true
     map.showsCompass = true
     map.showsUserLocation = true
