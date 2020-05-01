@@ -39,8 +39,8 @@ class UserSettings: ObservableObject {
   }
 
   private func initializeUserDefaultValues() {
-    set(bool: true, for: .showBicycleRepairStations)
-    set(bool: true, for: .showBicycleShops)
+    set(bool: Default.showBicycleRepairStations, for: .showBicycleRepairStations)
+    set(bool: Default.showBicycleShops, for: .showBicycleShops)
   }
 
   private func setFromUserDefaults() {
