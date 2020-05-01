@@ -35,13 +35,13 @@ struct MapView: UIViewRepresentable {
   }
 
   func updateUIView(_ uiView: MKMapView, context: Context) {
-    uiView.removeAnnotations(uiView.annotations)
+    let existingAnnotations = uiView.annotations.compactMap { $0 as? NodeAnnotation }
+    let existingNodeVMs = existingAnnotations.map(\.nodeVM)
+    let allNodeVMs = nodes.map { NodeViewModel(node: $0) }
+    let newNodeVMs = allNodeVMs.filter { !existingNodeVMs.contains($0) }
+    let newAnnotations = newNodeVMs.map { NodeAnnotation(nodeVM: $0) }
 
-    let annotations: [NodeAnnotation] = nodes.map {
-      NodeAnnotation(nodeVM: NodeViewModel(node: $0))
-    }
-
-    uiView.addAnnotations(annotations)
+    uiView.addAnnotations(newAnnotations)
 
     if !displayingLocationAuthRequest && shouldNavigateToUserLocation {
       moveToUserLocation(map: uiView)

@@ -10,16 +10,20 @@ class NodeAnnotation: NSObject, MKAnnotation {
   let image: UIImage
   let markerTintColor: UIColor
 
+  let nodeVM: NodeViewModel
+
   init(nodeVM: NodeViewModel) {
-    self.title = nodeVM.name
-    self.subtitle = nil
-    self.coordinate = nodeVM.location
-    self.image = (nodeVM.kind == .bicycleShop)
+    title = nodeVM.name
+    subtitle = nil
+    coordinate = nodeVM.location
+    image = (nodeVM.kind == .bicycleShop)
       ? UIImage(systemName: "cart.fill")!
       : UIImage(systemName: "wrench.fill")!
-    self.markerTintColor = (nodeVM.kind == .bicycleShop)
+    markerTintColor = (nodeVM.kind == .bicycleShop)
       ? UIColor.bikefixPrimary
       : UIColor.bikefixSecondary
+
+    self.nodeVM = nodeVM
 
     super.init()
   }
