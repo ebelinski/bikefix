@@ -6,6 +6,7 @@ struct Node: Codable {
     let name: String?
     let description: String?
     let amenity: String?
+    let shop: String?
     let brand: String?
     let opening_hours: String?
   }

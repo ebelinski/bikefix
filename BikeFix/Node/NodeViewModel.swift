@@ -3,14 +3,28 @@ import MapKit
 
 struct NodeViewModel {
 
+  enum Kind {
+    case bicycleShop
+    case bicycleRepairStation
+  }
+
   let id: Int
   let name: String
   let location: CLLocationCoordinate2D
+  let kind: Kind
 
   init(node: Node) {
     id = node.id
     name = node.tags.name ?? node.tags.description ?? node.tags.brand ?? "Unnamed"
     location = CLLocationCoordinate2D(latitude: node.lat, longitude: node.lon)
+
+    if node.tags.shop == "bicycle" {
+      kind = .bicycleShop
+    } else if (node.tags.amenity ?? "").contains("bicycle_repair_station") {
+      kind = .bicycleRepairStation
+    } else {
+      kind = .bicycleRepairStation
+    }
   }
 
 }
