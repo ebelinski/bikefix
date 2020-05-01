@@ -65,7 +65,7 @@ struct Map: View {
       .accessibility(label: Text("Loading data..."))
       .padding()
       .frame(minWidth: 60, minHeight: 60)
-      .background(Color.softBackground)
+      .background(Color.mapButtonBackground)
       .cornerRadius(10)
       .shadow(color: Color.shadow, radius: 5)
       .padding()
@@ -80,7 +80,7 @@ struct Map: View {
         .accessibility(label: Text("Locate Me"))
         .padding()
         .frame(minWidth: 60, minHeight: 60)
-        .background(Color.softBackground)
+        .background(Color.mapButtonBackground)
         .cornerRadius(10)
         .shadow(color: Color.shadow, radius: 5)
     }
