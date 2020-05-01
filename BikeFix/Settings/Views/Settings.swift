@@ -2,17 +2,16 @@ import SwiftUI
 
 struct Settings: View {
 
-  @State var showBikeFixStations = true
-  @State var showBikeShops = true
+  @EnvironmentObject var userSettings: UserSettings
 
   var body: some View {
     NavigationView {
       Form {
         Section {
-          Toggle(isOn: $showBikeFixStations) {
+          Toggle(isOn: $userSettings.showBicycleRepairStations) {
             Text("Show bike fix stations")
           }
-          Toggle(isOn: $showBikeShops) {
+          Toggle(isOn: $userSettings.showBicycleShops) {
             Text("Show bike shops")
           }
         }

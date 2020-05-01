@@ -23,6 +23,7 @@
 		417C5897245B5441001895B8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C5896245B5441001895B8 /* ActivityIndicator.swift */; };
 		417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */; };
 		419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
+		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
 		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
 		41A600242309865E00E2548F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* Settings.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		417C5896245B5441001895B8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; tabWidth = 2; };
 		417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NodeAnnotationMarkerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		419AA79D245BB3C40089424F /* UIColor+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
+		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* Settings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		419AA7A4245CC06F0089424F /* User Data */ = {
 			isa = PBXGroup;
 			children = (
+				419AA7A9245CC12E0089424F /* UserSettings.swift */,
 			);
 			path = "User Data";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapView.swift in Sources */,
+				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
 				41A600242309865E00E2548F /* Settings.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,
 			);

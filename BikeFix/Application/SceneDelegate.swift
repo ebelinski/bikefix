@@ -6,6 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
 
   var nodeProvider = NodeProvider()
+  var userSettings = UserSettings()
 
   func scene(_ scene: UIScene,
              willConnectTo session: UISceneSession,
@@ -20,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     if let windowScene = scene as? UIWindowScene {
       let home = Home()
         .environmentObject(nodeProvider)
+        .environmentObject(userSettings)
 
       let window = UIWindow(windowScene: windowScene)
       window.rootViewController = UIHostingController(rootView: home)
