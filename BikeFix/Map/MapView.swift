@@ -27,8 +27,6 @@ struct MapView: UIViewRepresentable {
     map.showsCompass = true
     map.showsUserLocation = true
 
-    map.register(NodeAnnotationInfoView.self,
-                 forAnnotationViewWithReuseIdentifier: String(describing: NodeAnnotationInfoView.self))
     map.register(NodeAnnotationMarkerView.self,
                  forAnnotationViewWithReuseIdentifier: String(describing: NodeAnnotationMarkerView.self))
 
