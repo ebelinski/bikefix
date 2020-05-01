@@ -42,6 +42,7 @@ struct Map: View {
     MapView(nodes: $nodeProvider.nodes,
             displayingLocationAuthRequest: $displayingLocationAuthRequest,
             shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
+      .accentColor(Color.bikefixPrimaryOnWhite)
   }
 
   var mapOverlays: some View {
