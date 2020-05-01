@@ -6,7 +6,7 @@ struct MapView: UIViewRepresentable {
   @EnvironmentObject var nodeProvider: NodeProvider
 
   @Binding var nodes: [Node]
-  @Binding var currentlyDisplayingLocationAuthorizationRequest: Bool
+  @Binding var displayingLocationAuthRequest: Bool
   @Binding var shouldNavigateToUserLocation: Bool
 
   let locationManager = CLLocationManager()
@@ -38,7 +38,7 @@ struct MapView: UIViewRepresentable {
 
     uiView.addAnnotations(annotations)
 
-    if !currentlyDisplayingLocationAuthorizationRequest && shouldNavigateToUserLocation {
+    if !displayingLocationAuthRequest && shouldNavigateToUserLocation {
       moveToUserLocation(map: uiView)
     }
   }

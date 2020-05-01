@@ -9,7 +9,7 @@ struct Map: View {
 
   // MARK: - State
 
-  @State var currentlyDisplayingLocationAuthorizationRequest = false
+  @State var displayingLocationAuthRequest = false
   @State var shouldNavigateToUserLocation = false
 
   // MARK: - Instance variables
@@ -38,7 +38,7 @@ struct Map: View {
 
   var map: some View {
     MapView(nodes: $nodeProvider.nodes,
-            currentlyDisplayingLocationAuthorizationRequest: $currentlyDisplayingLocationAuthorizationRequest,
+            displayingLocationAuthRequest: $displayingLocationAuthRequest,
             shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
   }
 
@@ -90,11 +90,11 @@ struct Map: View {
   // MARK: - Methods
 
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
-    currentlyDisplayingLocationAuthorizationRequest = false
+    displayingLocationAuthRequest = false
 
     if CLLocationManager.authorizationStatus() == .notDetermined {
       print("location authorization not determined")
-      currentlyDisplayingLocationAuthorizationRequest = true
+      displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
       return
     }
