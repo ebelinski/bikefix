@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		415E55A122F6289600D35882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A022F6289600D35882 /* AppDelegate.swift */; };
 		415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A222F6289600D35882 /* SceneDelegate.swift */; };
-		415E55A522F6289600D35882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* ContentView.swift */; };
+		415E55A522F6289600D35882 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
 		415E55A722F6289800D35882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A622F6289800D35882 /* Assets.xcassets */; };
 		415E55AA22F6289800D35882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A922F6289800D35882 /* Preview Assets.xcassets */; };
 		415E55AD22F6289800D35882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415E55AB22F6289800D35882 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 		415E559D22F6289600D35882 /* BikeFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415E55A022F6289600D35882 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A222F6289600D35882 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
-		415E55A422F6289600D35882 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		415E55A422F6289600D35882 /* Home.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A622F6289800D35882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		415E55A922F6289800D35882 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		415E55AC22F6289800D35882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				41E30A89234E08AD0015715D /* BikeFix.entitlements */,
 				415E55A022F6289600D35882 /* AppDelegate.swift */,
 				415E55A222F6289600D35882 /* SceneDelegate.swift */,
-				415E55A422F6289600D35882 /* ContentView.swift */,
+				415E55A422F6289600D35882 /* Home.swift */,
 				417C5894245B4EC9001895B8 /* Color+extension.swift */,
 				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
 				41274C092322E7990043B870 /* Map */,
@@ -222,7 +222,7 @@
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapView.swift in Sources */,
 				41A600242309865E00E2548F /* Settings.swift in Sources */,
-				415E55A522F6289600D35882 /* ContentView.swift in Sources */,
+				415E55A522F6289600D35882 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

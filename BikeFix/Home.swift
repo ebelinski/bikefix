@@ -1,7 +1,7 @@
 import SwiftUI
 import CoreLocation
 
-struct ContentView: View {
+struct Home: View {
 
   var body: some View {
     TabView {
@@ -22,9 +22,9 @@ struct ContentView: View {
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    Home()
   }
 }
 #endif
