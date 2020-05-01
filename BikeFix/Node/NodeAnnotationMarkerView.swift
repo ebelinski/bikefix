@@ -7,6 +7,8 @@ class NodeAnnotationMarkerView: MKMarkerAnnotationView {
     willSet {
       guard let annotation = newValue as? NodeAnnotation else { return }
 
+      displayPriority = .required
+
       canShowCallout = true
       rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 
