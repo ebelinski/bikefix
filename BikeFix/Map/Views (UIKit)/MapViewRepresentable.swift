@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct MapView: UIViewRepresentable {
+struct MapViewRepresentable: UIViewRepresentable {
 
   // MARK: - Environment
 
@@ -82,9 +82,9 @@ struct MapView: UIViewRepresentable {
 
   final class Coordinator: NSObject, MKMapViewDelegate {
 
-    var control: MapView
+    var control: MapViewRepresentable
 
-    init(_ control: MapView) {
+    init(_ control: MapViewRepresentable) {
       self.control = control
     }
 

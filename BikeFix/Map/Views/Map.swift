@@ -43,9 +43,9 @@ struct Map: View {
   // MARK: - Other views
 
   var map: some View {
-    MapView(nodes: $nodeProvider.nodes,
-            displayingLocationAuthRequest: $displayingLocationAuthRequest,
-            shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
+    MapViewRepresentable(nodes: $nodeProvider.nodes,
+                         displayingLocationAuthRequest: $displayingLocationAuthRequest,
+                         shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
       .accentColor(Color.bikefixPrimaryOnWhite)
       .edgesIgnoringSafeArea(.all)
   }
