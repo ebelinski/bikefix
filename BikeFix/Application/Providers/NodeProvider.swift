@@ -39,12 +39,12 @@ class NodeProvider: NSObject, ObservableObject {
 
     task = URLSession.shared.dataTask(with: url) { data, _, error in
       if let error = error {
-        print("Error: \(error.localizedDescription)")
+        log.error(error)
         return
       }
 
       guard let data = data else {
-        print("Error: data is nil")
+        log.error("Error: data is nil")
         return
       }
 
@@ -55,7 +55,7 @@ class NodeProvider: NSObject, ObservableObject {
           self.nodes = response.elements
         }
       } catch let error {
-        print("\(error.localizedDescription)")
+        log.error(error)
         DispatchQueue.main.async {
           self.loading = false
         }

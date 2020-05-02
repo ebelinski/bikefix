@@ -109,7 +109,7 @@ struct Map: View {
     displayingLocationAuthRequest = false
 
     if CLLocationManager.authorizationStatus() == .notDetermined {
-      print("location authorization not determined")
+      log.info("location authorization not determined")
       displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
       return

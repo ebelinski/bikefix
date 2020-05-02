@@ -130,7 +130,7 @@ struct NodeDetails: View {
   func openInAppleMaps(address: String) {
     CLGeocoder().geocodeAddressString(address) { placemarks, error in
       if let error = error {
-        print(error)
+        log.error(error)
         return
       }
 
