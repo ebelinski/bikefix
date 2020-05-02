@@ -76,6 +76,7 @@ struct NodeDetails: View {
           }
         }
       }
+      .buttonStyle(BorderlessButtonStyle()) // Required to prevent the first button in a list being the only functional button.
       .accentColor(Color.bikefixPrimary)
       .listStyle(GroupedListStyle())
       .navigationBarTitle(Text(nodeVM.name), displayMode: .large)
