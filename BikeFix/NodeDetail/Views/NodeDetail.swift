@@ -22,12 +22,19 @@ struct NodeDetail: View {
   var body: some View {
     NavigationView {
       Form {
-        Section(header: Text("Foo")) {
-          Text("Bar")
+        if nodeVM.address != nil {
+          Section(header: Text("Address")) {
+            Text(nodeVM.address!)
+          }
+        }
+
+
+        Section(header: Text("Raw")) {
+          Text("Raw data: \(nodeVM.node.toString)")
         }
       }
       .listStyle(GroupedListStyle())
-      .navigationBarTitle(Text("Details"), displayMode: .large)
+      .navigationBarTitle(Text(nodeVM.name), displayMode: .large)
       .navigationBarItems(trailing: doneButton)
     }
   }
