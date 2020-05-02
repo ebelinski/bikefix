@@ -24,12 +24,12 @@ struct NodeDetails: View {
           Text("(\(nodeVM.location.latitude), \(nodeVM.location.longitude))")
 
           Button(action: {
-            print("google maps")
+            self.openInGoogleMaps(coordinates: self.nodeVM.location)
           }) {
             HStack {
               Image(systemName: "map")
                 .foregroundColor(Color.bikefixPrimary)
-              Text("Open in Google Maps")
+              Text("Open location in Google Maps")
             }
           }
 
@@ -37,9 +37,9 @@ struct NodeDetails: View {
             print("apple maps")
           }) {
             HStack {
-              Image(systemName: "map")
+              Image(systemName: "map.fill")
                 .foregroundColor(Color.bikefixPrimary)
-              Text("Open in Apple Maps")
+              Text("Open location in Apple Maps")
             }
           }
         }
@@ -54,7 +54,7 @@ struct NodeDetails: View {
               HStack {
                 Image(systemName: "map")
                   .foregroundColor(Color.bikefixPrimary)
-                Text("Open in Google Maps")
+                Text("Open address in Google Maps")
               }
             }
 
@@ -62,9 +62,9 @@ struct NodeDetails: View {
               self.openInAppleMaps(address: self.nodeVM.address!)
             }) {
               HStack {
-                Image(systemName: "map")
+                Image(systemName: "map.fill")
                   .foregroundColor(Color.bikefixPrimary)
-                Text("Open in Apple Maps")
+                Text("Open address in Apple Maps")
               }
             }
           }
@@ -98,6 +98,11 @@ struct NodeDetails: View {
   // MARK: - Other views
 
   // MARK: - Methods
+
+  func openInGoogleMaps(coordinates: CLLocationCoordinate2D) {
+    guard let URL = URL(string: "https://www.google.com/maps/search/?api=1&query=\(coordinates.latitude),\(coordinates.longitude)") else { return }
+    UIApplication.shared.open(URL, options: [:], completionHandler: nil)
+  }
 
   func openInGoogleMaps(address: String) {
     guard let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
