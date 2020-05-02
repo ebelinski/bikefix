@@ -1,7 +1,7 @@
 import Foundation
 import MapKit
 
-struct NodeViewModel {
+struct NodeViewModel: Identifiable {
 
   enum Kind {
     case bicycleRepairStation

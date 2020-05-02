@@ -13,6 +13,7 @@ struct Map: View {
   @State var showingSettings = false
   @State var displayingLocationAuthRequest = false
   @State var shouldNavigateToUserLocation = false
+  @State var openedNodeVM: NodeViewModel? = nil
 
   // MARK: - Instance variables
 
@@ -25,12 +26,11 @@ struct Map: View {
   var body: some View {
     ZStack {
       map
+      .sheet(item: $openedNodeVM) { nodeVM in
+        NodeDetail(nodeVM: nodeVM)
+      }
 
       mapOverlays
-    }
-    .sheet(isPresented: $showingSettings) {
-      SettingsMain()
-        .environmentObject(self.userSettings)
     }
     .onAppear {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -44,6 +44,7 @@ struct Map: View {
 
   var map: some View {
     MapViewRepresentable(nodes: $nodeProvider.nodes,
+                         openedNodeVM: $openedNodeVM,
                          displayingLocationAuthRequest: $displayingLocationAuthRequest,
                          shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
       .accentColor(Color.bikefixPrimaryOnWhite)
@@ -84,6 +85,10 @@ struct Map: View {
     }
     .padding(5)
     .hoverEffect()
+    .sheet(isPresented: $showingSettings) {
+      SettingsMain()
+        .environmentObject(self.userSettings)
+    }
   }
 
   var locationButton: some View {

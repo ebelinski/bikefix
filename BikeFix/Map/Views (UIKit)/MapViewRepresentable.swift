@@ -11,6 +11,7 @@ struct MapViewRepresentable: UIViewRepresentable {
   // MARK: - Bindings
 
   @Binding var nodes: [Node]
+  @Binding var openedNodeVM: NodeViewModel?
   @Binding var displayingLocationAuthRequest: Bool
   @Binding var shouldNavigateToUserLocation: Bool
 
@@ -125,7 +126,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-      print(((view as? NodeAnnotationMarkerView)?.annotation as? NodeAnnotation)?.nodeVM ?? "")
+      self.control.openedNodeVM = ((view as? NodeAnnotationMarkerView)?.annotation as? NodeAnnotation)?.nodeVM
     }
 
   }
