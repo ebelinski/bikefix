@@ -5,8 +5,6 @@ struct NodeDetail: View {
 
   // MARK: - Environment
 
-  @EnvironmentObject var nodeProvider: NodeProvider
-
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
   // MARK: - Bindings
@@ -28,9 +26,9 @@ struct NodeDetail: View {
           }
         }
 
-
-        Section(header: Text("Raw")) {
-          Text("Raw data: \(nodeVM.node.toString)")
+        Section(header: Text("Raw Data")) {
+          Text("\(nodeVM.node.toString)")
+            .font(.system(.body, design: .monospaced))
         }
       }
       .listStyle(GroupedListStyle())
