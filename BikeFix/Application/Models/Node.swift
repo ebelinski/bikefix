@@ -39,7 +39,9 @@ struct Node: Codable {
 
   var toString: String {
     get {
-      guard let data = try? JSONEncoder().encode(self) else { return "" }
+      let encoder = JSONEncoder()
+      encoder.outputFormatting = .prettyPrinted
+      guard let data = try? encoder.encode(self) else { return "" }
       return String(data: data, encoding: String.Encoding.utf8) ?? ""
     }
   }
