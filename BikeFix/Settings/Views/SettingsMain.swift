@@ -1,8 +1,14 @@
 import SwiftUI
 
-struct Settings: View {
+struct SettingsMain: View {
+
+  // MARK: - Environment
 
   @EnvironmentObject var userSettings: UserSettings
+
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+  // MARK: - Body view
 
   var body: some View {
     NavigationView {
@@ -18,7 +24,20 @@ struct Settings: View {
       }
       .listStyle(GroupedListStyle())
       .navigationBarTitle(Text("Settings"), displayMode: .large)
+      .navigationBarItems(trailing: doneButton)
     }
+  }
+
+  // MARK: - Navigation button views
+
+  var doneButton: some View {
+    Button(action: {
+      self.presentationMode.wrappedValue.dismiss()
+    }) {
+      Text("Done")
+    }
+    .accentColor(Color.bikefixPrimary)
+    .hoverEffect()
   }
 
 }
@@ -26,7 +45,7 @@ struct Settings: View {
 #if DEBUG
 struct Settings_Previews: PreviewProvider {
   static var previews: some View {
-    Settings()
+    SettingsMain()
   }
 }
 #endif

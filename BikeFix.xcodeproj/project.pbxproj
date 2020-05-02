@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
+		41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image.extension.swift */; };
 		415E55A122F6289600D35882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A022F6289600D35882 /* AppDelegate.swift */; };
 		415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A222F6289600D35882 /* SceneDelegate.swift */; };
 		415E55A522F6289600D35882 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
@@ -26,11 +27,12 @@
 		419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
 		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
 		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
-		41A600242309865E00E2548F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* Settings.swift */; };
+		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
+		41312B77245D0F4900C733E6 /* Image.extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Image.extension.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E559D22F6289600D35882 /* BikeFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415E55A022F6289600D35882 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A222F6289600D35882 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -51,7 +53,7 @@
 		419AA79D245BB3C40089424F /* UIColor+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
-		41A600232309865E00E2548F /* Settings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				417C5894245B4EC9001895B8 /* Color+extension.swift */,
-				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
+				41312B77245D0F4900C733E6 /* Image.extension.swift */,
 				41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */,
+				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,7 +197,7 @@
 		419AA7A7245CC09F0089424F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				41A600232309865E00E2548F /* Settings.swift */,
+				41A600232309865E00E2548F /* SettingsMain.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,13 +290,14 @@
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
+				41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
 				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapView.swift in Sources */,
 				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
-				41A600242309865E00E2548F /* Settings.swift in Sources */,
+				41A600242309865E00E2548F /* SettingsMain.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -416,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

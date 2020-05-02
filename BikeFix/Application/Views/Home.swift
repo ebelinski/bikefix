@@ -4,19 +4,8 @@ import CoreLocation
 struct Home: View {
 
   var body: some View {
-    TabView {
-      Map()
-        .tabItem {
-          Image(systemName: "map.fill")
-          Text("Map")
-        }
-      Settings()
-        .tabItem {
-          Image(systemName: "gear")
-          Text("Settings")
-        }
-    }
-    .accentColor(Color.bikefixPrimary)
+    Map()
+      .accentColor(Color.bikefixPrimary)
   }
 
 }

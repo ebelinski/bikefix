@@ -6,9 +6,11 @@ struct Map: View {
   // MARK: - Environment
 
   @EnvironmentObject var nodeProvider: NodeProvider
+  @EnvironmentObject var userSettings: UserSettings
 
   // MARK: - State
 
+  @State var showingSettings = false
   @State var displayingLocationAuthRequest = false
   @State var shouldNavigateToUserLocation = false
 
@@ -23,10 +25,12 @@ struct Map: View {
   var body: some View {
     ZStack {
       map
-        .edgesIgnoringSafeArea(.top)
-        .edgesIgnoringSafeArea(.horizontal)
 
       mapOverlays
+    }
+    .sheet(isPresented: $showingSettings) {
+      SettingsMain()
+        .environmentObject(self.userSettings)
     }
     .onAppear {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -43,21 +47,19 @@ struct Map: View {
             displayingLocationAuthRequest: $displayingLocationAuthRequest,
             shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
       .accentColor(Color.bikefixPrimaryOnWhite)
+      .edgesIgnoringSafeArea(.all)
   }
 
   var mapOverlays: some View {
-    VStack {
-      if nodeProvider.loading {
-        HStack {
-          Spacer()
-          loadingIndicator
-        }
-      }
-
+    HStack {
       Spacer()
 
-      HStack {
+      VStack {
         Spacer()
+        if nodeProvider.loading {
+          loadingIndicator
+        }
+        settingsButton
         locationButton
       }
     }
@@ -73,19 +75,26 @@ struct Map: View {
       .padding()
   }
 
+  var settingsButton: some View {
+    Button(action: { self.showingSettings.toggle() }) {
+      Image(systemName: "gear")
+        .mapButtonImageStyle()
+        .accessibility(label: Text("Settings"))
+    }
+    .padding()
+    .hoverEffect()
+  }
+
   var locationButton: some View {
     Button(action: {
       self.checkForLocationAuthorizationAndNavigateToUserLocation()
     }) {
       Image(systemName: "location")
-        .imageScale(.large)
+        .mapButtonImageStyle()
         .accessibility(label: Text("Locate Me"))
-        .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
-        .background(Color.mapButtonBackground)
-        .cornerRadius(10)
-        .shadow(color: Color.shadow, radius: 5)
     }
     .padding()
+    .hoverEffect()
   }
 
   // MARK: - Methods
