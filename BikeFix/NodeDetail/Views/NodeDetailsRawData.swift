@@ -11,7 +11,7 @@ struct NodeDetailsRawData: View {
 
   var body: some View {
     Form {
-      Section {
+      Section(header: Text("JSON")) {
         Text("\(nodeVM.node.toString)")
           .font(.system(.body, design: .monospaced))
       }
