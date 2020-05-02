@@ -12,7 +12,39 @@ struct NodeViewModel: Identifiable {
 
   let id: Int
   let name: String
-  let address: String?
+
+  var address: String? {
+    get {
+      var temp = ""
+
+      if let name = node.tags.name {
+        temp += name
+      }
+
+      if let houseNumber = node.tags.addrHouseNumber {
+        if !temp.isEmpty { temp += "\n" }
+        temp += houseNumber
+      }
+
+      if let street = node.tags.addrStreet {
+        if !temp.isEmpty { temp += " " }
+        temp += street
+      }
+
+      if let city = node.tags.addrCity {
+        if !temp.isEmpty { temp += "\n" }
+        temp += city
+      }
+
+      if let postCode = node.tags.addrPostCode {
+        if !temp.isEmpty { temp += "\n" }
+        temp += postCode
+      }
+
+      return (!temp.isEmpty && temp != node.tags.name) ? temp : nil
+    }
+  }
+
   let location: CLLocationCoordinate2D
   let kind: Kind
 
@@ -40,35 +72,6 @@ struct NodeViewModel: Identifiable {
     } else {
       kind = .bicycleRepairStation
     }
-
-    var tempAddress = ""
-
-    if let houseNumber = node.tags.addrHouseNumber {
-      tempAddress += houseNumber
-    }
-
-    if let street = node.tags.addrStreet {
-      if !tempAddress.isEmpty {
-        tempAddress += " "
-      }
-      tempAddress += street
-    }
-
-    if let city = node.tags.addrCity {
-      if !tempAddress.isEmpty {
-        tempAddress += "\n"
-      }
-      tempAddress += city
-    }
-
-    if let postCode = node.tags.addrPostCode {
-      if !tempAddress.isEmpty {
-        tempAddress += "\n"
-      }
-      tempAddress += postCode
-    }
-
-    address = (!tempAddress.isEmpty) ? tempAddress : nil
   }
 
 }
