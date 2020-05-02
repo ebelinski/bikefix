@@ -20,6 +20,18 @@ struct NodeDetails: View {
   var body: some View {
     NavigationView {
       Form {
+        Section(header: Text("Information")) {
+          HStack {
+            Text("Type: \((nodeVM.kind == .bicycleShop) ? "Bike shop" : "Bike fix station")")
+            Spacer()
+            Image(systemName: (nodeVM.kind == .bicycleShop) ? "cart.fill" : "wrench.fill")
+          }
+
+          if nodeVM.node.tags.brand != nil {
+            Text("Brand: \(nodeVM.node.tags.brand ?? "")")
+          }
+        }
+
         Section(header: Text("Coordinates")) {
           Text("(\(nodeVM.location.latitude), \(nodeVM.location.longitude))")
 
@@ -29,7 +41,7 @@ struct NodeDetails: View {
             HStack {
               Image(systemName: "map")
                 .foregroundColor(Color.bikefixPrimary)
-              Text("Open location in Google Maps")
+              Text("Open coordinates in Google Maps")
             }
           }
 
@@ -39,15 +51,15 @@ struct NodeDetails: View {
             HStack {
               Image(systemName: "map.fill")
                 .foregroundColor(Color.bikefixPrimary)
-              Text("Open location in Apple Maps")
+              Text("Open coordinates in Apple Maps")
             }
           }
         }
 
-        Section(header: Text("Address")) {
-          Text(nodeVM.address ?? "Address not available")
+        if nodeVM.address != nil {
+          Section(header: Text("Address")) {
+            Text(nodeVM.address!)
 
-          if nodeVM.address != nil {
             Button(action: {
               self.openInGoogleMaps(address: self.nodeVM.address!)
             }) {
@@ -138,8 +150,13 @@ struct NodeDetails: View {
 #if DEBUG
 struct NodeDetails_Previews: PreviewProvider {
   static var previews: some View {
-    NodeDetails(nodeVM: NodeViewModel(node: DummyData.shopNode))
+    Group {
+      NodeDetails(nodeVM: NodeViewModel(node: DummyData.shopNode))
+        .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+
+      NodeDetails(nodeVM: NodeViewModel(node: DummyData.stationNode))
       .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+    }
   }
 }
 #endif
