@@ -32,8 +32,8 @@ struct SettingsMain: View {
         }
 
         Section(header: Text("Extras")) {
-          SettingsSafariLink(text: "Website", url: "https://bikefix.app/")
-          SettingsSafariLink(text: "Privacy Policy", url: "https://bikefix.app/privacy-policy/")
+          SafariLink(text: "Website", url: "https://bikefix.app/")
+          SafariLink(text: "Privacy Policy", url: "https://bikefix.app/privacy-policy/")
           feedbackButton
         }
       }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SettingsSafariLink: View {
+struct SafariLink: View {
 
   let text: String
   let url: String
