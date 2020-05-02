@@ -35,24 +35,18 @@ struct NodeDetails: View {
         Section(header: Text("Coordinates")) {
           Text("(\(nodeVM.location.latitude), \(nodeVM.location.longitude))")
 
-          Button(action: {
-            self.openInGoogleMaps(coordinates: self.nodeVM.location)
-          }) {
-            HStack {
-              Image(systemName: "map")
-                .foregroundColor(Color.bikefixPrimary)
-              Text("Open coordinates in Google Maps")
-            }
-          }
+          HStack {
+            Image(systemName: "map")
+              .foregroundColor(Color.bikefixPrimary)
+            Text("Open in:")
 
-          Button(action: {
-            print("apple maps")
-          }) {
-            HStack {
-              Image(systemName: "map.fill")
-                .foregroundColor(Color.bikefixPrimary)
-              Text("Open coordinates in Apple Maps")
-            }
+            Button("Google Maps", action: {
+              self.openInGoogleMaps(coordinates: self.nodeVM.location)
+            })
+
+            Button("Apple Maps", action: {
+              print("apple maps")
+            })
           }
         }
 
@@ -60,24 +54,18 @@ struct NodeDetails: View {
           Section(header: Text("Address")) {
             Text(nodeVM.address!)
 
-            Button(action: {
-              self.openInGoogleMaps(address: self.nodeVM.address!)
-            }) {
-              HStack {
-                Image(systemName: "map")
-                  .foregroundColor(Color.bikefixPrimary)
-                Text("Open address in Google Maps")
-              }
-            }
+            HStack {
+              Image(systemName: "map")
+                .foregroundColor(Color.bikefixPrimary)
+              Text("Open in:")
 
-            Button(action: {
-              self.openInAppleMaps(address: self.nodeVM.address!)
-            }) {
-              HStack {
-                Image(systemName: "map.fill")
-                  .foregroundColor(Color.bikefixPrimary)
-                Text("Open address in Apple Maps")
-              }
+              Button("Google Maps", action: {
+                self.openInGoogleMaps(address: self.nodeVM.address!)
+              })
+
+              Button("Apple Maps", action: {
+                self.openInAppleMaps(address: self.nodeVM.address!)
+              })
             }
           }
         }
