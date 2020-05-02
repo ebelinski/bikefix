@@ -122,6 +122,12 @@ struct MapViewRepresentable: UIViewRepresentable {
       }
     }
 
+    func mapView(_ mapView: MKMapView,
+                 annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+      print(((view as? NodeAnnotationMarkerView)?.annotation as? NodeAnnotation)?.nodeVM ?? "")
+    }
+
   }
 
 }
