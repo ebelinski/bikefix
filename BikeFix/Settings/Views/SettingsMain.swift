@@ -79,7 +79,16 @@ struct SettingsMain: View {
 #if DEBUG
 struct Settings_Previews: PreviewProvider {
   static var previews: some View {
-    SettingsMain()
+    Group {
+      SettingsMain()
+        .environmentObject(UserSettings())
+        .environment(\.colorScheme, .dark)
+        .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+
+      SettingsMain()
+        .environmentObject(UserSettings())
+        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+    }
   }
 }
 #endif

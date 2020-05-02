@@ -161,7 +161,7 @@ struct NodeDetails_Previews: PreviewProvider {
         .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
 
       NodeDetails(nodeVM: NodeViewModel(node: DummyData.stationNode))
-        .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
   }
 }
