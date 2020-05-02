@@ -39,7 +39,7 @@ struct NodeViewModel: Identifiable {
 
     if let street = node.tags.addrStreet {
       if !tempAddress.isEmpty {
-        tempAddress += ", "
+        tempAddress += " "
       }
       tempAddress += street
     }

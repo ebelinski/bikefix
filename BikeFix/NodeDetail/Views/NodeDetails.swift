@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct NodeDetail: View {
+struct NodeDetails: View {
 
   // MARK: - Environment
 
@@ -26,9 +26,10 @@ struct NodeDetail: View {
           }
         }
 
-        Section(header: Text("Raw Data")) {
-          Text("\(nodeVM.node.toString)")
-            .font(.system(.body, design: .monospaced))
+        Section {
+          NavigationLink(destination: NodeDetailsRawData(nodeVM: nodeVM)) {
+            Text("Raw Data")
+          }
         }
       }
       .listStyle(GroupedListStyle())
@@ -54,3 +55,11 @@ struct NodeDetail: View {
   // MARK: - Methods
 
 }
+
+#if DEBUG
+struct NodeDetails_Previews: PreviewProvider {
+  static var previews: some View {
+    NodeDetails(nodeVM: NodeViewModel(node: DummyData.shopNode))
+  }
+}
+#endif

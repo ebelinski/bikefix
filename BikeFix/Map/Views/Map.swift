@@ -27,7 +27,7 @@ struct Map: View {
     ZStack {
       map
       .sheet(item: $openedNodeVM) { nodeVM in
-        NodeDetail(nodeVM: nodeVM)
+        NodeDetails(nodeVM: nodeVM)
       }
 
       mapOverlays
