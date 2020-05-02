@@ -62,7 +62,7 @@ struct Map: View {
         settingsButton
         locationButton
       }
-      .padding(5)
+      .padding(10)
     }
   }
 
