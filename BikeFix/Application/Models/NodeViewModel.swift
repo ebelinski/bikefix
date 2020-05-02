@@ -4,8 +4,8 @@ import MapKit
 struct NodeViewModel {
 
   enum Kind {
-    case bicycleShop
     case bicycleRepairStation
+    case bicycleShop
   }
 
   let id: Int

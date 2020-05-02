@@ -6,6 +6,7 @@ struct MapView: UIViewRepresentable {
   // MARK: - Environment
 
   @EnvironmentObject var nodeProvider: NodeProvider
+  @EnvironmentObject var userSettings: UserSettings
 
   // MARK: - Bindings
 
@@ -42,6 +43,20 @@ struct MapView: UIViewRepresentable {
     let newAnnotations = newNodeVMs.map { NodeAnnotation(nodeVM: $0) }
 
     uiView.addAnnotations(newAnnotations)
+
+    // TODO: Improve this naming
+    let annotationsIntermediateStep = uiView.annotations.compactMap { $0 as? NodeAnnotation }
+
+    let stationAnnotations = annotationsIntermediateStep.filter { $0.nodeVM.kind == .bicycleRepairStation }
+    let shopAnnotations = annotationsIntermediateStep.filter { $0.nodeVM.kind == .bicycleShop }
+
+    if !userSettings.showBicycleRepairStations {
+      uiView.removeAnnotations(stationAnnotations)
+    }
+
+    if !userSettings.showBicycleShops {
+      uiView.removeAnnotations(shopAnnotations)
+    }
 
     if !displayingLocationAuthRequest && shouldNavigateToUserLocation {
       moveToUserLocation(map: uiView)
