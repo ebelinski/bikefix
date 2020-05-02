@@ -20,6 +20,7 @@ struct NodeDetails: View {
   var body: some View {
     NavigationView {
       Form {
+        // MARK: - Section: Information
         Section(header: Text("Information")) {
           HStack {
             Text("Type: \((nodeVM.kind == .bicycleShop) ? "Bike shop" : "Bike fix station")")
@@ -40,6 +41,7 @@ struct NodeDetails: View {
           }
         }
 
+        // MARK: - Section: Coordinates
         Section(header: Text("Coordinates")) {
           Text("(\(nodeVM.location.latitude), \(nodeVM.location.longitude))")
 
@@ -58,6 +60,7 @@ struct NodeDetails: View {
           }
         }
 
+        // MARK: - Section: Address
         if nodeVM.address != nil {
           Section(header: Text("Address")) {
             Text(nodeVM.address!)
@@ -78,6 +81,7 @@ struct NodeDetails: View {
           }
         }
 
+        // MARK: - Section: Miscellaneous
         Section(header: Text("Miscellaneous")) {
           if nodeVM.node.user != nil {
             Text("User: \(nodeVM.node.user ?? "") (\(nodeVM.node.uid ?? -1))")
@@ -86,6 +90,7 @@ struct NodeDetails: View {
           Text("Last updated: \(nodeVM.lastUpdated)")
         }
 
+        // MARK: - Section: Raw Data
         Section {
           NavigationLink(destination: NodeDetailsRawData(nodeVM: nodeVM)) {
             Text("Raw Data")
