@@ -16,6 +16,16 @@ struct NodeViewModel: Identifiable {
   let location: CLLocationCoordinate2D
   let kind: Kind
 
+  var lastUpdated: String {
+    get {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+      guard let lastChangedDate = formatter.date(from: node.timestamp) else { return "" }
+      formatter.dateFormat = "MMM d, yyyy, h:mm a"
+      return formatter.string(from: lastChangedDate)
+    }
+  }
+
   init(node: Node) {
     self.node = node
 

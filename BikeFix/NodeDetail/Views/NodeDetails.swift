@@ -30,6 +30,10 @@ struct NodeDetails: View {
           if nodeVM.node.tags.brand != nil {
             Text("Brand: \(nodeVM.node.tags.brand ?? "")")
           }
+
+          if nodeVM.node.tags.note != nil {
+            Text("Note: \(nodeVM.node.tags.note ?? "")")
+          }
         }
 
         Section(header: Text("Coordinates")) {
@@ -68,6 +72,14 @@ struct NodeDetails: View {
               })
             }
           }
+        }
+
+        Section(header: Text("Miscellaneous")) {
+          if nodeVM.node.user != nil {
+            Text("User: \(nodeVM.node.user ?? "") (\(nodeVM.node.uid ?? -1))")
+          }
+
+          Text("Last updated: \(nodeVM.lastUpdated)")
         }
 
         Section {
@@ -141,10 +153,11 @@ struct NodeDetails_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       NodeDetails(nodeVM: NodeViewModel(node: DummyData.shopNode))
+        .environment(\.colorScheme, .dark)
         .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
 
       NodeDetails(nodeVM: NodeViewModel(node: DummyData.stationNode))
-      .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
   }
 }

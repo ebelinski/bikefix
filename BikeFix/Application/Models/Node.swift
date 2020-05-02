@@ -10,6 +10,8 @@ struct Node: Codable {
     let shop: String?
     let brand: String?
     let openingHours: String?
+    let note: String?
+    let source: String?
 
     let addrCity: String?
     let addrHouseNumber: String?
@@ -23,6 +25,8 @@ struct Node: Codable {
       case shop
       case brand
       case openingHours = "opening_hours"
+      case note
+      case source
 
       case addrCity = "addr:city"
       case addrHouseNumber = "addr:housenumber"
@@ -35,6 +39,11 @@ struct Node: Codable {
   let id: Int
   let lat: Double
   let lon: Double
+
+  let timestamp: String
+  let user: String?
+  let uid: Int?
+  
   let tags: Tags
 
   var toString: String {
