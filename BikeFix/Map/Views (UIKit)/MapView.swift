@@ -30,7 +30,7 @@ struct MapView: UIViewRepresentable {
     map.showsUserLocation = true
 
     map.register(NodeAnnotationMarkerView.self,
-                 forAnnotationViewWithReuseIdentifier: String(describing: NodeAnnotationMarkerView.self))
+                 forAnnotationViewWithReuseIdentifier: NodeAnnotationMarkerView.identifier)
 
     return map
   }
@@ -102,7 +102,7 @@ struct MapView: UIViewRepresentable {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
       guard let annotation = annotation as? NodeAnnotation else { return nil }
 
-      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: NodeAnnotationMarkerView.self)) as? NodeAnnotationMarkerView
+      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: NodeAnnotationMarkerView.identifier) as? NodeAnnotationMarkerView
       if annotationView == nil {
         annotationView = NodeAnnotationMarkerView(
           annotation: annotation,

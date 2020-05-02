@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
 		415E55A122F6289600D35882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A022F6289600D35882 /* AppDelegate.swift */; };
 		415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A222F6289600D35882 /* SceneDelegate.swift */; };
 		415E55A522F6289600D35882 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		415E559D22F6289600D35882 /* BikeFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415E55A022F6289600D35882 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A222F6289600D35882 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -149,6 +151,7 @@
 			children = (
 				417C5894245B4EC9001895B8 /* Color+extension.swift */,
 				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
+				41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
+				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapView.swift in Sources */,
