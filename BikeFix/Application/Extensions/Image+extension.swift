@@ -7,7 +7,7 @@ extension Image {
       .imageScale(.large)
       .frame(minWidth: 50, minHeight: 50)
       .background(Color.mapButtonBackground)
-      .cornerRadius(10)
+      .cornerRadius(8)
       .shadow(color: Color.shadow, radius: 5)
   }
 

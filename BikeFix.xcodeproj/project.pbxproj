@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
-		41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image.extension.swift */; };
+		41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image+extension.swift */; };
 		41312B7A245D149700C733E6 /* SettingsSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B79245D149700C733E6 /* SettingsSafariView.swift */; };
 		41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7B245D14C700C733E6 /* DeviceInfo.swift */; };
 		41312B7E245D14E300C733E6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7D245D14E300C733E6 /* SafariView.swift */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		41312B77245D0F4900C733E6 /* Image.extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Image.extension.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41312B77245D0F4900C733E6 /* Image+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Image+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		41312B79245D149700C733E6 /* SettingsSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariView.swift; sourceTree = "<group>"; };
 		41312B7B245D14C700C733E6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		41312B7D245D14E300C733E6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				417C5894245B4EC9001895B8 /* Color+extension.swift */,
-				41312B77245D0F4900C733E6 /* Image.extension.swift */,
+				41312B77245D0F4900C733E6 /* Image+extension.swift */,
 				41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */,
 				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
 			);
@@ -299,7 +299,7 @@
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
-				41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */,
+				41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
 				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
 				41312B7A245D149700C733E6 /* SettingsSafariView.swift in Sources */,

@@ -62,6 +62,7 @@ struct Map: View {
         settingsButton
         locationButton
       }
+      .padding(5)
     }
   }
 
@@ -70,9 +71,9 @@ struct Map: View {
       .accessibility(label: Text("Loading data..."))
       .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
       .background(Color.mapButtonBackground)
-      .cornerRadius(10)
+      .cornerRadius(8)
       .shadow(color: Color.shadow, radius: 5)
-      .padding()
+      .padding(5)
   }
 
   var settingsButton: some View {
@@ -81,7 +82,7 @@ struct Map: View {
         .mapButtonImageStyle()
         .accessibility(label: Text("Settings"))
     }
-    .padding()
+    .padding(5)
     .hoverEffect()
   }
 
@@ -93,7 +94,7 @@ struct Map: View {
         .mapButtonImageStyle()
         .accessibility(label: Text("Locate Me"))
     }
-    .padding()
+    .padding(5)
     .hoverEffect()
   }
 
