@@ -7,6 +7,8 @@ struct NodeDetail: View {
 
   @EnvironmentObject var nodeProvider: NodeProvider
 
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
   // MARK: - Bindings
 
   // MARK: - State
@@ -24,9 +26,22 @@ struct NodeDetail: View {
           Text("Bar")
         }
       }
+      .listStyle(GroupedListStyle())
+      .navigationBarTitle(Text("Details"), displayMode: .large)
+      .navigationBarItems(trailing: doneButton)
     }
-    .listStyle(GroupedListStyle())
-    .navigationBarTitle(Text(nodeVM.name), displayMode: .large)
+  }
+
+  // MARK: - Navigation button views
+
+  var doneButton: some View {
+    Button(action: {
+      self.presentationMode.wrappedValue.dismiss()
+    }) {
+      Text("Done")
+    }
+    .accentColor(Color.bikefixPrimary)
+    .hoverEffect()
   }
 
   // MARK: - Other views
