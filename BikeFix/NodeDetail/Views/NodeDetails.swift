@@ -34,6 +34,10 @@ struct NodeDetails: View {
           if nodeVM.node.tags.note != nil {
             Text("Note: \(nodeVM.node.tags.note ?? "")")
           }
+
+          if nodeVM.node.tags.serviceBicycleChainTool != nil {
+            Text("Service bicycle chain tool: \(nodeVM.node.tags.serviceBicycleChainTool ?? "")")
+          }
         }
 
         Section(header: Text("Coordinates")) {
