@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
 		41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image.extension.swift */; };
+		41312B7A245D149700C733E6 /* SettingsSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B79245D149700C733E6 /* SettingsSafariView.swift */; };
+		41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7B245D14C700C733E6 /* DeviceInfo.swift */; };
+		41312B7E245D14E300C733E6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7D245D14E300C733E6 /* SafariView.swift */; };
 		415E55A122F6289600D35882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A022F6289600D35882 /* AppDelegate.swift */; };
 		415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A222F6289600D35882 /* SceneDelegate.swift */; };
 		415E55A522F6289600D35882 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		41312B77245D0F4900C733E6 /* Image.extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Image.extension.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41312B79245D149700C733E6 /* SettingsSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariView.swift; sourceTree = "<group>"; };
+		41312B7B245D14C700C733E6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		41312B7D245D14E300C733E6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		415E559D22F6289600D35882 /* BikeFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415E55A022F6289600D35882 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A222F6289600D35882 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				419AA7A7245CC09F0089424F /* Views */,
+				41312B79245D149700C733E6 /* SettingsSafariView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 				419AA7A4245CC06F0089424F /* User Data */,
 				419AA7A3245CC04C0089424F /* Views */,
 				415E55A022F6289600D35882 /* AppDelegate.swift */,
+				41312B7B245D14C700C733E6 /* DeviceInfo.swift */,
 				415E55A222F6289600D35882 /* SceneDelegate.swift */,
 			);
 			path = Application;
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				415E55A422F6289600D35882 /* Home.swift */,
+				41312B7D245D14E300C733E6 /* SafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,12 +302,15 @@
 				41312B78245D0F4900C733E6 /* Image.extension.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
 				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
+				41312B7A245D149700C733E6 /* SettingsSafariView.swift in Sources */,
+				41312B7E245D14E300C733E6 /* SafariView.swift in Sources */,
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapView.swift in Sources */,
 				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
 				41A600242309865E00E2548F /* SettingsMain.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,
+				41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
