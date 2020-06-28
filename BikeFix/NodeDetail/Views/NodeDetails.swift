@@ -50,13 +50,13 @@ struct NodeDetails: View {
               .foregroundColor(Color.bikefixPrimary)
             Text("Open in:")
 
-            Button("Google Maps", action: {
+            Button("Google Maps") {
               self.openInGoogleMaps(coordinates: self.nodeVM.location)
-            })
+            }
 
-            Button("Apple Maps", action: {
-              print("apple maps")
-            })
+            Button("Apple Maps") {
+              self.openInAppleMaps(coordinates: self.nodeVM.location, name: self.nodeVM.name)
+            }
           }
         }
 
@@ -70,13 +70,13 @@ struct NodeDetails: View {
                 .foregroundColor(Color.bikefixPrimary)
               Text("Open in:")
 
-              Button("Google Maps", action: {
+              Button("Google Maps") {
                 self.openInGoogleMaps(address: self.nodeVM.address!)
-              })
+              }
 
-              Button("Apple Maps", action: {
+              Button("Apple Maps") {
                 self.openInAppleMaps(address: self.nodeVM.address!)
-              })
+              }
             }
           }
         }
@@ -161,18 +161,31 @@ struct NodeDetails: View {
 
   // MARK: - Methods
 
-  func openInGoogleMaps(coordinates: CLLocationCoordinate2D) {
+  private func openInGoogleMaps(coordinates: CLLocationCoordinate2D) {
     guard let URL = URL(string: "https://www.google.com/maps/search/?api=1&query=\(coordinates.latitude),\(coordinates.longitude)") else { return }
     UIApplication.shared.open(URL, options: [:], completionHandler: nil)
   }
 
-  func openInGoogleMaps(address: String) {
+  private func openInGoogleMaps(address: String) {
     guard let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
     guard let URL = URL(string: "https://www.google.com/maps/search/?api=1&query=\(encodedAddress)") else { return }
     UIApplication.shared.open(URL, options: [:], completionHandler: nil)
   }
 
-  func openInAppleMaps(address: String) {
+  private func openInAppleMaps(coordinates: CLLocationCoordinate2D, name: String) {
+    let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
+    mapItem.name = name
+
+    let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+
+    let currentLocationMapItem = MKMapItem.forCurrentLocation()
+    MKMapItem.openMaps(
+      with: [currentLocationMapItem, mapItem],
+      launchOptions: launchOptions
+    )
+  }
+
+  private func openInAppleMaps(address: String) {
     CLGeocoder().geocodeAddressString(address) { placemarks, error in
       if let error = error {
         log.error(error)
@@ -181,17 +194,19 @@ struct NodeDetails: View {
 
       guard let placemarks = placemarks else { return }
       let geocodedPlacemark = placemarks[0]
-      let placemark = MKPlacemark(coordinate: geocodedPlacemark.location!.coordinate,
-                                  addressDictionary: geocodedPlacemark.addressDictionary! as? [String: AnyObject])
+      let placemark = MKPlacemark(
+        coordinate: geocodedPlacemark.location!.coordinate,
+        addressDictionary: geocodedPlacemark.addressDictionary! as? [String: AnyObject]
+      )
 
       let mapItem = MKMapItem(placemark: placemark)
       mapItem.name = geocodedPlacemark.name
 
-      let launchOptions = NSDictionary(object: MKLaunchOptionsDirectionsModeDriving,
-                                       forKey: MKLaunchOptionsDirectionsModeKey as NSCopying)
+      let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+
       let currentLocationMapItem = MKMapItem.forCurrentLocation()
       MKMapItem.openMaps(with: [currentLocationMapItem, mapItem],
-                         launchOptions: launchOptions as? [String: AnyObject])
+                         launchOptions: launchOptions)
     }
   }
 
