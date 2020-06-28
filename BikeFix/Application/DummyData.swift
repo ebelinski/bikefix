@@ -9,6 +9,8 @@ enum DummyData {
     timestamp: "2020-05-02T07:39:39Z",
     user: "ebelinski",
     uid: 123,
+    version: 5,
+    changeset: 82012168,
     tags: Node.Tags(
       name: "Eugene's Bike Shop",
       description: "A small bike shop.",
@@ -33,6 +35,8 @@ enum DummyData {
     timestamp: "2020-05-02T07:39:39Z",
     user: "ebelinski",
     uid: 123,
+    version: 5,
+    changeset: 82012168,
     tags: Node.Tags(
       name: "A repair station",
       description: "Just an ordinary bike repair station",

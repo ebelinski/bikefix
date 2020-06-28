@@ -45,6 +45,8 @@ struct Node: Codable {
   let timestamp: String
   let user: String?
   let uid: Int?
+  let version: Int?
+  let changeset: Int?
   
   let tags: Tags
 

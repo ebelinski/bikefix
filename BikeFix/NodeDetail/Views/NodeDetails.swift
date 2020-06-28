@@ -88,6 +88,14 @@ struct NodeDetails: View {
           }
 
           Text("Last updated: \(nodeVM.lastUpdated)")
+
+          if nodeVM.node.version != nil {
+            Text("Version: \(nodeVM.node.version ?? -1)")
+          }
+
+          if nodeVM.node.changeset != nil {
+            Text("Changeset: \(nodeVM.node.changeset ?? -1)")
+          }
         }
 
         // MARK: - Section: Raw Data
