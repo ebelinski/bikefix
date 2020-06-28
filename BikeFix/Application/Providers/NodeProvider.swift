@@ -18,17 +18,17 @@ class NodeProvider: NSObject, ObservableObject {
   var task: URLSessionDataTask?
 
   func getData(forRegion region: MKCoordinateRegion) {
+    log.info("Region: \(region)")
     loading = true
 
-    // Kind of a fuzzy calculation, deliberately larger than it needs to be
-    let topLeftLat = region.center.latitude - region.span.latitudeDelta
-    let topLeftLon = region.center.longitude - region.span.longitudeDelta
+    let southWestLat = region.southWest.latitude
+    let southWestLon = region.southWest.longitude
 
-    let bottomRightLat = region.center.latitude + region.span.latitudeDelta
-    let bottomRightLon = region.center.longitude + region.span.longitudeDelta
+    let northEastLat = region.northEast.latitude
+    let northEastLon = region.northEast.longitude
 
     let data = "data=[out:json][timeout:25]"
-    let box = "[bbox:\(topLeftLat),\(topLeftLon),\(bottomRightLat),\(bottomRightLon)];"
+    let box = "[bbox:\(southWestLat),\(southWestLon),\(northEastLat),\(northEastLon)];"
     let node = "(node[amenity=bicycle_repair_station];node[shop=bicycle];);"
     let meta = "out%20meta;"
     let endpoint = "\(baseEndpoint)interpreter?\(data)\(box)\(node)\(meta)"
@@ -37,6 +37,7 @@ class NodeProvider: NSObject, ObservableObject {
 
     task?.cancel()
 
+    log.info("URL: \(url)")
     task = URLSession.shared.dataTask(with: url) { data, _, error in
       if let error = error {
         log.error(error)
@@ -50,6 +51,7 @@ class NodeProvider: NSObject, ObservableObject {
 
       do {
         let response = try JSONDecoder().decode(NodeResponse.self, from: data)
+        log.info("Elements count: \(response.elements.count)")
         DispatchQueue.main.async {
           self.loading = false
           self.nodes = response.elements

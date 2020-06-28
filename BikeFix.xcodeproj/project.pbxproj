@@ -37,6 +37,7 @@
 		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
 		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
 		41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E724A940B60015E5ED /* CopyButton.swift */; };
+		41BAC2EA24A9531D0015E5ED /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41BAC2E724A940B60015E5ED /* CopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
+		41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegion.swift; sourceTree = "<group>"; };
 		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				417C5894245B4EC9001895B8 /* Color+extension.swift */,
 				41312B77245D0F4900C733E6 /* Image+extension.swift */,
 				41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */,
+				41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */,
 				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
 			);
 			path = Extensions;
@@ -340,6 +343,7 @@
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
+				41BAC2EA24A9531D0015E5ED /* MKCoordinateRegion.swift in Sources */,
 				41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */,
 				412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
