@@ -41,13 +41,15 @@ struct NodeDetails: View {
           }
         }
 
-        // MARK: - Section: Coordinates
-        Section(header: Text("Coordinates")) {
-          Text("(\(nodeVM.location.latitude), \(nodeVM.location.longitude))")
+        // MARK: - Section: Coordinate
+        Section(header: Text("Coordinate")) {
+          HStack {
+            Text(nodeVM.coordinate)
+            Spacer()
+            CopyButton(text: nodeVM.coordinate)
+          }
 
           HStack {
-            Image(systemName: "map")
-              .foregroundColor(Color.bikefixPrimary)
             Text("Open in:")
 
             Button("Google Maps") {
@@ -63,11 +65,13 @@ struct NodeDetails: View {
         // MARK: - Section: Address
         if nodeVM.address != nil {
           Section(header: Text("Address")) {
-            Text(nodeVM.address!)
+            HStack {
+              Text(nodeVM.address!)
+              Spacer()
+              CopyButton(text: nodeVM.address!)
+            }
 
             HStack {
-              Image(systemName: "map")
-                .foregroundColor(Color.bikefixPrimary)
               Text("Open in:")
 
               Button("Google Maps") {

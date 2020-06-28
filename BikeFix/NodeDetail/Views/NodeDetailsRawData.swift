@@ -12,8 +12,18 @@ struct NodeDetailsRawData: View {
   var body: some View {
     Form {
       Section(header: Text("JSON")) {
-        Text("\(nodeVM.node.toString)")
-          .font(.system(.body, design: .monospaced))
+        HStack {
+          Text(nodeVM.node.toString)
+            .font(.system(.body, design: .monospaced))
+
+          Spacer()
+
+          VStack {
+            CopyButton(text: nodeVM.node.toString)
+              .padding(.top)
+            Spacer()
+          }
+        }
       }
     }
     .listStyle(GroupedListStyle())

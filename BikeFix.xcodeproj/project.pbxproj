@@ -36,6 +36,7 @@
 		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
 		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
 		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
+		41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E724A940B60015E5ED /* CopyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41BAC2E724A940B60015E5ED /* CopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
 		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 				415E55A422F6289600D35882 /* Home.swift */,
 				41312B79245D149700C733E6 /* SafariLink.swift */,
 				41312B7D245D14E300C733E6 /* SafariView.swift */,
+				41BAC2E724A940B60015E5ED /* CopyButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
 				415E55A122F6289600D35882 /* AppDelegate.swift in Sources */,
 				417C5897245B5441001895B8 /* ActivityIndicator.swift in Sources */,
+				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
 				415E55B722F6536600D35882 /* NodeResponse.swift in Sources */,
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,

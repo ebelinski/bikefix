@@ -13,6 +13,10 @@ struct NodeViewModel: Identifiable {
   let id: Int
   let name: String
 
+  var coordinate: String {
+    "(\(location.latitude), \(location.longitude))"
+  }
+
   var address: String? {
     var temp = ""
 
