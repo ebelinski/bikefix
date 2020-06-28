@@ -14,35 +14,33 @@ struct NodeViewModel: Identifiable {
   let name: String
 
   var address: String? {
-    get {
-      var temp = ""
+    var temp = ""
 
-      if let name = node.tags.name {
-        temp += name
-      }
-
-      if let houseNumber = node.tags.addrHouseNumber {
-        if !temp.isEmpty { temp += "\n" }
-        temp += houseNumber
-      }
-
-      if let street = node.tags.addrStreet {
-        if !temp.isEmpty { temp += " " }
-        temp += street
-      }
-
-      if let city = node.tags.addrCity {
-        if !temp.isEmpty { temp += "\n" }
-        temp += city
-      }
-
-      if let postCode = node.tags.addrPostCode {
-        if !temp.isEmpty { temp += "\n" }
-        temp += postCode
-      }
-
-      return (!temp.isEmpty && temp != node.tags.name) ? temp : nil
+    if let name = node.tags.name {
+      temp += name
     }
+
+    if let houseNumber = node.tags.addrHouseNumber {
+      if !temp.isEmpty { temp += "\n" }
+      temp += houseNumber
+    }
+
+    if let street = node.tags.addrStreet {
+      if !temp.isEmpty { temp += " " }
+      temp += street
+    }
+
+    if let city = node.tags.addrCity {
+      if !temp.isEmpty { temp += "\n" }
+      temp += city
+    }
+
+    if let postCode = node.tags.addrPostCode {
+      if !temp.isEmpty { temp += "\n" }
+      temp += postCode
+    }
+
+    return (!temp.isEmpty && temp != node.tags.name) ? temp : nil
   }
 
   let location: CLLocationCoordinate2D
@@ -53,13 +51,11 @@ struct NodeViewModel: Identifiable {
   }
 
   var lastUpdated: String {
-    get {
-      let formatter = DateFormatter()
-      formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-      guard let lastChangedDate = formatter.date(from: node.timestamp) else { return "" }
-      formatter.dateFormat = "MMM d, yyyy, h:mm a"
-      return formatter.string(from: lastChangedDate)
-    }
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    guard let lastChangedDate = formatter.date(from: node.timestamp) else { return "" }
+    formatter.dateFormat = "MMM d, yyyy, h:mm a"
+    return formatter.string(from: lastChangedDate)
   }
 
   init(node: Node) {

@@ -55,12 +55,10 @@ struct Node: Codable {
   let tags: Tags
 
   var toString: String {
-    get {
-      let encoder = JSONEncoder()
-      encoder.outputFormatting = .prettyPrinted
-      guard let data = try? encoder.encode(self) else { return "" }
-      return String(data: data, encoding: String.Encoding.utf8) ?? ""
-    }
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    guard let data = try? encoder.encode(self) else { return "" }
+    return String(data: data, encoding: String.Encoding.utf8) ?? ""
   }
 
 }
