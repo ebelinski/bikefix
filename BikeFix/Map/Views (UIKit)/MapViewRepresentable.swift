@@ -30,8 +30,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     map.showsCompass = true
     map.showsUserLocation = true
 
-    map.register(NodeAnnotationMarkerView.self,
-                 forAnnotationViewWithReuseIdentifier: NodeAnnotationMarkerView.identifier)
+    map.register(
+      NodeAnnotationMarkerView.self,
+      forAnnotationViewWithReuseIdentifier: NodeAnnotationMarkerView.identifier
+    )
 
     return map
   }
@@ -48,8 +50,13 @@ struct MapViewRepresentable: UIViewRepresentable {
     // TODO: Improve this naming
     let annotationsIntermediateStep = uiView.annotations.compactMap { $0 as? NodeAnnotation }
 
-    let stationAnnotations = annotationsIntermediateStep.filter { $0.nodeVM.kind == .bicycleRepairStation }
-    let shopAnnotations = annotationsIntermediateStep.filter { $0.nodeVM.kind == .bicycleShop }
+    let stationAnnotations = annotationsIntermediateStep.filter {
+      $0.nodeVM.kind == .bicycleRepairStation
+    }
+
+    let shopAnnotations = annotationsIntermediateStep.filter {
+      $0.nodeVM.kind == .bicycleShop
+    }
 
     if !userSettings.showBicycleRepairStations {
       uiView.removeAnnotations(stationAnnotations)
@@ -73,9 +80,11 @@ struct MapViewRepresentable: UIViewRepresentable {
   private func moveToUserLocation(map: MKMapView) {
     guard let location = locationManager.location else { return }
 
-    let region = MKCoordinateRegion(center: location.coordinate,
-                                    span: MKCoordinateSpan(latitudeDelta: 0.02,
-                                                           longitudeDelta: 0.02))
+    let region = MKCoordinateRegion(
+      center: location.coordinate,
+      span: MKCoordinateSpan(latitudeDelta: 0.02,
+                             longitudeDelta: 0.02)
+    )
     map.setRegion(region, animated: true)
   }
 
@@ -100,7 +109,8 @@ struct MapViewRepresentable: UIViewRepresentable {
       mapView.setRegion(region, animated: true)
     }
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView,
+                 viewFor annotation: MKAnnotation) -> MKAnnotationView? {
       guard let annotation = annotation as? NodeAnnotation else { return nil }
 
       var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: NodeAnnotationMarkerView.identifier) as? NodeAnnotationMarkerView
@@ -126,7 +136,9 @@ struct MapViewRepresentable: UIViewRepresentable {
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-      self.control.openedNodeVM = ((view as? NodeAnnotationMarkerView)?.annotation as? NodeAnnotation)?.nodeVM
+      guard let view = view as? NodeAnnotationMarkerView else { return }
+      guard let annotation = view.annotation as? NodeAnnotation else { return }
+      self.control.openedNodeVM = annotation.nodeVM
     }
 
   }

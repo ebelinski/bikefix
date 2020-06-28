@@ -18,7 +18,7 @@ struct CopyButton: View {
       if showingSuccessConfirmation {
         Image(systemName: "checkmark")
       } else {
-        Button(action: { self.copyText() }) {
+        Button(action: copyText) {
           Image(systemName: "doc.on.doc")
             .foregroundColor(Color.bikefixPrimary)
         }

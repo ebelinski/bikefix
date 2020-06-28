@@ -45,7 +45,7 @@ struct NodeDetails: View {
           }
 
           if nodeVM.node.tags.serviceBicycleChainTool != nil {
-            Text("Service bicycle chain tool: \(nodeVM.node.tags.serviceBicycleChainTool ?? "")")
+            Text("Service bicycle chain tool: \(nodeVM.node.tags.serviceBicycleChainTool!)")
           }
         }
 
@@ -65,7 +65,8 @@ struct NodeDetails: View {
             }
 
             Button("Apple Maps") {
-              self.openInAppleMaps(coordinates: self.nodeVM.location, name: self.nodeVM.name)
+              self.openInAppleMaps(coordinates: self.nodeVM.location,
+                                   name: self.nodeVM.name)
             }
           }
         }

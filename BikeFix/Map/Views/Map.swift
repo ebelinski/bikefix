@@ -26,15 +26,16 @@ struct Map: View {
   var body: some View {
     ZStack {
       map
-      .sheet(item: $openedNodeVM) { nodeVM in
-        NodeDetails(nodeVM: nodeVM)
-      }
+        .sheet(item: $openedNodeVM) { nodeVM in
+          NodeDetails(nodeVM: nodeVM)
+        }
 
       mapOverlays
     }
     .onAppear {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        // Setting it right away doesn't work, due to some funny behavior with MapView's mapViewDidChangeVisibleRegion method.
+        // Setting it right away doesn't work, due to some funny behavior with
+        // MapView's mapViewDidChangeVisibleRegion method.
         self.shouldNavigateToUserLocation = true
       }
     }
@@ -43,12 +44,14 @@ struct Map: View {
   // MARK: - Other views
 
   var map: some View {
-    MapViewRepresentable(nodes: $nodeProvider.nodes,
-                         openedNodeVM: $openedNodeVM,
-                         displayingLocationAuthRequest: $displayingLocationAuthRequest,
-                         shouldNavigateToUserLocation: $shouldNavigateToUserLocation)
-      .accentColor(Color.bikefixPrimaryOnWhite)
-      .edgesIgnoringSafeArea(.all)
+    MapViewRepresentable(
+      nodes: $nodeProvider.nodes,
+      openedNodeVM: $openedNodeVM,
+      displayingLocationAuthRequest: $displayingLocationAuthRequest,
+      shouldNavigateToUserLocation: $shouldNavigateToUserLocation
+    )
+    .accentColor(Color.bikefixPrimaryOnWhite)
+    .edgesIgnoringSafeArea(.all)
   }
 
   var mapOverlays: some View {
