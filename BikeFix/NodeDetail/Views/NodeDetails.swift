@@ -29,11 +29,19 @@ struct NodeDetails: View {
           }
 
           if nodeVM.node.tags.brand != nil {
-            Text("Brand: \(nodeVM.node.tags.brand ?? "")")
+            HStack {
+              Text("Brand: \(nodeVM.node.tags.brand!)")
+              Spacer()
+              CopyButton(text: nodeVM.node.tags.brand!)
+            }
           }
 
           if nodeVM.node.tags.note != nil {
-            Text("Note: \(nodeVM.node.tags.note ?? "")")
+            HStack {
+              Text("Note: \(nodeVM.node.tags.note!)")
+              Spacer()
+              CopyButton(text: nodeVM.node.tags.note!)
+            }
           }
 
           if nodeVM.node.tags.serviceBicycleChainTool != nil {
@@ -89,14 +97,20 @@ struct NodeDetails: View {
         if nodeVM.node.tags.phone != nil {
           Section(header: Text("Phone")) {
             HStack {
-              Image(systemName: "phone")
-                .foregroundColor(Color.bikefixPrimary)
-
-              Button(nodeVM.node.tags.phone!) {
+              Button(action: {
                 if let url = URL(string: "tel://\(self.nodeVM.sanitizedPhoneNumber!)") {
                   UIApplication.shared.open(url)
                 }
+              }) {
+                HStack {
+                  Image(systemName: "phone")
+                  Text(nodeVM.node.tags.phone!)
+                }
               }
+
+              Spacer()
+
+              CopyButton(text: nodeVM.node.tags.phone!)
             }
           }
         }
@@ -105,32 +119,54 @@ struct NodeDetails: View {
         if nodeVM.node.tags.website != nil {
           Section(header: Text("Website")) {
             HStack {
-              Image(systemName: "globe")
-                .foregroundColor(Color.bikefixPrimary)
-
-              Button(nodeVM.node.tags.website!) {
+              Button(action: {
                 if let url = URL(string: self.nodeVM.node.tags.website!) {
                   UIApplication.shared.open(url)
                 }
+              }) {
+                HStack {
+                  Image(systemName: "globe")
+                  Text(nodeVM.node.tags.website!)
+                }
               }
+
+              Spacer()
+
+              CopyButton(text: nodeVM.node.tags.website!)
             }
           }
         }
 
         // MARK: - Section: Miscellaneous
         Section(header: Text("Miscellaneous")) {
-          if nodeVM.node.user != nil {
-            Text("User: \(nodeVM.node.user ?? "") (\(nodeVM.node.uid ?? -1))")
+          if nodeVM.node.user != nil && nodeVM.node.uid != nil {
+            HStack {
+              Text("User: \(nodeVM.node.user!) (\(nodeVM.node.uid!))")
+              Spacer()
+              CopyButton(text: "\(nodeVM.node.user!) (\(nodeVM.node.uid!))")
+            }
           }
 
-          Text("Last updated: \(nodeVM.lastUpdated)")
+          HStack {
+            Text("Last updated: \(nodeVM.lastUpdated)")
+            Spacer()
+            CopyButton(text: nodeVM.lastUpdated)
+          }
 
           if nodeVM.node.version != nil {
-            Text("Version: \(nodeVM.node.version ?? -1)")
+            HStack {
+              Text("Version: \(nodeVM.node.version!)")
+              Spacer()
+              CopyButton(text: "\(nodeVM.node.version!)")
+            }
           }
 
           if nodeVM.node.changeset != nil {
-            Text("Changeset: \(nodeVM.node.changeset ?? -1)")
+            HStack {
+              Text("Changeset: \(nodeVM.node.changeset!)")
+              Spacer()
+              CopyButton(text: "\(nodeVM.node.changeset!)")
+            }
           }
         }
 
