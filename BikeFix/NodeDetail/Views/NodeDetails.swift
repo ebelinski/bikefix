@@ -81,6 +81,22 @@ struct NodeDetails: View {
           }
         }
 
+        // MARK: - Section: Website
+        if nodeVM.node.tags.website != nil {
+          Section(header: Text("Website")) {
+            HStack {
+              Image(systemName: "globe")
+                .foregroundColor(Color.bikefixPrimary)
+
+              Button(nodeVM.node.tags.website!) {
+                if let url = URL(string: self.nodeVM.node.tags.website!) {
+                  UIApplication.shared.open(url)
+                }
+              }
+            }
+          }
+        }
+
         // MARK: - Section: Miscellaneous
         Section(header: Text("Miscellaneous")) {
           if nodeVM.node.user != nil {
