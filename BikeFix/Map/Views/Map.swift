@@ -65,6 +65,7 @@ struct Map: View {
       }
       .padding(10)
     }
+    .padding(.bottom, 20)
   }
 
   var loadingIndicator: some View {
