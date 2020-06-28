@@ -48,6 +48,10 @@ struct NodeViewModel: Identifiable {
   let location: CLLocationCoordinate2D
   let kind: Kind
 
+  var sanitizedPhoneNumber: String? {
+    return node.tags.phone?.filter("0123456789+".contains)
+  }
+
   var lastUpdated: String {
     get {
       let formatter = DateFormatter()

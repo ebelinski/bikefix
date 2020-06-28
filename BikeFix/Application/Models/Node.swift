@@ -14,6 +14,7 @@ struct Node: Codable {
     let source: String?
     let serviceBicycleChainTool: String?
     let website: String?
+    let phone: String?
 
     let addrCity: String?
     let addrHouseNumber: String?
@@ -31,6 +32,7 @@ struct Node: Codable {
       case source
       case serviceBicycleChainTool = "service:bicycle:chain_tool"
       case website
+      case phone
 
       case addrCity = "addr:city"
       case addrHouseNumber = "addr:housenumber"

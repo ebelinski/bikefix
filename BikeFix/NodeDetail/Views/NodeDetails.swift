@@ -81,6 +81,22 @@ struct NodeDetails: View {
           }
         }
 
+        // MARK: - Section: Phone
+        if nodeVM.node.tags.phone != nil {
+          Section(header: Text("Phone")) {
+            HStack {
+              Image(systemName: "phone")
+                .foregroundColor(Color.bikefixPrimary)
+
+              Button(nodeVM.node.tags.phone!) {
+                if let url = URL(string: "tel://\(self.nodeVM.sanitizedPhoneNumber!)") {
+                  UIApplication.shared.open(url)
+                }
+              }
+            }
+          }
+        }
+
         // MARK: - Section: Website
         if nodeVM.node.tags.website != nil {
           Section(header: Text("Website")) {
