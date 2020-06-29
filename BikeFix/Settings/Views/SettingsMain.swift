@@ -2,28 +2,31 @@ import SwiftUI
 
 struct SettingsMain: View {
 
+  enum IapStatus {
+    case nothing, loading, error, success
+  }
+
   // MARK: - Environment
 
   @EnvironmentObject var userSettings: UserSettings
-
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
   // MARK: - Bindings
 
   // MARK: - State
 
-  @State var iapLoading = false
   @State var tipButtonText: String?
+  @State var iapStatus = IapStatus.nothing
 
   // MARK: - Instance variables
 
+  let feedbackGenerator = UINotificationFeedbackGenerator()
   let priceFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.formatterBehavior = .behavior10_4
     formatter.numberStyle = .currency
     return formatter
   }()
-
   let publisherPurchaseSuccess = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseSuccess)
   let publisherPurchaseCancelled = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseCancelled)
   let publisherPurchaseFailed = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseFailed)
@@ -50,6 +53,15 @@ struct SettingsMain: View {
       self.priceFormatter.locale = product.priceLocale
       guard let price = self.priceFormatter.string(from: product.price) else { return }
       self.tipButtonText = "\(price) Tip"
+    }
+    .onReceive(publisherPurchaseSuccess) { output in
+      self.handlePurchaseSuccess(output)
+    }
+    .onReceive(publisherPurchaseCancelled) { output in
+      self.handlePurchaseCancelled()
+    }
+    .onReceive(publisherPurchaseFailed) { output in
+      self.handlePurchaseFailed()
     }
   }
 
@@ -90,11 +102,17 @@ struct SettingsMain: View {
   var aboutSection: some View {
     Section(header: Text("About")) {
       HStack {
-        Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
-
-        if tipButtonText != nil {
-          tipButton
+        if iapStatus == .error {
+          Text("An unknown error occurred. Please try again later.")
+            .foregroundColor(.red)
+        } else if iapStatus == .success {
+          Text("Thank you so much! 🚴‍♀️💞 Your contribution helps keep BikeFix alive!")
+            .foregroundColor(.green)
+        } else {
+          Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
         }
+
+        tipContainer
       }
 
       SafariLink(text: "BikeFix Website",
@@ -107,12 +125,12 @@ struct SettingsMain: View {
     }
   }
 
-  var tipButton: some View {
-    Button(action: {}) {
-      VStack {
-        Image.init(systemName: "heart.fill")
-          .accentColor(.pink)
-        Text(tipButtonText ?? "Error Encountered")
+  var tipContainer: some View {
+    HStack {
+      if iapStatus == .loading {
+        Text("Loading...")
+      } else if tipButtonText != nil {
+        tipButton
       }
     }
     .padding(.horizontal, 5)
@@ -120,6 +138,16 @@ struct SettingsMain: View {
     .padding(.bottom, 5)
     .background(Color.softBackground)
     .cornerRadius(10)
+  }
+
+  var tipButton: some View {
+    Button(action: openTip) {
+      VStack {
+        Image.init(systemName: "heart.fill")
+          .accentColor(.pink)
+        Text(tipButtonText ?? "Error Encountered")
+      }
+    }
   }
 
   var sourceCodeSection: some View {
@@ -152,6 +180,38 @@ struct SettingsMain: View {
   }
 
   // MARK: - Methods
+
+  func openTip() {
+    guard let product = Products.tipProducts.first else {
+      log.error("tipProducts is empty")
+      return
+    }
+
+    iapStatus = .loading
+    Products.store.buyProduct(product)
+  }
+
+  func handlePurchaseSuccess(_ notification: Notification) {
+    guard let productID = notification.object as? String else {
+      log.error("Could not get productID from purchase notification")
+      return
+    }
+    log.info("Got purchase notification for productID \(productID)")
+
+    confirmTipPurchase()
+  }
+
+  func handlePurchaseCancelled() {
+    iapStatus = .nothing
+  }
+
+  func handlePurchaseFailed() {
+    iapStatus = .error
+  }
+
+  func confirmTipPurchase() {
+    iapStatus = .success
+  }
 
 }
 
