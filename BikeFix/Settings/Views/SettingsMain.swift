@@ -8,6 +8,19 @@ struct SettingsMain: View {
 
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+  // MARK: - Bindings
+
+  // MARK: - State
+
+  // MARK: - Instance variables
+
+  static let priceFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.formatterBehavior = .behavior10_4
+    formatter.numberStyle = .currency
+    return formatter
+  }()
+
   // MARK: - Body view
 
   var body: some View {
@@ -32,11 +45,18 @@ struct SettingsMain: View {
         }
 
         Section(header: Text("Extras")) {
-          SafariLink(text: "Website", url: "https://bikefix.app/")
-          SafariLink(text: "Privacy Policy", url: "https://bikefix.app/privacy-policy/")
+          SafariLink(text: "BikeFix Website",
+                     url: "https://bikefix.app/")
+
+          SafariLink(text: "Privacy Policy",
+                     url: "https://bikefix.app/privacy-policy/")
+
           feedbackButton
         }
+
+        aboutSection
       }
+      .buttonStyle(BorderlessButtonStyle()) // Required to prevent the first button in a list being the only functional button.
       .listStyle(GroupedListStyle())
       .navigationBarTitle(Text("Settings"), displayMode: .large)
       .navigationBarItems(trailing: doneButton)
@@ -55,11 +75,33 @@ struct SettingsMain: View {
     .hoverEffect()
   }
 
+  var aboutSection: some View {
+    Section {
+      HStack {
+        Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
+
+        Button(action: {}) {
+          VStack {
+            Image.init(systemName: "heart.fill")
+              .accentColor(.pink)
+            Text("$1.99 Tip")
+          }
+        }
+        .padding(.horizontal, 5)
+        .padding(.top, 10)
+        .padding(.bottom, 5)
+        .accentColor(Color.bikefixPrimary)
+        .background(Color.softBackground)
+        .cornerRadius(10)
+      }
+    }
+  }
+
   // MARK: - Other views
 
   var feedbackButton: some View {
     Button(action: {
-      let subject = "Flynote Feedback"
+      let subject = "BikeFix Feedback"
       let body = "\n\n\(DeviceInfo.description)"
       guard let coded = "mailto:hello@tapmoko.com?subject=\(subject)&body=\(body)"
         .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
@@ -69,12 +111,16 @@ struct SettingsMain: View {
         UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
       }
     }) {
-      Text("Submit Feedback")
+      Text("Send Us Feedback!")
     }
     .accentColor(Color.bikefixPrimary)
   }
 
+  // MARK: - Methods
+
 }
+
+// MARK: - Preview
 
 #if DEBUG
 struct Settings_Previews: PreviewProvider {

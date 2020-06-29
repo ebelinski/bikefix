@@ -18,7 +18,6 @@ struct MapViewRepresentable: UIViewRepresentable {
   // MARK: - Instance variables
 
   let locationManager = CLLocationManager()
-
   var previouslySearchedRegion: MKCoordinateRegion?
 
   // MARK: - Instance methods
