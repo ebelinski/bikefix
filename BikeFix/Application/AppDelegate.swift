@@ -5,7 +5,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    Products.store.requestProducts { success, tipProducts in
+      if success {
+        Products.tipProducts = tipProducts!
+      }
+    }
+
     return true
   }
 

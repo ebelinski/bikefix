@@ -12,14 +12,21 @@ struct SettingsMain: View {
 
   // MARK: - State
 
+  @State var iapLoading = false
+  @State var tipButtonText: String?
+
   // MARK: - Instance variables
 
-  static let priceFormatter: NumberFormatter = {
+  let priceFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.formatterBehavior = .behavior10_4
     formatter.numberStyle = .currency
     return formatter
   }()
+
+  let publisherPurchaseSuccess = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseSuccess)
+  let publisherPurchaseCancelled = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseCancelled)
+  let publisherPurchaseFailed = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseFailed)
 
   // MARK: - Body view
 
@@ -37,6 +44,12 @@ struct SettingsMain: View {
       .navigationBarTitle(Text("Settings"), displayMode: .large)
       .navigationBarItems(trailing: doneButton)
       .accentColor(Color.bikefixPrimary)
+    }
+    .onAppear {
+      guard let product = Products.tipProducts.first else { return }
+      self.priceFormatter.locale = product.priceLocale
+      guard let price = self.priceFormatter.string(from: product.price) else { return }
+      self.tipButtonText = "\(price) Tip"
     }
   }
 
@@ -79,18 +92,9 @@ struct SettingsMain: View {
       HStack {
         Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
 
-        Button(action: {}) {
-          VStack {
-            Image.init(systemName: "heart.fill")
-              .accentColor(.pink)
-            Text("$1.99 Tip")
-          }
+        if tipButtonText != nil {
+          tipButton
         }
-        .padding(.horizontal, 5)
-        .padding(.top, 10)
-        .padding(.bottom, 5)
-        .background(Color.softBackground)
-        .cornerRadius(10)
       }
 
       SafariLink(text: "BikeFix Website",
@@ -101,6 +105,21 @@ struct SettingsMain: View {
 
       feedbackButton
     }
+  }
+
+  var tipButton: some View {
+    Button(action: {}) {
+      VStack {
+        Image.init(systemName: "heart.fill")
+          .accentColor(.pink)
+        Text(tipButtonText ?? "Error Encountered")
+      }
+    }
+    .padding(.horizontal, 5)
+    .padding(.top, 10)
+    .padding(.bottom, 5)
+    .background(Color.softBackground)
+    .cornerRadius(10)
   }
 
   var sourceCodeSection: some View {

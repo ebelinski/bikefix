@@ -1,4 +1,7 @@
+import Foundation
 import SwiftyBeaver
+
+let bundleID = Bundle.main.bundleIdentifier ?? ""
 
 let log: SwiftyBeaver.Type = {
   let log = SwiftyBeaver.self

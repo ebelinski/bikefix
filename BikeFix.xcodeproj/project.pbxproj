@@ -36,6 +36,9 @@
 		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
 		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
 		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
+		41B3B21A24A980560023AA7E /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21924A980560023AA7E /* IAPHelper.swift */; };
+		41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */; };
+		41B3B21E24A9808E0023AA7E /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21D24A9808E0023AA7E /* Products.swift */; };
 		41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E724A940B60015E5ED /* CopyButton.swift */; };
 		41BAC2EA24A9531D0015E5ED /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41B3B21924A980560023AA7E /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+extension.swift"; sourceTree = "<group>"; };
+		41B3B21D24A9808E0023AA7E /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		41BAC2E724A940B60015E5ED /* CopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
 		41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegion.swift; sourceTree = "<group>"; };
 		41E30A89234E08AD0015715D /* BikeFix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFix.entitlements; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				419AA7A2245CC00B0089424F /* Extensions */,
+				41B3B21824A980460023AA7E /* IAP */,
 				41274C0B2322E7C50043B870 /* Models */,
 				419AA7A8245CC0C10089424F /* Providers */,
 				419AA7A4245CC06F0089424F /* User Data */,
@@ -196,6 +203,7 @@
 				41312B77245D0F4900C733E6 /* Image+extension.swift */,
 				41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */,
 				41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */,
+				41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */,
 				419AA79D245BB3C40089424F /* UIColor+extension.swift */,
 			);
 			path = Extensions;
@@ -253,6 +261,15 @@
 				415E55B422F6534D00D35882 /* NodeProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		41B3B21824A980460023AA7E /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				41B3B21924A980560023AA7E /* IAPHelper.swift */,
+				41B3B21D24A9808E0023AA7E /* Products.swift */,
+			);
+			path = IAP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */,
 				41A60022230985F400E2548F /* Map.swift in Sources */,
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
@@ -344,6 +362,7 @@
 				417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */,
 				415E55B522F6534D00D35882 /* NodeProvider.swift in Sources */,
 				41BAC2EA24A9531D0015E5ED /* MKCoordinateRegion.swift in Sources */,
+				41B3B21A24A980560023AA7E /* IAPHelper.swift in Sources */,
 				41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */,
 				412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */,
 				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
@@ -357,6 +376,7 @@
 				415E55C322F718E200D35882 /* MapViewRepresentable.swift in Sources */,
 				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
 				41A600242309865E00E2548F /* SettingsMain.swift in Sources */,
+				41B3B21E24A9808E0023AA7E /* Products.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,
 				41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */,
 			);
