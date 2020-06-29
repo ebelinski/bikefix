@@ -30,4 +30,19 @@ extension MKCoordinateRegion {
     )
   }
 
+  // A region with the same center but double the deltas
+  var largerRegion: MKCoordinateRegion {
+    let newSpan = MKCoordinateSpan(latitudeDelta: span.latitudeDelta * 2,
+                                   longitudeDelta: span.longitudeDelta * 2)
+    return MKCoordinateRegion(center: center, span: newSpan)
+  }
+
+  // Returns true if the region is completely contained in this region
+  func fullyContains(region: MKCoordinateRegion) -> Bool {
+    northWest.latitude >= region.northWest.latitude
+      && northWest.longitude <= region.northWest.longitude
+      && southEast.latitude <= region.southEast.latitude
+      && southEast.longitude >= region.southEast.longitude
+  }
+
 }

@@ -19,6 +19,8 @@ struct MapViewRepresentable: UIViewRepresentable {
 
   let locationManager = CLLocationManager()
 
+  var previouslySearchedRegion: MKCoordinateRegion?
+
   // MARK: - Instance methods
 
   func makeUIView(context: Context) -> MKMapView {
@@ -126,11 +128,29 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
 
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-      let newRegion = mapView.region
+      let newVisibleRegion = mapView.region
+      log.info("Region changed to: \(newVisibleRegion)")
 
-      if (newRegion.span.latitudeDelta < 2.0) {
-        control.nodeProvider.getData(forRegion: newRegion)
+      // Don't search if new region isn't close enough
+      guard newVisibleRegion.span.latitudeDelta < 2.0 else {
+        log.info("Cancelling search: Region is too far away")
+        return
       }
+
+      // Don't search if new region is fully contained in existing search region
+      if let previouslySearchedRegion = control.previouslySearchedRegion {
+        if previouslySearchedRegion.fullyContains(region: newVisibleRegion) {
+          log.info("Cancelling search: Previous region fully contains new one")
+          return
+        }
+      }
+
+      // Get a larger region to search so nearby but out-of-view results are
+      // displayed without delay on navigation
+      let largerNewRegion = newVisibleRegion.largerRegion
+
+      control.nodeProvider.getData(forRegion: largerNewRegion)
+      control.previouslySearchedRegion = largerNewRegion
     }
 
     func mapView(_ mapView: MKMapView,
