@@ -26,35 +26,11 @@ struct SettingsMain: View {
   var body: some View {
     NavigationView {
       Form {
-        Section(header: Text("Map")) {
-          HStack {
-            Image(systemName: "wrench.fill")
-              .foregroundColor(Color.bikefixPrimary)
-            Toggle(isOn: $userSettings.showBicycleRepairStations) {
-              Text("Show bike fix stations")
-            }
-          }
-
-          HStack {
-            Image(systemName: "cart.fill")
-              .foregroundColor(Color.bikefixPrimary)
-            Toggle(isOn: $userSettings.showBicycleShops) {
-              Text("Show bike shops")
-            }
-          }
-        }
-
-        Section(header: Text("Extras")) {
-          SafariLink(text: "BikeFix Website",
-                     url: "https://bikefix.app/")
-
-          SafariLink(text: "Privacy Policy",
-                     url: "https://bikefix.app/privacy-policy/")
-
-          feedbackButton
-        }
+        mapSettingsSection
 
         aboutSection
+
+        sourceCodeSection
       }
       .buttonStyle(BorderlessButtonStyle()) // Required to prevent the first button in a list being the only functional button.
       .listStyle(GroupedListStyle())
@@ -75,8 +51,30 @@ struct SettingsMain: View {
     .hoverEffect()
   }
 
+  // MARK: - Other views
+
+  var mapSettingsSection: some View {
+    Section(header: Text("Map")) {
+      HStack {
+        Image(systemName: "wrench.fill")
+          .foregroundColor(Color.bikefixPrimary)
+        Toggle(isOn: $userSettings.showBicycleRepairStations) {
+          Text("Show bike fix stations")
+        }
+      }
+
+      HStack {
+        Image(systemName: "cart.fill")
+          .foregroundColor(Color.bikefixPrimary)
+        Toggle(isOn: $userSettings.showBicycleShops) {
+          Text("Show bike shops")
+        }
+      }
+    }
+  }
+
   var aboutSection: some View {
-    Section {
+    Section(header: Text("About")) {
       HStack {
         Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
 
@@ -94,10 +92,25 @@ struct SettingsMain: View {
         .background(Color.softBackground)
         .cornerRadius(10)
       }
+
+      SafariLink(text: "BikeFix Website",
+                 url: "https://bikefix.app/")
+
+      SafariLink(text: "Privacy Policy",
+                 url: "https://bikefix.app/privacy-policy/")
+
+      feedbackButton
     }
   }
 
-  // MARK: - Other views
+  var sourceCodeSection: some View {
+    Section(header: Text("Source Code")) {
+      Text("BikeFix is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license.")
+
+      SafariLink(text: "View Source",
+                 url: "https://github.com/ebelinski/bikefix")
+    }
+  }
 
   var feedbackButton: some View {
     Button(action: {
