@@ -36,6 +36,7 @@ struct SettingsMain: View {
       .listStyle(GroupedListStyle())
       .navigationBarTitle(Text("Settings"), displayMode: .large)
       .navigationBarItems(trailing: doneButton)
+      .accentColor(Color.bikefixPrimary)
     }
   }
 
@@ -88,7 +89,6 @@ struct SettingsMain: View {
         .padding(.horizontal, 5)
         .padding(.top, 10)
         .padding(.bottom, 5)
-        .accentColor(Color.bikefixPrimary)
         .background(Color.softBackground)
         .cornerRadius(10)
       }
@@ -124,9 +124,12 @@ struct SettingsMain: View {
         UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
       }
     }) {
-      Text("Send Us Feedback!")
+      HStack {
+        Image(systemName: "envelope")
+        Text("Send Us Feedback!")
+        Spacer()
+      }
     }
-    .accentColor(Color.bikefixPrimary)
   }
 
   // MARK: - Methods
