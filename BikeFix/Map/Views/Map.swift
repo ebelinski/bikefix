@@ -28,6 +28,7 @@ struct Map: View {
       map
         .sheet(item: $openedNodeVM) { nodeVM in
           NodeDetails(nodeVM: nodeVM)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
 
       mapOverlays
@@ -91,6 +92,7 @@ struct Map: View {
     .hoverEffect()
     .sheet(isPresented: $showingSettings) {
       SettingsMain()
+        .navigationViewStyle(StackNavigationViewStyle())
         .environmentObject(self.userSettings)
     }
   }
