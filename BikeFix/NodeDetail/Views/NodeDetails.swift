@@ -234,14 +234,11 @@ struct NodeDetails: View {
       }
 
       guard let placemarks = placemarks else { return }
-      let geocodedPlacemark = placemarks[0]
-      let placemark = MKPlacemark(
-        coordinate: geocodedPlacemark.location!.coordinate,
-        addressDictionary: geocodedPlacemark.addressDictionary! as? [String: AnyObject]
-      )
+      let clPlacemark = placemarks[0]
+      let mkPlacemark = MKPlacemark(placemark: clPlacemark)
 
-      let mapItem = MKMapItem(placemark: placemark)
-      mapItem.name = geocodedPlacemark.name
+      let mapItem = MKMapItem(placemark: mkPlacemark)
+      mapItem.name = clPlacemark.name
 
       let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
 
