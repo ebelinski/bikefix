@@ -33,7 +33,7 @@
 		417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */; };
 		419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
 		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
-		41A60022230985F400E2548F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* Map.swift */; };
+		41A60022230985F400E2548F /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* MapScreen.swift */; };
 		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
 		41B3B21A24A980560023AA7E /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21924A980560023AA7E /* IAPHelper.swift */; };
 		41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */; };
@@ -70,7 +70,7 @@
 		417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NodeAnnotationMarkerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		419AA79D245BB3C40089424F /* UIColor+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
-		41A60021230985F400E2548F /* Map.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41A60021230985F400E2548F /* MapScreen.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41B3B21924A980560023AA7E /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+extension.swift"; sourceTree = "<group>"; };
@@ -92,13 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41274C092322E7990043B870 /* Map */ = {
+		41274C092322E7990043B870 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
 				419AA7A6245CC0970089424F /* Views */,
 				419AA7A5245CC08D0089424F /* Views (UIKit) */,
 			);
-			path = Map;
+			path = MapScreen;
 			sourceTree = "<group>";
 		};
 		41274C0A2322E7A30043B870 /* Settings */ = {
@@ -157,7 +157,7 @@
 			children = (
 				41E30A89234E08AD0015715D /* BikeFix.entitlements */,
 				419AA7A1245CBFE90089424F /* Application */,
-				41274C092322E7990043B870 /* Map */,
+				41274C092322E7990043B870 /* MapScreen */,
 				41312B7F245D9FDC00C733E6 /* NodeDetail */,
 				41274C0A2322E7A30043B870 /* Settings */,
 				415E55A622F6289800D35882 /* Assets.xcassets */,
@@ -239,7 +239,7 @@
 		419AA7A6245CC0970089424F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				41A60021230985F400E2548F /* Map.swift */,
+				41A60021230985F400E2548F /* MapScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */,
-				41A60022230985F400E2548F /* Map.swift in Sources */,
+				41A60022230985F400E2548F /* MapScreen.swift in Sources */,
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,

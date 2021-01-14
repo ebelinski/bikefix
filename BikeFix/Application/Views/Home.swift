@@ -4,7 +4,7 @@ import CoreLocation
 struct Home: View {
 
   var body: some View {
-    Map()
+    MapScreen()
       .accentColor(Color.bikefixPrimary)
   }
 

@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct Map: View {
+struct MapScreen: View {
 
   // MARK: - Environment
 
@@ -129,7 +129,7 @@ struct Map: View {
 #if DEBUG
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
-    Map()
+    MapScreen()
   }
 }
 #endif
