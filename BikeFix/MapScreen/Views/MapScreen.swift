@@ -11,14 +11,12 @@ struct MapScreen: View {
   // MARK: - State
 
   @State var showingSettings = false
-  @State var displayingLocationAuthRequest = false
-  @State var shouldNavigateToUserLocation = false
   @State var openedNodeVM: NodeViewModel? = nil
+  @State var mapRegion = MKCoordinateRegion()
 
   // MARK: - Instance variables
 
   let locationManager = CLLocationManager()
-
   let mapButtonDimension: CGFloat = 50
 
   // MARK: - Body view
@@ -34,22 +32,17 @@ struct MapScreen: View {
       mapOverlays
     }
     .onAppear {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        // Setting it right away doesn't work, due to some funny behavior with
-        // MapView's mapViewDidChangeVisibleRegion method.
-        self.shouldNavigateToUserLocation = true
-      }
+      moveToUserLocation()
     }
   }
 
   // MARK: - Other views
 
   var map: some View {
-    MapHolder(
-      nodes: $nodeProvider.nodes,
-      openedNodeVM: $openedNodeVM,
-      displayingLocationAuthRequest: $displayingLocationAuthRequest,
-      shouldNavigateToUserLocation: $shouldNavigateToUserLocation
+    Map(
+      coordinateRegion: $mapRegion,
+      interactionModes: .all,
+      showsUserLocation: true
     )
     .accentColor(Color.bikefixPrimaryOnWhite)
     .edgesIgnoringSafeArea(.all)
@@ -65,7 +58,7 @@ struct MapScreen: View {
           loadingIndicator
         }
         settingsButton
-        locationButton
+        locateMeButton
       }
       .padding(10)
     }
@@ -97,7 +90,7 @@ struct MapScreen: View {
     }
   }
 
-  var locationButton: some View {
+  var locateMeButton: some View {
     Button(action: {
       self.checkForLocationAuthorizationAndNavigateToUserLocation()
     }) {
@@ -112,18 +105,25 @@ struct MapScreen: View {
   // MARK: - Methods
 
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
-    displayingLocationAuthRequest = false
-
     if locationManager.authorizationStatus == .notDetermined {
       log.info("location authorization not determined")
-      displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
       return
     }
 
-    shouldNavigateToUserLocation = true
+    moveToUserLocation()
   }
-  
+
+  func moveToUserLocation() {
+    guard let location = locationManager.location else { return }
+
+    mapRegion = MKCoordinateRegion(
+      center: location.coordinate,
+      span: MKCoordinateSpan(latitudeDelta: 0.02,
+                             longitudeDelta: 0.02)
+    )
+  }
+
 }
 
 #if DEBUG

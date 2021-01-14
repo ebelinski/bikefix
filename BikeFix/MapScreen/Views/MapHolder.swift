@@ -12,15 +12,10 @@ struct MapHolder: View {
 
   @Binding var nodes: [Node]
   @Binding var openedNodeVM: NodeViewModel?
-  @Binding var displayingLocationAuthRequest: Bool
-  @Binding var shouldNavigateToUserLocation: Bool
 
   // MARK: - State
 
-  @State private var region = MKCoordinateRegion(
-    center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
-    span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-  )
+  @State private var region = MKCoordinateRegion()
 
   // MARK: - Instance variables
 
@@ -30,7 +25,11 @@ struct MapHolder: View {
   // MARK: - Body view
 
   var body: some View {
-    Map(coordinateRegion: $region)
+    Map(
+      coordinateRegion: $region,
+      interactionModes: .all,
+      showsUserLocation: true
+    )
   }
 
   // MARK: - Methods
