@@ -1,5 +1,4 @@
 import SwiftUI
-import UIKit
 
 @main
 struct BikeFixApp: App {
@@ -20,12 +19,10 @@ struct BikeFixApp: App {
 
   private func didAppear() {
     Products.store.requestProducts { success, tipProducts in
-      if success {
-        Products.tipProducts = tipProducts!
+      if success, let tipProducts = tipProducts {
+        Products.tipProducts = tipProducts
       }
     }
-
-    UISwitch.appearance().onTintColor = UIColor.bikefixPrimaryOnWhite
   }
 
 }

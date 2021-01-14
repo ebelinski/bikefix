@@ -87,6 +87,7 @@ struct SettingsMain: View {
         Toggle(isOn: $userSettings.showBicycleRepairStations) {
           Text("Show bike fix stations")
         }
+        .toggleStyle(SwitchToggleStyle(tint: Color.bikefixPrimaryOnWhite))
       }
 
       HStack {
@@ -95,6 +96,7 @@ struct SettingsMain: View {
         Toggle(isOn: $userSettings.showBicycleShops) {
           Text("Show bike shops")
         }
+        .toggleStyle(SwitchToggleStyle(tint: Color.bikefixPrimaryOnWhite))
       }
     }
   }
