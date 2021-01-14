@@ -45,7 +45,7 @@ struct MapScreen: View {
   // MARK: - Other views
 
   var map: some View {
-    MapViewRepresentable(
+    MapHolder(
       nodes: $nodeProvider.nodes,
       openedNodeVM: $openedNodeVM,
       displayingLocationAuthRequest: $displayingLocationAuthRequest,

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
+		241A4CFE25AFF81800345C64 /* MapHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CFD25AFF81800345C64 /* MapHolder.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
 		412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
 		412DB39F245E12BD00A91314 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 412DB39E245E12BD00A91314 /* SwiftyBeaver */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
+		241A4CFD25AFF81800345C64 /* MapHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHolder.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		412DB394245DD16500A91314 /* NodeDetailsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsRawData.swift; sourceTree = "<group>"; };
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				41A60021230985F400E2548F /* MapScreen.swift */,
+				241A4CFD25AFF81800345C64 /* MapHolder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */,
 				41A60022230985F400E2548F /* MapScreen.swift in Sources */,
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
+				241A4CFE25AFF81800345C64 /* MapHolder.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
 				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
