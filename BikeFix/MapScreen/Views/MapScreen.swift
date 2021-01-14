@@ -19,6 +19,7 @@ struct MapScreen: View {
   let locationManager = CLLocationManager()
   let mapButtonDimension: CGFloat = 50
 
+
   // MARK: - Body view
 
   var body: some View {
@@ -30,6 +31,9 @@ struct MapScreen: View {
         }
 
       mapOverlays
+    }
+    .onChange(of: $mapRegion) { newMapRegion in
+      print("Hi")
     }
     .onAppear {
       moveToUserLocation()
