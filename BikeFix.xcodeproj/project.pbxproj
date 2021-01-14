@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
 		412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
 		412DB39F245E12BD00A91314 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 412DB39E245E12BD00A91314 /* SwiftyBeaver */; };
@@ -17,8 +18,6 @@
 		41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7B245D14C700C733E6 /* DeviceInfo.swift */; };
 		41312B7E245D14E300C733E6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7D245D14E300C733E6 /* SafariView.swift */; };
 		41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B81245D9FFB00C733E6 /* NodeDetails.swift */; };
-		415E55A122F6289600D35882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A022F6289600D35882 /* AppDelegate.swift */; };
-		415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A222F6289600D35882 /* SceneDelegate.swift */; };
 		415E55A522F6289600D35882 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
 		415E55A722F6289800D35882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A622F6289800D35882 /* Assets.xcassets */; };
 		415E55AA22F6289800D35882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A922F6289800D35882 /* Preview Assets.xcassets */; };
@@ -43,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		412DB394245DD16500A91314 /* NodeDetailsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsRawData.swift; sourceTree = "<group>"; };
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -53,8 +53,6 @@
 		41312B7D245D14E300C733E6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		41312B81245D9FFB00C733E6 /* NodeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetails.swift; sourceTree = "<group>"; };
 		415E559D22F6289600D35882 /* BikeFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		415E55A022F6289600D35882 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
-		415E55A222F6289600D35882 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A422F6289600D35882 /* Home.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55A622F6289800D35882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		415E55A922F6289800D35882 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -185,11 +183,10 @@
 				419AA7A8245CC0C10089424F /* Providers */,
 				419AA7A4245CC06F0089424F /* User Data */,
 				419AA7A3245CC04C0089424F /* Views */,
-				415E55A022F6289600D35882 /* AppDelegate.swift */,
+				241A4CF825AFF13E00345C64 /* BikeFixApp.swift */,
 				41312B7B245D14C700C733E6 /* DeviceInfo.swift */,
 				412DB392245DCE3500A91314 /* DummyData.swift */,
 				412DB3A0245E12DA00A91314 /* Global.swift */,
-				415E55A222F6289600D35882 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -351,7 +348,6 @@
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
-				415E55A122F6289600D35882 /* AppDelegate.swift in Sources */,
 				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
 				415E55B722F6536600D35882 /* NodeResponse.swift in Sources */,
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
@@ -361,7 +357,6 @@
 				41B3B21A24A980560023AA7E /* IAPHelper.swift in Sources */,
 				41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */,
 				412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */,
-				415E55A322F6289600D35882 /* SceneDelegate.swift in Sources */,
 				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
 				41312B7A245D149700C733E6 /* SafariLink.swift in Sources */,
 				41312B7E245D14E300C733E6 /* SafariView.swift in Sources */,
@@ -370,6 +365,7 @@
 				412DB3A1245E12DA00A91314 /* Global.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapViewRepresentable.swift in Sources */,
+				241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */,
 				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
 				41A600242309865E00E2548F /* SettingsMain.swift in Sources */,
 				41B3B21E24A9808E0023AA7E /* Products.swift in Sources */,
