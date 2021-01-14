@@ -114,7 +114,7 @@ struct Map: View {
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
     displayingLocationAuthRequest = false
 
-    if CLLocationManager.authorizationStatus() == .notDetermined {
+    if locationManager.authorizationStatus == .notDetermined {
       log.info("location authorization not determined")
       displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
