@@ -30,7 +30,6 @@
 		415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C022F7189700D35882 /* NodeAnnotation.swift */; };
 		415E55C322F718E200D35882 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C222F718E200D35882 /* MapViewRepresentable.swift */; };
 		417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C5894245B4EC9001895B8 /* Color+extension.swift */; };
-		417C5897245B5441001895B8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C5896245B5441001895B8 /* ActivityIndicator.swift */; };
 		417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */; };
 		419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
 		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
@@ -68,7 +67,6 @@
 		415E55C022F7189700D35882 /* NodeAnnotation.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NodeAnnotation.swift; sourceTree = "<group>"; tabWidth = 2; };
 		415E55C222F718E200D35882 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; tabWidth = 2; };
 		417C5894245B4EC9001895B8 /* Color+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		417C5896245B5441001895B8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; tabWidth = 2; };
 		417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NodeAnnotationMarkerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		419AA79D245BB3C40089424F /* UIColor+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -231,7 +229,6 @@
 		419AA7A5245CC08D0089424F /* Views (UIKit) */ = {
 			isa = PBXGroup;
 			children = (
-				417C5896245B5441001895B8 /* ActivityIndicator.swift */,
 				415E55C222F718E200D35882 /* MapViewRepresentable.swift */,
 				415E55C022F7189700D35882 /* NodeAnnotation.swift */,
 				417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */,
@@ -355,7 +352,6 @@
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
 				415E55A122F6289600D35882 /* AppDelegate.swift in Sources */,
-				417C5897245B5441001895B8 /* ActivityIndicator.swift in Sources */,
 				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
 				415E55B722F6536600D35882 /* NodeResponse.swift in Sources */,
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,

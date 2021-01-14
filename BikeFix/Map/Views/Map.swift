@@ -73,7 +73,7 @@ struct Map: View {
   }
 
   var loadingIndicator: some View {
-    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+    ProgressView()
       .accessibility(label: Text("Loading data..."))
       .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
       .background(Color.mapButtonBackground)
