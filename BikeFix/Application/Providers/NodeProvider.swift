@@ -2,7 +2,7 @@ import Foundation
 import MapKit
 import Combine
 
-class NodeProvider: NSObject, ObservableObject {
+class NodeProvider: ObservableObject {
 
   @Published var nodes: [Node] = []
   @Published var loading = false
