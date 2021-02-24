@@ -6,8 +6,6 @@ import UIKit
 
 class UserSettings: ObservableObject {
 
-  var objectWillChange = PassthroughSubject<Void, Never>()
-
   enum BoolSettingsKey: String, CaseIterable {
     case didLaunchOnce
     case showBicycleRepairStations
@@ -20,12 +18,10 @@ class UserSettings: ObservableObject {
   }
 
   @Published var showBicycleRepairStations: Bool = Default.showBicycleRepairStations {
-    willSet { objectWillChange.send() }
     didSet { set(bool: showBicycleRepairStations, for: .showBicycleRepairStations) }
   }
 
   @Published var showBicycleShops: Bool = Default.showBicycleShops {
-    willSet { objectWillChange.send() }
     didSet { set(bool: showBicycleShops, for: .showBicycleShops) }
   }
 
