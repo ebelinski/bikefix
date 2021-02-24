@@ -1,6 +1,5 @@
 import Foundation
 import Combine
-import UIKit
 
 // Settings are saved to User Defaults when the user makes a change. If the user doesn't make a change, nothing is saved in User Defaults, and the Default is used.
 
