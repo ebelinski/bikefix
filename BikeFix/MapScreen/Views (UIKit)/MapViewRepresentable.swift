@@ -3,10 +3,10 @@ import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
 
-  // MARK: - Environment
+  // MARK: - Observables
 
-  @EnvironmentObject var nodeProvider: NodeProvider
-  @EnvironmentObject var userSettings: UserSettings
+  @ObservedObject var nodeProvider: NodeProvider
+  @ObservedObject var userSettings: UserSettings
 
   // MARK: - Bindings
 

@@ -3,10 +3,10 @@ import MapKit
 
 struct MapScreen: View {
 
-  // MARK: - Environment
+  // MARK: - Observables
 
-  @EnvironmentObject var nodeProvider: NodeProvider
-  @EnvironmentObject var userSettings: UserSettings
+  @ObservedObject var nodeProvider: NodeProvider
+  @ObservedObject var userSettings: UserSettings
 
   // MARK: - State
 
@@ -46,6 +46,8 @@ struct MapScreen: View {
 
   var map: some View {
     MapViewRepresentable(
+      nodeProvider: nodeProvider,
+      userSettings: userSettings,
       nodes: $nodeProvider.nodes,
       openedNodeVM: $openedNodeVM,
       displayingLocationAuthRequest: $displayingLocationAuthRequest,
@@ -129,7 +131,7 @@ struct MapScreen: View {
 #if DEBUG
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
-    MapScreen()
+    MapScreen(nodeProvider: NodeProvider(), userSettings: UserSettings())
   }
 }
 #endif
