@@ -4,13 +4,19 @@ import Combine
 
 class NodeProvider: ObservableObject {
 
+  // MARK: - Public properties
+
   @Published var nodes: [Node] = []
   @Published var loading = false
 
-  let baseEndpoint = "https://www.overpass-api.de/api/"
-  var task: URLSessionDataTask?
+  // MARK: - Private properties
 
-  func getData(forRegion region: MKCoordinateRegion) {
+  private let baseEndpoint = "https://www.overpass-api.de/api/"
+  private var task: URLSessionDataTask?
+
+  // MARK: - Public methods
+
+  func refreshData(forRegion region: MKCoordinateRegion) {
     log.info("Region: \(region)")
     loading = true
 

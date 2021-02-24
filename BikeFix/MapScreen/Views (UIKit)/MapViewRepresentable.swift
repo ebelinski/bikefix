@@ -148,7 +148,7 @@ struct MapViewRepresentable: UIViewRepresentable {
       // displayed without delay on navigation
       let largerNewRegion = newVisibleRegion.largerRegion
 
-      control.nodeProvider.getData(forRegion: largerNewRegion)
+      control.nodeProvider.refreshData(forRegion: largerNewRegion)
       control.previouslySearchedRegion = largerNewRegion
     }
 
