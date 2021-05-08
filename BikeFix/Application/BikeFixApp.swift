@@ -10,8 +10,8 @@ struct BikeFixApp: App {
 
   @SceneBuilder var body: some Scene {
     WindowGroup {
-        Home(nodeProvider: nodeProvider, userSettings: userSettings)
-            .onAppear(perform: didAppear)
+      Home(nodeProvider: nodeProvider, userSettings: userSettings)
+        .onAppear(perform: didAppear)
     }
   }
 
