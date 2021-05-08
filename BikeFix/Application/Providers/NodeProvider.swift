@@ -39,7 +39,7 @@ class NodeProvider: ObservableObject {
     log.info("URL: \(url)")
     task = URLSession.shared.dataTask(with: url) { data, _, error in
       if let error = error {
-        log.error(error)
+        log.error(error.localizedDescription)
         return
       }
 
@@ -56,7 +56,7 @@ class NodeProvider: ObservableObject {
           self.nodes = response.elements
         }
       } catch let error {
-        log.error(error)
+        log.error(error.localizedDescription)
         DispatchQueue.main.async {
           self.loading = false
         }

@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
+		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
 		412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
-		412DB39F245E12BD00A91314 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 412DB39E245E12BD00A91314 /* SwiftyBeaver */; };
 		412DB3A1245E12DA00A91314 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A0245E12DA00A91314 /* Global.swift */; };
 		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
 		41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image+extension.swift */; };
@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
+		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		412DB394245DD16500A91314 /* NodeDetailsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsRawData.swift; sourceTree = "<group>"; };
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				412DB39F245E12BD00A91314 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +187,7 @@
 				41312B7B245D14C700C733E6 /* DeviceInfo.swift */,
 				412DB392245DCE3500A91314 /* DummyData.swift */,
 				412DB3A0245E12DA00A91314 /* Global.swift */,
+				2489B8322646C4F6009F056B /* Log.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -283,7 +284,6 @@
 			);
 			name = BikeFix;
 			packageProductDependencies = (
-				412DB39E245E12BD00A91314 /* SwiftyBeaver */,
 			);
 			productName = BikeFix;
 			productReference = 415E559D22F6289600D35882 /* BikeFix.app */;
@@ -314,7 +314,6 @@
 			);
 			mainGroup = 415E559422F6289600D35882;
 			packageReferences = (
-				412DB39D245E12BD00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 415E559E22F6289600D35882 /* Products */;
 			projectDirPath = "";
@@ -371,6 +370,7 @@
 				41B3B21E24A9808E0023AA7E /* Products.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,
 				41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */,
+				2489B8332646C4F6009F056B /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,25 +574,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		412DB39D245E12BD00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		412DB39E245E12BD00A91314 /* SwiftyBeaver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 412DB39D245E12BD00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
-			productName = SwiftyBeaver;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 415E559522F6289600D35882 /* Project object */;
 }

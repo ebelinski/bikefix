@@ -229,7 +229,7 @@ struct NodeDetails: View {
   private func openInAppleMaps(address: String) {
     CLGeocoder().geocodeAddressString(address) { placemarks, error in
       if let error = error {
-        log.error(error)
+        log.error(error.localizedDescription)
         return
       }
 
