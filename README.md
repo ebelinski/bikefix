@@ -15,8 +15,5 @@ Bikefix taps into OpenStreetMap data for repair stations and shops anywhere in t
 
 ### Apple frameworks
 
-
-
-### Third party dependencies (via SPM)
-
-* [SwiftyBeaver]()
+* **[SwiftUI](https://developer.apple.com/xcode/swiftui/)**: For most of the UI.
+* **[UIKit](https://developer.apple.com/documentation/uikit)**: For the MKMapView.
