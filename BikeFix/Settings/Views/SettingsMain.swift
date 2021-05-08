@@ -128,11 +128,13 @@ struct SettingsMain: View {
   }
 
   var tipContainer: some View {
-    HStack {
-      if iapStatus == .loading {
-        Text("Loading...")
-      } else if tipButtonText != nil {
+    ZStack {
+      if tipButtonText != nil {
         tipButton
+      }
+
+      if iapStatus == .loading {
+        ProgressView()
       }
     }
     .padding(.horizontal, 5)
@@ -150,6 +152,7 @@ struct SettingsMain: View {
         Text(tipButtonText ?? "Error Encountered")
       }
     }
+    .disabled(iapStatus == .loading)
   }
 
   var sourceCodeSection: some View {
