@@ -111,7 +111,7 @@ struct SettingsMain: View {
   var apiSettingsSection: some View {
     Section(
       header: Text("Data"),
-      footer: Text("This is where the location data for fix stations and shops comes from.")
+      footer: Text("BikeFix downloads location data for fix stations and shops from the selected Overpass API source.")
     ) {
       Picker("API", selection: $apiBase) {
         ForEach(APIBase.allCases, id: \.self) { endpoint in
@@ -120,6 +120,7 @@ struct SettingsMain: View {
         }
       }
     }
+    .accentColor(Color.bikefixPrimary)
   }
 
   var aboutSection: some View {
@@ -141,8 +142,11 @@ struct SettingsMain: View {
       SafariLink(text: "BikeFix Website",
                  url: "https://bikefix.app/")
 
-      SafariLink(text: "Privacy Policy",
+      SafariLink(text: "BikeFix Privacy Policy",
                  url: "https://bikefix.app/privacy-policy/")
+
+      SafariLink(text: "Overpass API",
+                 url: "https://wiki.openstreetmap.org/wiki/Overpass_API")
 
       feedbackButton
     }
