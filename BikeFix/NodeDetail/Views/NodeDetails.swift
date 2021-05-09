@@ -57,37 +57,39 @@ struct NodeDetails: View {
             }
 
             Button("Apple Maps") {
-              self.openInAppleMaps(coordinates: self.nodeVM.location,
-                                   name: self.nodeVM.name)
+              self.openInAppleMaps(
+                coordinates: self.nodeVM.location,
+                name: self.nodeVM.name
+              )
             }
           }
         }
 
         // MARK: - Section: Address
-        if nodeVM.address != nil {
+        if let address = nodeVM.address {
           Section(header: Text("Address")) {
             HStack {
-              Text(nodeVM.address!)
+              Text(address)
               Spacer()
-              CopyButton(text: nodeVM.address!)
+              CopyButton(text: address)
             }
 
             HStack {
               Text("Open in:")
 
               Button("Google Maps") {
-                self.openInGoogleMaps(address: self.nodeVM.address!)
+                self.openInGoogleMaps(address: address)
               }
 
               Button("Apple Maps") {
-                self.openInAppleMaps(address: self.nodeVM.address!)
+                self.openInAppleMaps(address: address)
               }
             }
           }
         }
 
         // MARK: - Section: Phone
-        if nodeVM.node.tags.phone != nil {
+        if let phone = nodeVM.node.tags.phone {
           Section(header: Text("Phone")) {
             HStack {
               Button(action: {
@@ -97,35 +99,35 @@ struct NodeDetails: View {
               }) {
                 HStack {
                   Image(systemName: "phone")
-                  Text(nodeVM.node.tags.phone!)
+                  Text(phone)
                 }
               }
 
               Spacer()
 
-              CopyButton(text: nodeVM.node.tags.phone!)
+              CopyButton(text: phone)
             }
           }
         }
 
         // MARK: - Section: Website
-        if nodeVM.node.tags.website != nil {
+        if let website = nodeVM.node.tags.website {
           Section(header: Text("Website")) {
             HStack {
               Button(action: {
-                if let url = URL(string: self.nodeVM.node.tags.website!) {
+                if let url = URL(string: website) {
                   UIApplication.shared.open(url)
                 }
               }) {
                 HStack {
                   Image(systemName: "globe")
-                  Text(nodeVM.node.tags.website!)
+                  Text(website)
                 }
               }
 
               Spacer()
 
-              CopyButton(text: nodeVM.node.tags.website!)
+              CopyButton(text: website)
             }
           }
         }
