@@ -74,7 +74,7 @@ struct MapScreen: View {
 
   var loadingIndicator: some View {
     ProgressView()
-      .accessibility(label: Text("Loading data..."))
+      .accessibility(label: Text("Loading map data..."))
       .frame(minWidth: mapButtonDimension, minHeight: mapButtonDimension)
       .background(Color.mapButtonBackground)
       .cornerRadius(8)
