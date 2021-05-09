@@ -29,6 +29,10 @@
 		<key>NSAppClipRequestLocationConfirmation</key>
 		<false/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This allows BikeFix to display bicycle repair stations and shops around you, and to display your location on the map.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This allows BikeFix to display bicycle repair stations and shops around you, and to display your location on the map.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -55,9 +59,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This allows BikeFix to display bicycle repair stations and shops around you, and to display your location on the map.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This allows BikeFix to display bicycle repair stations and shops around you, and to display your location on the map.</string>
 </dict>
 </plist>
