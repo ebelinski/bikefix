@@ -139,14 +139,14 @@ struct SettingsMain: View {
         tipContainer
       }
 
-      SafariLink(text: "BikeFix Website",
-                 url: "https://bikefix.app/")
+      SafariInAppLink(text: "BikeFix Website",
+                      url: "https://bikefix.app/")
 
-      SafariLink(text: "BikeFix Privacy Policy",
-                 url: "https://bikefix.app/privacy-policy/")
+      SafariInAppLink(text: "BikeFix Privacy Policy",
+                      url: "https://bikefix.app/privacy-policy/")
 
-      SafariLink(text: "Overpass API",
-                 url: "https://wiki.openstreetmap.org/wiki/Overpass_API")
+      SafariInAppLink(text: "Overpass API",
+                      url: "https://wiki.openstreetmap.org/wiki/Overpass_API")
 
       feedbackButton
     }
@@ -184,8 +184,8 @@ struct SettingsMain: View {
     Section(header: Text("Source Code")) {
       Text("BikeFix is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license.")
 
-      SafariLink(text: "View Source",
-                 url: "https://github.com/ebelinski/bikefix")
+      SafariInAppLink(text: "View Source",
+                      url: "https://github.com/ebelinski/bikefix")
     }
   }
 

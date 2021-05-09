@@ -18,7 +18,7 @@
 		412DB3A1245E12DA00A91314 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A0245E12DA00A91314 /* Global.swift */; };
 		41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
 		41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image+extension.swift */; };
-		41312B7A245D149700C733E6 /* SafariLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B79245D149700C733E6 /* SafariLink.swift */; };
+		41312B7A245D149700C733E6 /* SafariInAppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B79245D149700C733E6 /* SafariInAppLink.swift */; };
 		41312B7C245D14C700C733E6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7B245D14C700C733E6 /* DeviceInfo.swift */; };
 		41312B7E245D14E300C733E6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7D245D14E300C733E6 /* SafariView.swift */; };
 		41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B81245D9FFB00C733E6 /* NodeDetails.swift */; };
@@ -57,7 +57,7 @@
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		41312B77245D0F4900C733E6 /* Image+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Image+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		41312B79245D149700C733E6 /* SafariLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariLink.swift; sourceTree = "<group>"; };
+		41312B79245D149700C733E6 /* SafariInAppLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariInAppLink.swift; sourceTree = "<group>"; };
 		41312B7B245D14C700C733E6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		41312B7D245D14E300C733E6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		41312B81245D9FFB00C733E6 /* NodeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetails.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				415E55A422F6289600D35882 /* Home.swift */,
-				41312B79245D149700C733E6 /* SafariLink.swift */,
+				41312B79245D149700C733E6 /* SafariInAppLink.swift */,
 				41312B7D245D14E300C733E6 /* SafariView.swift */,
 				41BAC2E724A940B60015E5ED /* CopyButton.swift */,
 			);
@@ -372,7 +372,7 @@
 				41312B78245D0F4900C733E6 /* Image+extension.swift in Sources */,
 				412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */,
 				41312B73245D08EF00C733E6 /* MKAnnotationView+extension.swift in Sources */,
-				41312B7A245D149700C733E6 /* SafariLink.swift in Sources */,
+				41312B7A245D149700C733E6 /* SafariInAppLink.swift in Sources */,
 				41312B7E245D14E300C733E6 /* SafariView.swift in Sources */,
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				412DB393245DCE3500A91314 /* DummyData.swift in Sources */,
