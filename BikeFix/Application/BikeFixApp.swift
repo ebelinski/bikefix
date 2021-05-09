@@ -8,19 +8,22 @@ struct BikeFixApp: App {
 
   @Environment(\.scenePhase) private var scenePhase
 
+  private var didAppearOnce = false
+
   @SceneBuilder var body: some Scene {
     WindowGroup {
       Home(nodeProvider: nodeProvider, userSettings: userSettings)
-        .onAppear(perform: didAppear)
     }
   }
 
-  private func didAppear() {
+  init() {
     Products.store.requestProducts { success, tipProducts in
       if success, let tipProducts = tipProducts {
         Products.tipProducts = tipProducts
       }
     }
+
+    ReviewHelper.shared.allTimeAppOpenCount += 1
   }
 
 }

@@ -26,7 +26,7 @@ struct MapScreen: View {
   var body: some View {
     ZStack {
       map
-        .sheet(item: $openedNodeVM) { nodeVM in
+        .sheet(item: $openedNodeVM, onDismiss: onNodeDetailDismiss) { nodeVM in
           NodeDetails(nodeVM: nodeVM)
             .navigationViewStyle(StackNavigationViewStyle())
         }
@@ -100,9 +100,7 @@ struct MapScreen: View {
   }
 
   var locationButton: some View {
-    Button(action: {
-      self.checkForLocationAuthorizationAndNavigateToUserLocation()
-    }) {
+    Button(action: checkForLocationAuthorizationAndNavigateToUserLocation) {
       Image(systemName: "location")
         .mapButtonImageStyle()
         .accessibility(label: Text("Locate Me"))
@@ -124,6 +122,11 @@ struct MapScreen: View {
     }
 
     shouldNavigateToUserLocation = true
+  }
+
+  private func onNodeDetailDismiss() {
+    ReviewHelper.shared.allTimeNodeDetailDismissCount += 1
+    ReviewHelper.shared.requestReviewIfAppropriate()
   }
   
 }

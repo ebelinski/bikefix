@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
+		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
 		412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
 		412DB3A1245E12DA00A91314 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A0245E12DA00A91314 /* Global.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		412DB394245DD16500A91314 /* NodeDetailsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsRawData.swift; sourceTree = "<group>"; };
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				419AA7A2245CC00B0089424F /* Extensions */,
-				41B3B21824A980460023AA7E /* IAP */,
+				41B3B21824A980460023AA7E /* StoreKit */,
 				41274C0B2322E7C50043B870 /* Models */,
 				419AA7A8245CC0C10089424F /* Providers */,
 				419AA7A4245CC06F0089424F /* User Data */,
@@ -258,13 +260,14 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
-		41B3B21824A980460023AA7E /* IAP */ = {
+		41B3B21824A980460023AA7E /* StoreKit */ = {
 			isa = PBXGroup;
 			children = (
 				41B3B21924A980560023AA7E /* IAPHelper.swift */,
 				41B3B21D24A9808E0023AA7E /* Products.swift */,
+				2489B8342647574F009F056B /* ReviewHelper.swift */,
 			);
-			path = IAP;
+			path = StoreKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +348,7 @@
 				41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */,
 				41A60022230985F400E2548F /* MapScreen.swift in Sources */,
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
+				2489B8352647574F009F056B /* ReviewHelper.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
 				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
