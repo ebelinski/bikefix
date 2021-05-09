@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
 		245D6505264816A5001B1898 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D6504264816A5001B1898 /* SimpleDetailCell.swift */; };
+		245D650726481FDD001B1898 /* SettingsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650626481FDD001B1898 /* SettingsDefault.swift */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
@@ -33,7 +34,7 @@
 		417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C5894245B4EC9001895B8 /* Color+extension.swift */; };
 		417C589D245B5F11001895B8 /* NodeAnnotationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */; };
 		419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
-		419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* UserSettings.swift */; };
+		419AA7AA245CC12E0089424F /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* SettingsKey.swift */; };
 		41A60022230985F400E2548F /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* MapScreen.swift */; };
 		41A600242309865E00E2548F /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
 		41B3B21A24A980560023AA7E /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21924A980560023AA7E /* IAPHelper.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
 		245D6504264816A5001B1898 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
+		245D650626481FDD001B1898 /* SettingsDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDefault.swift; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		417C5894245B4EC9001895B8 /* Color+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NodeAnnotationMarkerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		419AA79D245BB3C40089424F /* UIColor+extension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		419AA7A9245CC12E0089424F /* UserSettings.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; tabWidth = 2; };
+		419AA7A9245CC12E0089424F /* SettingsKey.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A60021230985F400E2548F /* MapScreen.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41A600232309865E00E2548F /* SettingsMain.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsMain.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41B3B21924A980560023AA7E /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
@@ -224,7 +226,8 @@
 		419AA7A4245CC06F0089424F /* User Data */ = {
 			isa = PBXGroup;
 			children = (
-				419AA7A9245CC12E0089424F /* UserSettings.swift */,
+				419AA7A9245CC12E0089424F /* SettingsKey.swift */,
+				245D650626481FDD001B1898 /* SettingsDefault.swift */,
 			);
 			path = "User Data";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2489B8352647574F009F056B /* ReviewHelper.swift in Sources */,
 				41312B82245D9FFB00C733E6 /* NodeDetails.swift in Sources */,
 				415E55BF22F7182E00D35882 /* NodeViewModel.swift in Sources */,
+				245D650726481FDD001B1898 /* SettingsDefault.swift in Sources */,
 				41BAC2E824A940B60015E5ED /* CopyButton.swift in Sources */,
 				415E55B722F6536600D35882 /* NodeResponse.swift in Sources */,
 				419AA79E245BB3C40089424F /* UIColor+extension.swift in Sources */,
@@ -373,7 +377,7 @@
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapViewRepresentable.swift in Sources */,
 				241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */,
-				419AA7AA245CC12E0089424F /* UserSettings.swift in Sources */,
+				419AA7AA245CC12E0089424F /* SettingsKey.swift in Sources */,
 				41A600242309865E00E2548F /* SettingsMain.swift in Sources */,
 				41B3B21E24A9808E0023AA7E /* Products.swift in Sources */,
 				415E55A522F6289600D35882 /* Home.swift in Sources */,

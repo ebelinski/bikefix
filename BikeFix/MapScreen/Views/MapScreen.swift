@@ -6,7 +6,6 @@ struct MapScreen: View {
   // MARK: - Observables
 
   @ObservedObject var nodeProvider: NodeProvider
-  @ObservedObject var userSettings: UserSettings
 
   // MARK: - State
 
@@ -47,7 +46,6 @@ struct MapScreen: View {
   var map: some View {
     MapViewRepresentable(
       nodeProvider: nodeProvider,
-      userSettings: userSettings,
       nodes: $nodeProvider.nodes,
       openedNodeVM: $openedNodeVM,
       displayingLocationAuthRequest: $displayingLocationAuthRequest,
@@ -95,7 +93,6 @@ struct MapScreen: View {
     .sheet(isPresented: $showingSettings) {
       SettingsMain()
         .navigationViewStyle(StackNavigationViewStyle())
-        .environmentObject(self.userSettings)
     }
   }
 
@@ -134,7 +131,7 @@ struct MapScreen: View {
 #if DEBUG
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
-    MapScreen(nodeProvider: NodeProvider(), userSettings: UserSettings())
+    MapScreen(nodeProvider: NodeProvider())
   }
 }
 #endif

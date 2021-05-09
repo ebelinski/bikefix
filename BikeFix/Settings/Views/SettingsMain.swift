@@ -8,7 +8,6 @@ struct SettingsMain: View {
 
   // MARK: - Environment
 
-  @EnvironmentObject var userSettings: UserSettings
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
   // MARK: - Bindings
@@ -17,6 +16,12 @@ struct SettingsMain: View {
 
   @State var tipButtonText: String?
   @State var iapStatus = IapStatus.nothing
+
+  @AppStorage(SettingsKey.showRepairStations.rawValue)
+  var showRepairStations = SettingsDefault.showRepairStations
+
+  @AppStorage(SettingsKey.showShops.rawValue)
+  var showShops = SettingsDefault.showShops
 
   // MARK: - Instance variables
 
@@ -84,7 +89,7 @@ struct SettingsMain: View {
       HStack {
         Image(systemName: "wrench.fill")
           .foregroundColor(Color.bikefixPrimary)
-        Toggle(isOn: $userSettings.showBicycleRepairStations) {
+        Toggle(isOn: $showRepairStations) {
           Text("Show bike fix stations")
         }
         .toggleStyle(SwitchToggleStyle(tint: Color.bikefixPrimaryOnWhite))
@@ -93,7 +98,7 @@ struct SettingsMain: View {
       HStack {
         Image(systemName: "cart.fill")
           .foregroundColor(Color.bikefixPrimary)
-        Toggle(isOn: $userSettings.showBicycleShops) {
+        Toggle(isOn: $showShops) {
           Text("Show bike shops")
         }
         .toggleStyle(SwitchToggleStyle(tint: Color.bikefixPrimaryOnWhite))
@@ -227,12 +232,10 @@ struct Settings_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       SettingsMain()
-        .environmentObject(UserSettings())
         .environment(\.colorScheme, .dark)
         .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
 
       SettingsMain()
-        .environmentObject(UserSettings())
         .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
   }

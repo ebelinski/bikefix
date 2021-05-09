@@ -4,10 +4,9 @@ import CoreLocation
 struct Home: View {
 
   @ObservedObject var nodeProvider: NodeProvider
-  @ObservedObject var userSettings: UserSettings
 
   var body: some View {
-    MapScreen(nodeProvider: nodeProvider, userSettings: userSettings)
+    MapScreen(nodeProvider: nodeProvider)
       .accentColor(Color.bikefixPrimary)
   }
 
@@ -16,7 +15,7 @@ struct Home: View {
 #if DEBUG
 struct Home_Previews: PreviewProvider {
   static var previews: some View {
-    Home(nodeProvider: NodeProvider(), userSettings: UserSettings())
+    Home(nodeProvider: NodeProvider())
   }
 }
 #endif

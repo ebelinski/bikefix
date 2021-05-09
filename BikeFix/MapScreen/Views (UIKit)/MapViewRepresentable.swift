@@ -6,7 +6,12 @@ struct MapViewRepresentable: UIViewRepresentable {
   // MARK: - Observables
 
   @ObservedObject var nodeProvider: NodeProvider
-  @ObservedObject var userSettings: UserSettings
+
+  @AppStorage(SettingsKey.showRepairStations.rawValue)
+  var showRepairStations = SettingsDefault.showRepairStations
+
+  @AppStorage(SettingsKey.showShops.rawValue)
+  var showShops = SettingsDefault.showShops
 
   // MARK: - Bindings
 
@@ -59,11 +64,11 @@ struct MapViewRepresentable: UIViewRepresentable {
       $0.nodeVM.kind == .bicycleShop
     }
 
-    if !userSettings.showBicycleRepairStations {
+    if !showRepairStations {
       uiView.removeAnnotations(stationAnnotations)
     }
 
-    if !userSettings.showBicycleShops {
+    if !showShops {
       uiView.removeAnnotations(shopAnnotations)
     }
 
