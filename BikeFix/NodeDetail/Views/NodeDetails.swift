@@ -23,29 +23,21 @@ struct NodeDetails: View {
         // MARK: - Section: Information
         Section(header: Text("Information")) {
           HStack {
-            Text("Type: \((nodeVM.kind == .bicycleShop) ? "Bike shop" : "Bike fix station")")
+            Text("Type: ").fontWeight(.bold) + Text((nodeVM.kind == .bicycleShop) ? "Bike shop" : "Bike fix station")
             Spacer()
             Image(systemName: (nodeVM.kind == .bicycleShop) ? "cart.fill" : "wrench.fill")
           }
 
-          if nodeVM.node.tags.brand != nil {
-            HStack {
-              Text("Brand: \(nodeVM.node.tags.brand!)")
-              Spacer()
-              CopyButton(text: nodeVM.node.tags.brand!)
-            }
+          if let brand = nodeVM.node.tags.brand {
+            SimpleDetailCell(title: "Brand", content: brand)
           }
 
-          if nodeVM.node.tags.note != nil {
-            HStack {
-              Text("Note: \(nodeVM.node.tags.note!)")
-              Spacer()
-              CopyButton(text: nodeVM.node.tags.note!)
-            }
+          if let note = nodeVM.node.tags.note {
+            SimpleDetailCell(title: "Note", content: note)
           }
 
-          if nodeVM.node.tags.serviceBicycleChainTool != nil {
-            Text("Service bicycle chain tool: \(nodeVM.node.tags.serviceBicycleChainTool!)")
+          if let serviceBicycleChainTool = nodeVM.node.tags.serviceBicycleChainTool {
+            Text("Service bicycle chain tool: \(serviceBicycleChainTool)")
           }
         }
 
@@ -140,34 +132,18 @@ struct NodeDetails: View {
 
         // MARK: - Section: Miscellaneous
         Section(header: Text("Miscellaneous")) {
-          if nodeVM.node.user != nil && nodeVM.node.uid != nil {
-            HStack {
-              Text("User: \(nodeVM.node.user!) (\(nodeVM.node.uid!))")
-              Spacer()
-              CopyButton(text: "\(nodeVM.node.user!) (\(nodeVM.node.uid!))")
-            }
+          if let user = nodeVM.node.user, let uid = nodeVM.node.uid {
+            SimpleDetailCell(title: "User", content: "\(user) (\(uid))")
           }
 
-          HStack {
-            Text("Last updated: \(nodeVM.lastUpdated)")
-            Spacer()
-            CopyButton(text: nodeVM.lastUpdated)
+          SimpleDetailCell(title: "Last updated", content: nodeVM.lastUpdated)
+
+          if let version = nodeVM.node.version {
+            SimpleDetailCell(title: "Version", content: "\(version)")
           }
 
-          if nodeVM.node.version != nil {
-            HStack {
-              Text("Version: \(nodeVM.node.version!)")
-              Spacer()
-              CopyButton(text: "\(nodeVM.node.version!)")
-            }
-          }
-
-          if nodeVM.node.changeset != nil {
-            HStack {
-              Text("Changeset: \(nodeVM.node.changeset!)")
-              Spacer()
-              CopyButton(text: "\(nodeVM.node.changeset!)")
-            }
+          if let changeset = nodeVM.node.changeset {
+            SimpleDetailCell(title: "Last updated", content: "\(changeset)")
           }
         }
 

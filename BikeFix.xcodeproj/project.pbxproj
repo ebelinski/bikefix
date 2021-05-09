@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
+		245D6505264816A5001B1898 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D6504264816A5001B1898 /* SimpleDetailCell.swift */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
+		245D6504264816A5001B1898 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				41312B81245D9FFB00C733E6 /* NodeDetails.swift */,
+				245D6504264816A5001B1898 /* SimpleDetailCell.swift */,
 				412DB394245DD16500A91314 /* NodeDetailsRawData.swift */,
 			);
 			path = Views;
@@ -366,6 +369,7 @@
 				417C5895245B4EC9001895B8 /* Color+extension.swift in Sources */,
 				412DB393245DCE3500A91314 /* DummyData.swift in Sources */,
 				412DB3A1245E12DA00A91314 /* Global.swift in Sources */,
+				245D6505264816A5001B1898 /* SimpleDetailCell.swift in Sources */,
 				415E55B922F6536E00D35882 /* Node.swift in Sources */,
 				415E55C322F718E200D35882 /* MapViewRepresentable.swift in Sources */,
 				241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */,
