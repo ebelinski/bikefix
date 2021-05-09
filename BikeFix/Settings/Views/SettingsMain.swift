@@ -23,6 +23,9 @@ struct SettingsMain: View {
   @AppStorage(SettingsKey.showShops.rawValue)
   var showShops = SettingsDefault.showShops
 
+  @AppStorage(SettingsKey.apiBase.rawValue)
+  var apiBase = SettingsDefault.apiBase
+
   // MARK: - Instance variables
 
   let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -42,9 +45,8 @@ struct SettingsMain: View {
     NavigationView {
       Form {
         mapSettingsSection
-
+        apiSettingsSection
         aboutSection
-
         sourceCodeSection
       }
       .buttonStyle(BorderlessButtonStyle()) // Required to prevent the first button in a list being the only functional button.
@@ -102,6 +104,20 @@ struct SettingsMain: View {
           Text("Show bike shops")
         }
         .toggleStyle(SwitchToggleStyle(tint: Color.bikefixPrimaryOnWhite))
+      }
+    }
+  }
+
+  var apiSettingsSection: some View {
+    Section(
+      header: Text("Data"),
+      footer: Text("This is where the location data for fix stations and shops comes from.")
+    ) {
+      Picker("API", selection: $apiBase) {
+        ForEach(APIBase.allCases, id: \.self) { endpoint in
+          Text(endpoint.rawValue)
+            .tag(endpoint.rawValue)
+        }
       }
     }
   }

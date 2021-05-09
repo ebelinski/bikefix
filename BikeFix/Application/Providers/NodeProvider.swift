@@ -1,6 +1,7 @@
 import Foundation
 import MapKit
 import Combine
+import SwiftUI
 
 class NodeProvider: ObservableObject {
 
@@ -11,7 +12,14 @@ class NodeProvider: ObservableObject {
 
   // MARK: - Private properties
 
-  private let baseEndpoint = "https://www.overpass-api.de/api/"
+  @AppStorage(SettingsKey.apiBase.rawValue)
+  private var apiBase = SettingsDefault.apiBase
+
+  /// Computed property, because the user could change their preference
+  private var dataEndpoint: String {
+    "https://\(apiBase.rawValue)/api/interpreter"
+  }
+
   private var task: URLSessionDataTask?
 
   // MARK: - Public methods
@@ -30,7 +38,7 @@ class NodeProvider: ObservableObject {
     let box = "[bbox:\(southWestLat),\(southWestLon),\(northEastLat),\(northEastLon)];"
     let node = "(node[amenity=bicycle_repair_station];node[shop=bicycle];);"
     let meta = "out%20meta;"
-    let endpoint = "\(baseEndpoint)interpreter?\(data)\(box)\(node)\(meta)"
+    let endpoint = "\(dataEndpoint)?\(data)\(box)\(node)\(meta)"
 
     let url = URL(string: endpoint)!
 

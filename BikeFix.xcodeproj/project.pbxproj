@@ -10,6 +10,7 @@
 		241A4CF925AFF13E00345C64 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
 		245D6505264816A5001B1898 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D6504264816A5001B1898 /* SimpleDetailCell.swift */; };
 		245D650726481FDD001B1898 /* SettingsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650626481FDD001B1898 /* SettingsDefault.swift */; };
+		245D650926482D47001B1898 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650826482D47001B1898 /* APIEndpoint.swift */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
@@ -48,6 +49,7 @@
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
 		245D6504264816A5001B1898 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
 		245D650626481FDD001B1898 /* SettingsDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDefault.swift; sourceTree = "<group>"; };
+		245D650826482D47001B1898 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				415E55B422F6534D00D35882 /* NodeProvider.swift */,
+				245D650826482D47001B1898 /* APIEndpoint.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B3B21C24A9807D0023AA7E /* Notification.Name+extension.swift in Sources */,
+				245D650926482D47001B1898 /* APIEndpoint.swift in Sources */,
 				41A60022230985F400E2548F /* MapScreen.swift in Sources */,
 				415E55C122F7189700D35882 /* NodeAnnotation.swift in Sources */,
 				2489B8352647574F009F056B /* ReviewHelper.swift in Sources */,
