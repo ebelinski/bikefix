@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,41 @@
 		245D6505264816A5001B1898 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D6504264816A5001B1898 /* SimpleDetailCell.swift */; };
 		245D650726481FDD001B1898 /* SettingsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650626481FDD001B1898 /* SettingsDefault.swift */; };
 		245D650926482D47001B1898 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650826482D47001B1898 /* APIBase.swift */; };
+		245D651F26484E7D001B1898 /* BikeFixClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 245D651026484E7B001B1898 /* BikeFixClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		245D652426484F47001B1898 /* NodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55B422F6534D00D35882 /* NodeProvider.swift */; };
+		245D652526484F47001B1898 /* BikeFixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A4CF825AFF13E00345C64 /* BikeFixApp.swift */; };
+		245D652626484F47001B1898 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA79D245BB3C40089424F /* UIColor+extension.swift */; };
+		245D652726484F47001B1898 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55B822F6536E00D35882 /* Node.swift */; };
+		245D652826484F47001B1898 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21D24A9808E0023AA7E /* Products.swift */; };
+		245D652926484F47001B1898 /* CopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E724A940B60015E5ED /* CopyButton.swift */; };
+		245D652A26484F47001B1898 /* NodeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B81245D9FFB00C733E6 /* NodeDetails.swift */; };
+		245D652B26484F47001B1898 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650826482D47001B1898 /* APIBase.swift */; };
+		245D652C26484F47001B1898 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AA7A9245CC12E0089424F /* SettingsKey.swift */; };
+		245D652D26484F47001B1898 /* NodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55BE22F7182E00D35882 /* NodeViewModel.swift */; };
+		245D652E26484F47001B1898 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55A422F6289600D35882 /* Home.swift */; };
+		245D652F26484F47001B1898 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21924A980560023AA7E /* IAPHelper.swift */; };
+		245D653026484F47001B1898 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7D245D14E300C733E6 /* SafariView.swift */; };
+		245D653126484F47001B1898 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A0245E12DA00A91314 /* Global.swift */; };
+		245D653226484F47001B1898 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
+		245D653326484F47001B1898 /* SettingsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A600232309865E00E2548F /* SettingsMain.swift */; };
+		245D653426484F47001B1898 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A60021230985F400E2548F /* MapScreen.swift */; };
+		245D653526484F47001B1898 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C222F718E200D35882 /* MapViewRepresentable.swift */; };
+		245D653626484F47001B1898 /* NodeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55C022F7189700D35882 /* NodeAnnotation.swift */; };
+		245D653726484F47001B1898 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C5894245B4EC9001895B8 /* Color+extension.swift */; };
+		245D653826484F47001B1898 /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
+		245D653926484F47001B1898 /* NodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E55B622F6536600D35882 /* NodeResponse.swift */; };
+		245D653A26484F47001B1898 /* Notification.Name+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B21B24A9807D0023AA7E /* Notification.Name+extension.swift */; };
+		245D653B26484F47001B1898 /* NodeAnnotationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C589C245B5F11001895B8 /* NodeAnnotationMarkerView.swift */; };
+		245D653C26484F47001B1898 /* Image+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B77245D0F4900C733E6 /* Image+extension.swift */; };
+		245D653D26484F47001B1898 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
+		245D653E26484F47001B1898 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D6504264816A5001B1898 /* SimpleDetailCell.swift */; };
+		245D653F26484F47001B1898 /* SettingsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D650626481FDD001B1898 /* SettingsDefault.swift */; };
+		245D654026484F47001B1898 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B7B245D14C700C733E6 /* DeviceInfo.swift */; };
+		245D654126484F47001B1898 /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */; };
+		245D654226484F47001B1898 /* MKAnnotationView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B72245D08EF00C733E6 /* MKAnnotationView+extension.swift */; };
+		245D654326484F47001B1898 /* SafariInAppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41312B79245D149700C733E6 /* SafariInAppLink.swift */; };
+		245D654426484F47001B1898 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
+		245D65452648500A001B1898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A622F6289800D35882 /* Assets.xcassets */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
@@ -45,11 +80,38 @@
 		41BAC2EA24A9531D0015E5ED /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAC2E924A9531D0015E5ED /* MKCoordinateRegion.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		245D651D26484E7D001B1898 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 415E559522F6289600D35882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 245D650F26484E7B001B1898;
+			remoteInfo = BikeFixClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		245D652326484E7D001B1898 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				245D651F26484E7D001B1898 /* BikeFixClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		241A4CF825AFF13E00345C64 /* BikeFixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeFixApp.swift; sourceTree = "<group>"; };
 		245D6504264816A5001B1898 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
 		245D650626481FDD001B1898 /* SettingsDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDefault.swift; sourceTree = "<group>"; };
 		245D650826482D47001B1898 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		245D651026484E7B001B1898 /* BikeFixClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeFixClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		245D651B26484E7D001B1898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		245D651C26484E7D001B1898 /* BikeFixClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFixClip.entitlements; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -88,6 +150,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		245D650D26484E7B001B1898 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		415E559A22F6289600D35882 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +167,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		245D651126484E7B001B1898 /* BikeFixClip */ = {
+			isa = PBXGroup;
+			children = (
+				245D651B26484E7D001B1898 /* Info.plist */,
+				245D651C26484E7D001B1898 /* BikeFixClip.entitlements */,
+			);
+			path = BikeFixClip;
+			sourceTree = "<group>";
+		};
 		41274C092322E7990043B870 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				415E559F22F6289600D35882 /* BikeFix */,
+				245D651126484E7B001B1898 /* BikeFixClip */,
 				415E559E22F6289600D35882 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				415E559D22F6289600D35882 /* BikeFix.app */,
+				245D651026484E7B001B1898 /* BikeFixClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +242,6 @@
 		415E559F22F6289600D35882 /* BikeFix */ = {
 			isa = PBXGroup;
 			children = (
-				41E30A89234E08AD0015715D /* BikeFix.entitlements */,
 				419AA7A1245CBFE90089424F /* Application */,
 				41274C092322E7990043B870 /* MapScreen */,
 				41312B7F245D9FDC00C733E6 /* NodeDetail */,
@@ -170,6 +249,7 @@
 				415E55A622F6289800D35882 /* Assets.xcassets */,
 				415E55AB22F6289800D35882 /* LaunchScreen.storyboard */,
 				415E55AE22F6289800D35882 /* Info.plist */,
+				41E30A89234E08AD0015715D /* BikeFix.entitlements */,
 				415E55A822F6289800D35882 /* Preview Content */,
 			);
 			path = BikeFix;
@@ -282,6 +362,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		245D650F26484E7B001B1898 /* BikeFixClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 245D652026484E7D001B1898 /* Build configuration list for PBXNativeTarget "BikeFixClip" */;
+			buildPhases = (
+				245D650C26484E7B001B1898 /* Sources */,
+				245D650D26484E7B001B1898 /* Frameworks */,
+				245D650E26484E7B001B1898 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeFixClip;
+			productName = BikeFixClip;
+			productReference = 245D651026484E7B001B1898 /* BikeFixClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		415E559C22F6289600D35882 /* BikeFix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 415E55B122F6289800D35882 /* Build configuration list for PBXNativeTarget "BikeFix" */;
@@ -289,10 +386,12 @@
 				415E559922F6289600D35882 /* Sources */,
 				415E559A22F6289600D35882 /* Frameworks */,
 				415E559B22F6289600D35882 /* Resources */,
+				245D652326484E7D001B1898 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				245D651E26484E7D001B1898 /* PBXTargetDependency */,
 			);
 			name = BikeFix;
 			packageProductDependencies = (
@@ -307,10 +406,13 @@
 		415E559522F6289600D35882 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "TapMoko LLC";
 				TargetAttributes = {
+					245D650F26484E7B001B1898 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					415E559C22F6289600D35882 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -332,11 +434,20 @@
 			projectRoot = "";
 			targets = (
 				415E559C22F6289600D35882 /* BikeFix */,
+				245D650F26484E7B001B1898 /* BikeFixClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		245D650E26484E7B001B1898 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245D65452648500A001B1898 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		415E559B22F6289600D35882 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +461,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		245D650C26484E7B001B1898 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245D652626484F47001B1898 /* UIColor+extension.swift in Sources */,
+				245D652A26484F47001B1898 /* NodeDetails.swift in Sources */,
+				245D653F26484F47001B1898 /* SettingsDefault.swift in Sources */,
+				245D653226484F47001B1898 /* Log.swift in Sources */,
+				245D653326484F47001B1898 /* SettingsMain.swift in Sources */,
+				245D653526484F47001B1898 /* MapViewRepresentable.swift in Sources */,
+				245D653026484F47001B1898 /* SafariView.swift in Sources */,
+				245D653A26484F47001B1898 /* Notification.Name+extension.swift in Sources */,
+				245D653D26484F47001B1898 /* NodeDetailsRawData.swift in Sources */,
+				245D654426484F47001B1898 /* DummyData.swift in Sources */,
+				245D653B26484F47001B1898 /* NodeAnnotationMarkerView.swift in Sources */,
+				245D653E26484F47001B1898 /* SimpleDetailCell.swift in Sources */,
+				245D653926484F47001B1898 /* NodeResponse.swift in Sources */,
+				245D654326484F47001B1898 /* SafariInAppLink.swift in Sources */,
+				245D652526484F47001B1898 /* BikeFixApp.swift in Sources */,
+				245D653726484F47001B1898 /* Color+extension.swift in Sources */,
+				245D652E26484F47001B1898 /* Home.swift in Sources */,
+				245D652F26484F47001B1898 /* IAPHelper.swift in Sources */,
+				245D653126484F47001B1898 /* Global.swift in Sources */,
+				245D654126484F47001B1898 /* MKCoordinateRegion.swift in Sources */,
+				245D652826484F47001B1898 /* Products.swift in Sources */,
+				245D652426484F47001B1898 /* NodeProvider.swift in Sources */,
+				245D652B26484F47001B1898 /* APIBase.swift in Sources */,
+				245D654026484F47001B1898 /* DeviceInfo.swift in Sources */,
+				245D653426484F47001B1898 /* MapScreen.swift in Sources */,
+				245D653826484F47001B1898 /* ReviewHelper.swift in Sources */,
+				245D654226484F47001B1898 /* MKAnnotationView+extension.swift in Sources */,
+				245D653626484F47001B1898 /* NodeAnnotation.swift in Sources */,
+				245D652D26484F47001B1898 /* NodeViewModel.swift in Sources */,
+				245D653C26484F47001B1898 /* Image+extension.swift in Sources */,
+				245D652926484F47001B1898 /* CopyButton.swift in Sources */,
+				245D652C26484F47001B1898 /* SettingsKey.swift in Sources */,
+				245D652726484F47001B1898 /* Node.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		415E559922F6289600D35882 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +543,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		245D651E26484E7D001B1898 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 245D650F26484E7B001B1898 /* BikeFixClip */;
+			targetProxy = 245D651D26484E7D001B1898 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		415E55AB22F6289800D35882 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -404,6 +563,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		245D652126484E7D001B1898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BikeFixClip/BikeFixClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_ASSET_PATHS = "\"BikeFix/Preview Content\"";
+				DEVELOPMENT_TEAM = H7ATB2ZBVD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BikeFixClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.BikeFix.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		245D652226484E7D001B1898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BikeFixClip/BikeFixClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_ASSET_PATHS = "\"BikeFix/Preview Content\"";
+				DEVELOPMENT_TEAM = H7ATB2ZBVD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BikeFixClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.BikeFix.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		415E55AF22F6289800D35882 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,6 +732,7 @@
 		415E55B222F6289800D35882 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BikeFix/BikeFix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +757,7 @@
 		415E55B322F6289800D35882 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BikeFix/BikeFix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -571,6 +782,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		245D652026484E7D001B1898 /* Build configuration list for PBXNativeTarget "BikeFixClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245D652126484E7D001B1898 /* Debug */,
+				245D652226484E7D001B1898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		415E559822F6289600D35882 /* Build configuration list for PBXProject "BikeFix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
