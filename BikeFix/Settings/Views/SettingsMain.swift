@@ -145,7 +145,7 @@ struct SettingsMain: View {
       SafariInAppLink(text: "BikeFix Privacy Policy",
                       url: "https://bikefix.app/privacy-policy/")
 
-      SafariInAppLink(text: "Overpass API",
+      SafariInAppLink(text: "Overpass API Information",
                       url: "https://wiki.openstreetmap.org/wiki/Overpass_API")
 
       feedbackButton
