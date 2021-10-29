@@ -4,7 +4,7 @@ import SwiftUI
 
 class NodeProvider: ObservableObject {
 
-  enum DataError: Error { case generic }
+  enum DataError: Error { case decodingError }
 
   // MARK: - Public properties
 
@@ -38,6 +38,7 @@ class NodeProvider: ObservableObject {
     }
   }
 
+  @MainActor
   private func getNodes(forRegion region: MKCoordinateRegion) async throws -> [Node] {
     let url = getRequestUrl(forRegion: region)
 
@@ -51,7 +52,7 @@ class NodeProvider: ObservableObject {
       return response.elements
     } catch let error {
       log.error(error.localizedDescription)
-      throw DataError.generic
+      throw DataError.decodingError
     }
   }
 
