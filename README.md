@@ -1,4 +1,4 @@
-# Bikefix 🚴‍♀️📍🗺
+# BikeFix 🚴‍♀️📍🗺
 
 BikeFix is the easiest way to find nearby bicycle repair stations and shops on your iPhone when you're on the trail!
 
