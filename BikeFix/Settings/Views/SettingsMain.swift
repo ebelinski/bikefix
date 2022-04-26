@@ -133,7 +133,7 @@ struct SettingsMain: View {
           Text("Thank you so much! 🚴‍♀️💞 Your contribution helps keep BikeFix alive!")
             .foregroundColor(.green)
         } else {
-          Text("BikeFix is built by TapMoko, a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
+          Text("BikeFix is built by [TapMoko](https://tapmoko.com), a company by Eugene Belinski.\n\nBikeFix is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.")
         }
 
         tipContainer
