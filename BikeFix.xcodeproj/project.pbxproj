@@ -48,6 +48,7 @@
 		245D65452648500A001B1898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415E55A622F6289800D35882 /* Assets.xcassets */; };
 		2489B8332646C4F6009F056B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8322646C4F6009F056B /* Log.swift */; };
 		2489B8352647574F009F056B /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489B8342647574F009F056B /* ReviewHelper.swift */; };
+		248BF64D2857F57E00563896 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 248BF64C2857F57E00563896 /* README.md */; };
 		412DB393245DCE3500A91314 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB392245DCE3500A91314 /* DummyData.swift */; };
 		412DB395245DD16500A91314 /* NodeDetailsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB394245DD16500A91314 /* NodeDetailsRawData.swift */; };
 		412DB3A1245E12DA00A91314 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A0245E12DA00A91314 /* Global.swift */; };
@@ -114,6 +115,7 @@
 		245D651C26484E7D001B1898 /* BikeFixClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeFixClip.entitlements; sourceTree = "<group>"; };
 		2489B8322646C4F6009F056B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2489B8342647574F009F056B /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
+		248BF64C2857F57E00563896 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		412DB392245DCE3500A91314 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		412DB394245DD16500A91314 /* NodeDetailsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsRawData.swift; sourceTree = "<group>"; };
 		412DB3A0245E12DA00A91314 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		415E559422F6289600D35882 = {
 			isa = PBXGroup;
 			children = (
+				248BF64C2857F57E00563896 /* README.md */,
 				415E559F22F6289600D35882 /* BikeFix */,
 				245D651126484E7B001B1898 /* BikeFixClip */,
 				415E559E22F6289600D35882 /* Products */,
@@ -454,6 +457,7 @@
 			files = (
 				415E55AD22F6289800D35882 /* LaunchScreen.storyboard in Resources */,
 				415E55AA22F6289800D35882 /* Preview Assets.xcassets in Resources */,
+				248BF64D2857F57E00563896 /* README.md in Resources */,
 				415E55A722F6289800D35882 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
