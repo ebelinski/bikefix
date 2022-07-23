@@ -9,11 +9,6 @@ struct MapView: View {
 
   // MARK: - State
 
-  @State var showingSettings = false
-  @State var displayingLocationAuthRequest = false
-  @State var shouldNavigateToUserLocation = false
-  @State var openedNodeVM: NodeViewModel? = nil
-
   // MARK: - Instance variables
 
   let locationManager = CLLocationManager()
@@ -25,7 +20,10 @@ struct MapView: View {
   var body: some View {
     ZStack {
       map
-        .sheet(item: $openedNodeVM, onDismiss: onNodeDetailDismiss) { nodeVM in
+        .sheet(
+          item: $viewModel.openedNodeVM,
+          onDismiss: onNodeDetailDismiss
+        ) { nodeVM in
           NodeDetails(nodeVM: nodeVM)
             .navigationViewStyle(StackNavigationViewStyle())
         }
@@ -36,7 +34,7 @@ struct MapView: View {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         // Setting it right away doesn't work, due to some funny behavior with
         // MapView's mapViewDidChangeVisibleRegion method.
-        self.shouldNavigateToUserLocation = true
+        self.viewModel.shouldNavigateToUserLocation = true
       }
     }
   }
@@ -47,9 +45,9 @@ struct MapView: View {
     MapViewRepresentable(
       nodeProvider: viewModel.nodeProvider,
       nodes: $viewModel.nodeProvider.nodes,
-      openedNodeVM: $openedNodeVM,
-      displayingLocationAuthRequest: $displayingLocationAuthRequest,
-      shouldNavigateToUserLocation: $shouldNavigateToUserLocation
+      openedNodeVM: $viewModel.openedNodeVM,
+      displayingLocationAuthRequest: $viewModel.displayingLocationAuthRequest,
+      shouldNavigateToUserLocation: $viewModel.shouldNavigateToUserLocation
     )
     .accentColor(Color.bikefixPrimaryOnWhite)
     .edgesIgnoringSafeArea(.all)
@@ -83,14 +81,14 @@ struct MapView: View {
   }
 
   var settingsButton: some View {
-    Button(action: { self.showingSettings.toggle() }) {
+    Button(action: { self.viewModel.showingSettings.toggle() }) {
       Image(systemName: "gear")
         .mapButtonImageStyle()
         .accessibility(label: Text("Settings"))
     }
     .padding(5)
     .hoverEffect()
-    .sheet(isPresented: $showingSettings) {
+    .sheet(isPresented: $viewModel.showingSettings) {
       SettingsMain()
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -109,16 +107,16 @@ struct MapView: View {
   // MARK: - Methods
 
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
-    displayingLocationAuthRequest = false
+    viewModel.displayingLocationAuthRequest = false
 
     if locationManager.authorizationStatus == .notDetermined {
       log.info("location authorization not determined")
-      displayingLocationAuthRequest = true
+      viewModel.displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
       return
     }
 
-    shouldNavigateToUserLocation = true
+    viewModel.shouldNavigateToUserLocation = true
   }
 
   private func onNodeDetailDismiss() {
