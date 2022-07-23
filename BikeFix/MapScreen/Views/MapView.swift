@@ -1,11 +1,11 @@
 import SwiftUI
 import MapKit
 
-struct MapScreen: View {
+struct MapView: View {
+
+  @ObservedObject var viewModel: MapViewModel
 
   // MARK: - Observables
-
-  @ObservedObject var nodeProvider: NodeProvider
 
   // MARK: - State
 
@@ -45,8 +45,8 @@ struct MapScreen: View {
 
   var map: some View {
     MapViewRepresentable(
-      nodeProvider: nodeProvider,
-      nodes: $nodeProvider.nodes,
+      nodeProvider: viewModel.nodeProvider,
+      nodes: $viewModel.nodeProvider.nodes,
       openedNodeVM: $openedNodeVM,
       displayingLocationAuthRequest: $displayingLocationAuthRequest,
       shouldNavigateToUserLocation: $shouldNavigateToUserLocation
@@ -61,7 +61,7 @@ struct MapScreen: View {
 
       VStack {
         Spacer()
-        if nodeProvider.loading {
+        if viewModel.nodeProvider.loading {
           loadingIndicator
         }
         settingsButton
@@ -131,7 +131,7 @@ struct MapScreen: View {
 #if DEBUG
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
-    MapScreen(nodeProvider: NodeProvider())
+    MapView(viewModel: MapViewModel(nodeProvider: NodeProvider()))
   }
 }
 #endif

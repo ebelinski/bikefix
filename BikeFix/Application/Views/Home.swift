@@ -6,7 +6,7 @@ struct Home: View {
   @ObservedObject var nodeProvider: NodeProvider
 
   var body: some View {
-    MapScreen(nodeProvider: nodeProvider)
+    MapView(viewModel: MapViewModel(nodeProvider: nodeProvider))
       .accentColor(Color.bikefixPrimary)
   }
 
