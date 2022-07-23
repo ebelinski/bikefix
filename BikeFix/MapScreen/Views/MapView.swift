@@ -3,17 +3,13 @@ import MapKit
 
 struct MapView: View {
 
-  @ObservedObject var viewModel: MapViewModel
-
   // MARK: - Observables
 
-  // MARK: - State
+  @ObservedObject var viewModel: MapViewModel
 
   // MARK: - Instance variables
 
-  let locationManager = CLLocationManager()
-
-  let mapButtonDimension: CGFloat = 50
+  private let mapButtonDimension: CGFloat = 50
 
   // MARK: - Body view
 
@@ -22,7 +18,7 @@ struct MapView: View {
       map
         .sheet(
           item: $viewModel.openedNodeVM,
-          onDismiss: onNodeDetailDismiss
+          onDismiss: viewModel.onNodeDetailDismiss
         ) { nodeVM in
           NodeDetails(nodeVM: nodeVM)
             .navigationViewStyle(StackNavigationViewStyle())
@@ -95,33 +91,13 @@ struct MapView: View {
   }
 
   var locationButton: some View {
-    Button(action: checkForLocationAuthorizationAndNavigateToUserLocation) {
+    Button(action: viewModel.checkForLocationAuthorizationAndNavigateToUserLocation) {
       Image(systemName: "location")
         .mapButtonImageStyle()
         .accessibility(label: Text("Locate Me"))
     }
     .padding(5)
     .hoverEffect()
-  }
-
-  // MARK: - Methods
-
-  func checkForLocationAuthorizationAndNavigateToUserLocation() {
-    viewModel.displayingLocationAuthRequest = false
-
-    if locationManager.authorizationStatus == .notDetermined {
-      log.info("location authorization not determined")
-      viewModel.displayingLocationAuthRequest = true
-      locationManager.requestWhenInUseAuthorization()
-      return
-    }
-
-    viewModel.shouldNavigateToUserLocation = true
-  }
-
-  private func onNodeDetailDismiss() {
-    ReviewHelper.shared.allTimeNodeDetailDismissCount += 1
-    ReviewHelper.shared.requestReviewIfAppropriate()
   }
   
 }
