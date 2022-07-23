@@ -88,8 +88,7 @@ struct MapViewRepresentable: UIViewRepresentable {
 
     let region = MKCoordinateRegion(
       center: location.coordinate,
-      span: MKCoordinateSpan(latitudeDelta: 0.02,
-                             longitudeDelta: 0.02)
+      span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
     )
     map.setRegion(region, animated: true)
   }
@@ -119,7 +118,10 @@ struct MapViewRepresentable: UIViewRepresentable {
                  viewFor annotation: MKAnnotation) -> MKAnnotationView? {
       guard let annotation = annotation as? NodeAnnotation else { return nil }
 
-      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: NodeAnnotationMarkerView.identifier) as? NodeAnnotationMarkerView
+      var annotationView = mapView.dequeueReusableAnnotationView(
+        withIdentifier: NodeAnnotationMarkerView.identifier
+      ) as? NodeAnnotationMarkerView
+
       if annotationView == nil {
         annotationView = NodeAnnotationMarkerView(
           annotation: annotation,
@@ -128,6 +130,7 @@ struct MapViewRepresentable: UIViewRepresentable {
       } else {
         annotationView?.annotation = annotation
       }
+
       return annotationView
     }
 
@@ -157,9 +160,11 @@ struct MapViewRepresentable: UIViewRepresentable {
       control.previouslySearchedRegion = largerNewRegion
     }
 
-    func mapView(_ mapView: MKMapView,
-                 annotationView view: MKAnnotationView,
-                 calloutAccessoryControlTapped control: UIControl) {
+    func mapView(
+      _ mapView: MKMapView,
+      annotationView view: MKAnnotationView,
+      calloutAccessoryControlTapped control: UIControl
+    ) {
       guard let view = view as? NodeAnnotationMarkerView else { return }
       guard let annotation = view.annotation as? NodeAnnotation else { return }
       self.control.openedNodeVM = annotation.nodeVM
