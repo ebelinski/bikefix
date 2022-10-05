@@ -592,7 +592,7 @@
 				DEVELOPMENT_TEAM = H7ATB2ZBVD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BikeFixClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +616,7 @@
 				DEVELOPMENT_TEAM = H7ATB2ZBVD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BikeFixClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
