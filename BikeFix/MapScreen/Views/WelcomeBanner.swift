@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FirstTimeView: View {
+struct WelcomeBanner: View {
   let closeAction: () -> Void
 
   var body: some View {
@@ -19,8 +19,8 @@ struct FirstTimeView: View {
   }
 }
 
-struct FirstTimeView_Previews: PreviewProvider {
+struct WelcomeBanner_Previews: PreviewProvider {
   static var previews: some View {
-    FirstTimeView() {}
+    WelcomeBanner() {}
   }
 }

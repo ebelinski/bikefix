@@ -52,7 +52,7 @@ struct MapView: View {
   var mapOverlays: some View {
     VStack {
       if viewModel.displayFirstTimeMessage {
-        FirstTimeView() {
+        WelcomeBanner() {
           withAnimation {
             viewModel.displayFirstTimeMessage = false
           }
