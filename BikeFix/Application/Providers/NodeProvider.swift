@@ -23,18 +23,17 @@ class NodeProvider: ObservableObject {
 
   // MARK: - Public methods
 
-  func refreshData(forRegion region: MKCoordinateRegion) {
+  @MainActor func refreshData(forRegion region: MKCoordinateRegion) async {
     log.info("Region: \(region)")
     loading = true
 
-    Task {
-      do {
-        let nodes = try await getNodes(forRegion: region)
-        self.loading = false
-        self.nodes = nodes
-      } catch {
-        self.loading = false
-      }
+    do {
+      let nodes = try await getNodes(forRegion: region)
+      self.loading = false
+      self.nodes = nodes
+    } catch {
+      log.error(error.localizedDescription)
+      self.loading = false
     }
   }
 

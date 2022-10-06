@@ -104,7 +104,11 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
 
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-      control.shouldNavigateToUserLocation = false
+      Task {
+        await MainActor.run {
+          control.shouldNavigateToUserLocation = false
+        }
+      }
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -156,8 +160,12 @@ struct MapViewRepresentable: UIViewRepresentable {
       // displayed without delay on navigation
       let largerNewRegion = newVisibleRegion.largerRegion
 
-      control.nodeProvider.refreshData(forRegion: largerNewRegion)
-      control.previouslySearchedRegion = largerNewRegion
+      Task {
+        await control.nodeProvider.refreshData(forRegion: largerNewRegion)
+        await MainActor.run {
+          control.previouslySearchedRegion = largerNewRegion
+        }
+      }
     }
 
     func mapView(
