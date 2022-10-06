@@ -11,6 +11,9 @@ class NodeProvider: ObservableObject {
   @Published var nodes: [Node] = []
   @Published var loading = false
 
+  @AppStorage(SettingsKey.hasLoadedNodesOnce.rawValue)
+  var hasLoadedNodesOnce = SettingsDefault.hasLoadedNodesOnce
+
   // MARK: - Private properties
 
   @AppStorage(SettingsKey.apiBase.rawValue)
@@ -28,12 +31,12 @@ class NodeProvider: ObservableObject {
     loading = true
 
     do {
-      let nodes = try await getNodes(forRegion: region)
-      self.loading = false
-      self.nodes = nodes
+      nodes = try await getNodes(forRegion: region)
+      loading = false
+      hasLoadedNodesOnce = true
     } catch {
       log.error(error.localizedDescription)
-      self.loading = false
+      loading = false
     }
   }
 

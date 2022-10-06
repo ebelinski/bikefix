@@ -50,18 +50,30 @@ struct MapView: View {
   }
 
   var mapOverlays: some View {
-    HStack {
+    VStack {
+      if !viewModel.nodeProvider.hasLoadedNodesOnce {
+        Text("**Welcome to BikeFix!** To see bicycle repair stations and stores, press the \(Image(systemName: "location")) button at the bottom-right, or pinch to zoom.")
+          .padding(10)
+          .background(.ultraThinMaterial)
+          .cornerRadius(8)
+          .padding(10)
+      }
+
       Spacer()
 
-      VStack {
+      HStack {
         Spacer()
-        if viewModel.nodeProvider.loading {
-          loadingIndicator
+
+        VStack {
+          Spacer()
+          if viewModel.nodeProvider.loading {
+            loadingIndicator
+          }
+          settingsButton
+          locationButton
         }
-        settingsButton
-        locationButton
+        .padding(10)
       }
-      .padding(10)
     }
     .padding(.bottom, 20)
   }
@@ -104,6 +116,10 @@ struct MapView: View {
 
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
-    MapView(viewModel: MapViewModel(nodeProvider: NodeProvider()))
+      MapView(viewModel: MapViewModel(nodeProvider: NodeProvider()))
+        .preferredColorScheme(.light)
+
+      MapView(viewModel: MapViewModel(nodeProvider: NodeProvider()))
+        .preferredColorScheme(.dark)
   }
 }
