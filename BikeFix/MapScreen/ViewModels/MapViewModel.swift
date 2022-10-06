@@ -7,6 +7,7 @@ class MapViewModel: NSObject, ObservableObject {
   @Published var displayingLocationAuthRequest = false
   @Published var shouldNavigateToUserLocation = false
   @Published var openedNodeVM: NodeViewModel? = nil
+  @Published var displayFirstTimeMessage = false
 
   var nodeProvider: NodeProvider
 
@@ -18,6 +19,10 @@ class MapViewModel: NSObject, ObservableObject {
 
   init(nodeProvider: NodeProvider) {
     self.nodeProvider = nodeProvider
+
+    if !nodeProvider.hasLoadedNodesOnce {
+      displayFirstTimeMessage = true
+    }
   }
 
   // MARK: - Public methods

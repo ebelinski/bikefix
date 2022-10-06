@@ -51,12 +51,13 @@ struct MapView: View {
 
   var mapOverlays: some View {
     VStack {
-      if !viewModel.nodeProvider.hasLoadedNodesOnce {
-        Text("**Welcome to BikeFix!** To see bicycle repair stations and stores, press the \(Image(systemName: "location")) button at the bottom-right, or pinch to zoom.")
-          .padding(10)
-          .background(.ultraThinMaterial)
-          .cornerRadius(8)
-          .padding(10)
+      if viewModel.displayFirstTimeMessage {
+        FirstTimeView() {
+          withAnimation {
+            viewModel.displayFirstTimeMessage = false
+          }
+        }
+        .transition(.opacity)
       }
 
       Spacer()
