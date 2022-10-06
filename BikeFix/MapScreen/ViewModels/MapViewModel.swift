@@ -5,8 +5,8 @@ class MapViewModel: ObservableObject {
 
   @Published var showingSettings = false
   @Published var displayingLocationAuthRequest = false
-  @Published var shouldNavigateToUserLocation = false
   @Published var openedNodeVM: NodeViewModel? = nil
+  @Published var mapRegion = MKCoordinateRegion()
 
   var nodeProvider: NodeProvider
 
@@ -19,16 +19,23 @@ class MapViewModel: ObservableObject {
   // MARK: - Public methods
 
   func checkForLocationAuthorizationAndNavigateToUserLocation() {
-    displayingLocationAuthRequest = false
-
     if locationManager.authorizationStatus == .notDetermined {
       log.info("location authorization not determined")
-      displayingLocationAuthRequest = true
       locationManager.requestWhenInUseAuthorization()
       return
     }
 
-    shouldNavigateToUserLocation = true
+    moveToUserLocation()
+  }
+
+  func moveToUserLocation() {
+    guard let location = locationManager.location else { return }
+
+    mapRegion = MKCoordinateRegion(
+      center: location.coordinate,
+      span: MKCoordinateSpan(latitudeDelta: 0.02,
+                             longitudeDelta: 0.02)
+    )
   }
 
   func onNodeDetailDismiss() {

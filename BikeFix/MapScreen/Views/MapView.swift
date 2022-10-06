@@ -27,23 +27,17 @@ struct MapView: View {
       mapOverlays
     }
     .onAppear {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        // Setting it right away doesn't work, due to some funny behavior with
-        // MapView's mapViewDidChangeVisibleRegion method.
-        self.viewModel.shouldNavigateToUserLocation = true
-      }
+      viewModel.moveToUserLocation()
     }
   }
 
   // MARK: - Other views
 
   var map: some View {
-    MapViewRepresentable(
-      nodeProvider: viewModel.nodeProvider,
-      nodes: $viewModel.nodeProvider.nodes,
-      openedNodeVM: $viewModel.openedNodeVM,
-      displayingLocationAuthRequest: $viewModel.displayingLocationAuthRequest,
-      shouldNavigateToUserLocation: $viewModel.shouldNavigateToUserLocation
+    Map(
+      coordinateRegion: $viewModel.mapRegion,
+      interactionModes: .all,
+      showsUserLocation: true
     )
     .accentColor(Color.bikefixPrimaryOnWhite)
     .edgesIgnoringSafeArea(.all)
@@ -59,7 +53,7 @@ struct MapView: View {
           loadingIndicator
         }
         settingsButton
-        locationButton
+        locateMeButton
       }
       .padding(10)
     }
@@ -90,7 +84,7 @@ struct MapView: View {
     }
   }
 
-  var locationButton: some View {
+  var locateMeButton: some View {
     Button(action: viewModel.checkForLocationAuthorizationAndNavigateToUserLocation) {
       Image(systemName: "location")
         .mapButtonImageStyle()
