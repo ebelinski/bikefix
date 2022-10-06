@@ -5,7 +5,7 @@ struct MapView: View {
 
   // MARK: - Observables
 
-  @ObservedObject var viewModel: MapViewModel
+  @StateObject var viewModel: MapViewModel
 
   // MARK: - Instance variables
 
