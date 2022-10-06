@@ -247,7 +247,6 @@ struct SettingsMain: View {
 
 // MARK: - Preview
 
-#if DEBUG
 struct Settings_Previews: PreviewProvider {
   static var previews: some View {
     Group {
@@ -260,4 +259,3 @@ struct Settings_Previews: PreviewProvider {
     }
   }
 }
-#endif

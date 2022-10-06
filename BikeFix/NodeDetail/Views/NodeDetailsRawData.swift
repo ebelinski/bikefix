@@ -32,7 +32,6 @@ struct NodeDetailsRawData: View {
 
 }
 
-#if DEBUG
 struct NodeDetailsRawData_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
@@ -41,4 +40,3 @@ struct NodeDetailsRawData_Previews: PreviewProvider {
     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
   }
 }
-#endif

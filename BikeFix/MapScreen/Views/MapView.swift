@@ -102,10 +102,8 @@ struct MapView: View {
   
 }
 
-#if DEBUG
 struct Map_Previews: PreviewProvider {
   static var previews: some View {
     MapView(viewModel: MapViewModel(nodeProvider: NodeProvider()))
   }
 }
-#endif
