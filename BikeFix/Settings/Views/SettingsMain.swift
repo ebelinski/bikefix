@@ -29,15 +29,17 @@ struct SettingsMain: View {
   // MARK: - Instance variables
 
   let feedbackGenerator = UINotificationFeedbackGenerator()
+  
   let priceFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.formatterBehavior = .behavior10_4
     formatter.numberStyle = .currency
     return formatter
   }()
-  let publisherPurchaseSuccess = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseSuccess)
-  let publisherPurchaseCancelled = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseCancelled)
-  let publisherPurchaseFailed = NotificationCenter.default.publisher(for: Notification.Name.IAP.purchaseFailed)
+
+  let publisherPurchaseSuccess = NotificationCenter.default.publisher(for: .IAP.purchaseSuccess)
+  let publisherPurchaseCancelled = NotificationCenter.default.publisher(for: .IAP.purchaseCancelled)
+  let publisherPurchaseFailed = NotificationCenter.default.publisher(for: .IAP.purchaseFailed)
 
   // MARK: - Body view
 
