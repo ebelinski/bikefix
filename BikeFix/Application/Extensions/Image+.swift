@@ -1,7 +1,6 @@
 import SwiftUI
 
 extension Image {
-
   func mapButtonImageStyle() -> some View {
     self
       .imageScale(.large)
@@ -10,5 +9,4 @@ extension Image {
       .cornerRadius(8)
       .shadow(color: Color.shadow, radius: 5)
   }
-
 }

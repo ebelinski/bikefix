@@ -1,7 +1,6 @@
 import MapKit
 
 extension MKCoordinateRegion {
-
   var northWest: CLLocationCoordinate2D {
     CLLocationCoordinate2D(
       latitude: center.latitude + span.latitudeDelta / 2,
@@ -44,5 +43,4 @@ extension MKCoordinateRegion {
       && southEast.latitude <= region.southEast.latitude
       && southEast.longitude >= region.southEast.longitude
   }
-
 }
