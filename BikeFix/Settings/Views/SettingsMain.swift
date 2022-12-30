@@ -44,7 +44,7 @@ struct SettingsMain: View {
   // MARK: - Body view
 
   var body: some View {
-    NavigationView {
+    NavigationStack {
       Form {
         mapSettingsSection
         apiSettingsSection
