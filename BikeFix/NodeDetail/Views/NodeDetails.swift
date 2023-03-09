@@ -18,7 +18,7 @@ struct NodeDetails: View {
   // MARK: - Body view
 
   var body: some View {
-    NavigationView {
+    NavigationStack {
       Form {
         // MARK: - Section: Information
         Section(header: Text("Information")) {
